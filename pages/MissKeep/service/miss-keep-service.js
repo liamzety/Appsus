@@ -1,4 +1,4 @@
-import  {UtilsService}  from "../../../services/utils.js";
+import  {utilsService}  from "../../../services/utils.js";
 
 export const missKeepService={
     query,
@@ -41,14 +41,14 @@ var notes = [
 
    function query(){
 
-       notes= UtilsService.loadFromStorage(KEY) || notes
-       UtilsService.saveToStorage(KEY, notes)
+       notes= utilsService.loadFromStorage(KEY) || notes
+       utilsService.saveToStorage(KEY, notes)
         return Promise.resolve(notes)
    }
 
    function addNote(note){
     notes.unshift(note)
-    UtilsService.saveToStorage(KEY, notes)
+    utilsService.saveToStorage(KEY, notes)
     
     return Promise.resolve(notes)
    }
