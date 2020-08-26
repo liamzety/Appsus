@@ -22,7 +22,7 @@ export function BookPreview(props) {
 
     return (
 
-        <Link to={`books/${props.book.id}`}>
+        <Link to={`miss-books/${props.book.id}`}>
             <ul id={props.book.id} className="book-preview">
                 <li><img className="list-image" src={props.book.thumbnail} alt="" /></li>
                 <li><h2>{props.book.title}</h2></li>

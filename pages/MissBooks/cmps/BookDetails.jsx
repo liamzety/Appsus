@@ -100,7 +100,7 @@ export class BookDetails extends React.Component {
         return (
             
             <section className="book-details">
-                 <Link to="/books">
+                 <Link to="/miss-books">
                     <button className="back-button"> {'< Go Back'}</button>
                 </Link>
                 <ul className="book-details-list">
@@ -140,10 +140,10 @@ export class BookDetails extends React.Component {
             <ReviewAdd book={this.state.book}/>
                 </div>
                 <div className="prev-next">
-            <Link to={`/books/${prevBook}`}>
+            <Link to={`/miss-books/${prevBook}`}>
             <button>Previous</button>
             </Link>
-            <Link to={`/books/${nextBook}`}>
+            <Link to={`/miss-books/${nextBook}`}>
             <button>Next</button>
             </Link>
                 </div>

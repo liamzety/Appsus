@@ -4,52 +4,10 @@
 @import './details.css';
 @import './filter.css';
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a{
-  color: inherit;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-body {
-  background-color: #E5E5E5;
-  color: #14213D;
-}
-
-button{
-  width:120px;
-  height:60px;
-  border: 3px solid #14213D;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #14213D;
-  background-color: #E5E5E5;
-  cursor: pointer;
-}
 
 .container{
   margin-left: 50px;
   margin-right:50px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-img{
-  object-fit: cover;
 }
 
 .booklist {
