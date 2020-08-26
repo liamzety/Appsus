@@ -1,5 +1,7 @@
 @import './email-preview.css';
 @import './email-compose.css';
+@import './email-body.css';
 .miss-email {
-  background-color: red;
+  background-image: url(../img/pegasus-bg.jpg);
+  min-height: 100vh;
 }

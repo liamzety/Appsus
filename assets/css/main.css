@@ -27,6 +27,10 @@ textarea {
   resize: none;
 }
 
+.fas {
+  cursor: pointer;
+}
+
 /* helpers */
 
 .mb-25 {
