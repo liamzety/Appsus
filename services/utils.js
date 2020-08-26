@@ -47,6 +47,10 @@ function getRandomColor() {
 //---------------------------------------------------------------------
 // GET CURRENT DATE FORAMTED [ISRAEL]
 function getFormattedDate(timestamp) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3bf0d9237dd1956d1497edbdbc59f56a41a8b624
   var a = new Date(timestamp);
   var year = a.getFullYear();
   var month = a.getMonth() + 1;
@@ -62,9 +66,15 @@ function getFormattedDate(timestamp) {
 function getTimeStamp(date = '15/1/1995') {
   var myDate = date;
   myDate = date.split("/");
+<<<<<<< HEAD
   
   var newDate = new Date(myDate[2], myDate[1] - 1, myDate[0]);
   
+=======
+
+  var newDate = new Date(myDate[2], myDate[1] - 1, myDate[0]);
+
+>>>>>>> 3bf0d9237dd1956d1497edbdbc59f56a41a8b624
   return newDate.getTime()
 }
 //---------------------------------------------------------------------

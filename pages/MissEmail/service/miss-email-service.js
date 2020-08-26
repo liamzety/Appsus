@@ -2,7 +2,8 @@ import { utilsService } from '../../../services/utils.js'
 
 export const emailService = {
     getEmails,
-    saveEmail
+    addEmail,
+    removeEmail
 }
 
 let emails = [
@@ -35,22 +36,32 @@ let emails = [
 ]
 
 function getEmails() {
-    emails = utilsService.loadFromStorage('emails') || emails
+    emails = utilsService.checkIfStorage('emails') ? utilsService.loadFromStorage('emails') : emails
     utilsService.saveToStorage('emails', emails)
 
     return Promise.resolve(emails)
 }
 
-function saveEmail(email) {
-    var currTimeStamp = Date.now()
-    // email.subject
-    // email.body
+function addEmail(emailDetails) {
+    console.log('', emailDetails)
+
     emails.unshift({
         id: utilsService.getRandId(),
-        subject: 'NEW EMAIL',
-        body: 'hello im NEW email',
+        subject: emailDetails.subject,
+        body: emailDetails.body,
         isRead: false,
         sentAt: Date.now()
     })
     utilsService.saveToStorage('emails', emails)
+}
+
+function removeEmail(id) {
+    const emailToRemoveIdx = getById(id)
+    emails = emails.filter((email, idx) => idx !== emailToRemoveIdx)
+
+    utilsService.saveToStorage('emails', emails)
+}
+
+function getById(id) {
+    return emails.findIndex(email => email.id === id)
 }
