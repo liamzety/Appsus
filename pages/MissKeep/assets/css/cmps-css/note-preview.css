@@ -1,0 +1,38 @@
+.notes{
+   display:flex;
+   flex-wrap: wrap;
+}
+
+.note{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding-left:10px;
+    margin:10px;
+    box-shadow: 5px 5px 5px grey;
+    flex-wrap: wrap;
+}
+
+.remove-note-btn{
+    align-self: flex-start;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-bottom:10px
+}
+
+.remove-note-btn:hover{
+cursor: pointer;
+}
+
+.edit-note-btn{
+    align-self: flex-start;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-bottom:10px
+}
+
+.edit-note-btn:hover{
+    cursor: pointer;
+    }

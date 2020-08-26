@@ -2,7 +2,9 @@ import  {utilsService}  from "../../../services/utils.js";
 
 export const missKeepService={
     query,
-    addNote
+    addNote,
+    removeNote,
+    updateNote
 }
 
 const KEY= 'Notes'
@@ -14,7 +16,8 @@ var notes = [
     isPinned: true,
     info: {
     txt: "Fullstack Me Baby!"
-    }
+    },
+    id: utilsService.getRandId()
     },
     {
     type: "NoteImg",
@@ -24,7 +27,8 @@ var notes = [
     },
     style: {
     backgroundColor: "#00d"
-    }
+    },
+    id: utilsService.getRandId()
     },
     {
     type: "NoteTodos",
@@ -34,7 +38,8 @@ var notes = [
     { txt: "Do that", doneAt: null },
     { txt: "Do this", doneAt: 187111111 }
     ]
-    }
+    },
+    id: utilsService.getRandId()
     }
    ];
 
@@ -47,8 +52,29 @@ var notes = [
    }
 
    function addNote(note){
-    notes.unshift(note)
+       const NewNote={
+           ...note,
+           id: utilsService.getRandId()
+       }
+    notes.unshift(NewNote)
     utilsService.saveToStorage(KEY, notes)
     
     return Promise.resolve(notes)
+   }
+
+   function removeNote(noteId){
+    
+    notes=notes.filter(note=> note.id!==noteId)
+    utilsService.saveToStorage(KEY, notes)
+    return Promise.resolve(notes)
+   }
+
+   function updateNote(newNote){
+       const noteIdx= notes.findIndex(note=> note.id===newNote.id)
+
+       notes.splice(noteIdx, 1, newNote)
+
+       utilsService.saveToStorage(KEY, notes)
+       return Promise.resolve(notes)
+      
    }
