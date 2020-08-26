@@ -47,6 +47,7 @@ function getRandomColor() {
 //---------------------------------------------------------------------
 // GET CURRENT DATE FORAMTED [ISRAEL]
 function getFormattedDate(timestamp) {
+
   var a = new Date(timestamp);
   var year = a.getFullYear();
   var month = a.getMonth() + 1;
