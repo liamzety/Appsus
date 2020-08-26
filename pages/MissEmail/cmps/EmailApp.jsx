@@ -42,9 +42,9 @@ export class EmailApp extends React.Component {
 
         return (
             <section className="email-app">
-                <button onClick={this.onStartCompose}>Compose</button>
+
+                <EmailList onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
                 {this.state.isComposing && <EmailCompose onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
-                <EmailList onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
             </section>
         )
     }

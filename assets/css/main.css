@@ -5,6 +5,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -31,8 +33,25 @@ textarea {
   cursor: pointer;
 }
 
+/* navbar */
+
+.nav-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rebeccapurple;
+  left: 15px;
+  width: 300px;
+  height: 150px;
+}
+
 /* helpers */
 
 .mb-25 {
   margin-bottom: 25px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }

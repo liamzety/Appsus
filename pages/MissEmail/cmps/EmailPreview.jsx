@@ -1,6 +1,5 @@
 import { utilsService } from '../../../services/utils.js'
 import { emailService } from '../service/miss-email-service.js'
-import { EmailBody } from '../cmps/EmailBody.jsx'
 
 export class EmailPreview extends React.Component {
 
@@ -21,7 +20,7 @@ export class EmailPreview extends React.Component {
         return (
             <React.Fragment>
                 {!this.state.showEmail &&
-                    <section onClick={this.onShowLongText} className="email-preview-container mb-25">
+                    <section onClick={this.onShowLongText} className="email-preview-container mb-10">
 
                         <div onClick={(ev) => {
                             ev.stopPropagation()
@@ -36,12 +35,13 @@ export class EmailPreview extends React.Component {
                         }}>
                             <i className="fas fa-arrow">show</i>
                         </div>
+
                         <h2>{email.from}</h2>
-                        <h2>Sent: {sentAt}</h2>
-                        <h1 style={{ fontWeight: email.isRead ? 400 : 700 }}>{email.subject}</h1>
                         <div className={this.state.showLongTxt ? 'txt-body-container' : 'txt-body-container hide-long-txt'}>
+                            <h1 style={{ fontWeight: email.isRead ? 400 : 700 }}>{email.subject}</h1>
                             <p >{email.body}</p>
                         </div>
+                        <p>{sentAt}</p>
                     </section>
                 }
 

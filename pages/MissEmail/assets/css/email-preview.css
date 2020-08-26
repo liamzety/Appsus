@@ -1,5 +1,5 @@
 .email-preview-container {
-    padding: 25px;
+    padding: 10px 25px;
     color: #f1f1f1;
     background-color: #222222e3;
     display: flex;
@@ -10,8 +10,11 @@
     margin-left: 10px;
 }
 
+.email-preview-container h2 {
+    width: 200px;
+}
+
 .email-preview-container .hide-long-txt {
-    width: 50%;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;

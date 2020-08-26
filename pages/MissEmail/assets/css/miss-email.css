@@ -1,7 +1,9 @@
+@import './email-list.css';
 @import './email-preview.css';
-@import './email-compose.css';
 @import './email-body.css';
+@import './email-compose.css';
 .miss-email {
   background-image: url(../img/pegasus-bg.jpg);
   min-height: 100vh;
+  font-size: 16px;
 }
