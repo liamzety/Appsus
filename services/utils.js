@@ -1,9 +1,12 @@
-export const UtilsService={
+export const utilsService = {
   checkIfStorage,
   saveToStorage,
   loadFromStorage,
   getRandomArbitrary,
-  getRandomColor
+  getRandomColor,
+  getFormattedDate,
+  getRandId,
+  getTimeStamp
 }
 
 
@@ -41,4 +44,39 @@ function getRandomColor() {
   return color;
 }
 
+//---------------------------------------------------------------------
+// GET CURRENT DATE FORAMTED [ISRAEL]
+function getFormattedDate(timestamp) {
+  console.log('timestamp', timestamp)
+  var a = new Date(timestamp);
+  var year = a.getFullYear();
+  var month = a.getMonth() + 1;
+  var date = a.getDate();
 
+  var time = date + '/' + month + '/' + year
+
+  return time;
+
+}
+//---------------------------------------------------------------------
+// GET SPECIFIC DATE TO TIMESTAMP
+function getTimeStamp(date = '15/1/1995') {
+  var myDate = date;
+  myDate = date.split("/");
+  console.log('', myDate)
+  var newDate = new Date(myDate[2], myDate[1] - 1, myDate[0]);
+  console.log('', newDate)
+  return newDate.getTime()
+}
+//---------------------------------------------------------------------
+// GET RANDOM ID
+function getRandId(length = 8) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
