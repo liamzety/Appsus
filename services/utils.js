@@ -33,30 +33,3 @@ function getRandomColor() {
 }
 
 
-
-//SHUFFLE [GOES WITH GET RANDOM NUM]
-function shuffle(arr) {
-  var random = getRandomArbitrary(0, arr.length);
-  var sortedArr = [];
-
-  for (var i = 0; i <= arr.length; i++) {
-    sortedArr.push(arr[random]);
-    arr.splice(random, 1);
-    random = getRandomArbitrary(0, arr.length);
-    i = 0;
-  }
-
-  return sortedArr;
-}
-
-//--------------------------------------------------------------------
-//RANDOM COLOR
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
