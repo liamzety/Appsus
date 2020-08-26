@@ -3,12 +3,28 @@
 @import '../../pages/MissBooks/assets/css/miss-books.css';
 /* BASE */
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
 
 main {
   min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
 }
 
 /* helpers */

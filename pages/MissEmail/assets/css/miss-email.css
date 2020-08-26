@@ -1,4 +1,5 @@
 @import './email-preview.css';
+@import './email-compose.css';
 .miss-email {
   background-color: red;
 }
