@@ -13,11 +13,20 @@
     flex-wrap: wrap;
 }
 
+/* BUTTONS */
+
+.note-btns{
+    visibility: hidden;
+}
+
+.note:hover .note-btns{
+    visibility: visible;
+}
+
 .remove-note-btn{
     align-self: flex-start;
     background-color: transparent;
-    border: 1px solid black;
-    border-radius: 50px;
+    border:0;
     margin-bottom:10px
 }
 
@@ -28,11 +37,21 @@ cursor: pointer;
 .edit-note-btn{
     align-self: flex-start;
     background-color: transparent;
-    border: 1px solid black;
-    border-radius: 50px;
+    border:0;
     margin-bottom:10px
 }
 
 .edit-note-btn:hover{
+    cursor: pointer;
+    }
+
+.pin-note-btn{
+    align-self: flex-start;
+    background-color: transparent;
+    border:0;
+    margin-bottom:10px
+}
+
+.pin-note-btn:hover{
     cursor: pointer;
     }

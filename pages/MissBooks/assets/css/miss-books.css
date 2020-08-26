@@ -1,3 +1,93 @@
-.miss-books {
-  background-color: blue;
+@import './header.css';
+@import './homepage.css';
+@import './about.css';
+@import './details.css';
+@import './filter.css';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a{
+  color: inherit;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+body {
+  background-color: #E5E5E5;
+  color: #14213D;
+}
+
+button{
+  width:120px;
+  height:60px;
+  border: 3px solid #14213D;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #14213D;
+  background-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.container{
+  margin-left: 50px;
+  margin-right:50px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img{
+  object-fit: cover;
+}
+
+.booklist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book-preview {
+  display: flex;
+  flex-direction: column;
+  padding:20px 20px 0 0;
+  width:200px;
+  height:100%;
+}
+
+.book-preview:hover{
+  -webkit-filter: brightness(50%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.hidden{
+  display:none;
+}
+
+.list-image{
+  
+  width:100%;
+}
+
+.search-add-button{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  font-size:1rem;
+  padding: 0px;
 }

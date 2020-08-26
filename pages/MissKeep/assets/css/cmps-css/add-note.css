@@ -1,3 +1,8 @@
+.note-adding-area{
+    text-align: center;
+    padding: 20px;
+}
+
 .add-note{
     display: flex;
     margin:0 auto;
