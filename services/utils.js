@@ -1,3 +1,12 @@
+export const UtilsService={
+  checkIfStorage,
+  saveToStorage,
+  loadFromStorage,
+  getRandomArbitrary,
+  getRandomColor
+}
+
+
 //--------------------------------------------------------------------
 //STORAGE
 function checkIfStorage(key) {
