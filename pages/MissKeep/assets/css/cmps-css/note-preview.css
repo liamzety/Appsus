@@ -11,6 +11,7 @@
     margin:10px;
     box-shadow: 5px 5px 5px 5px grey;
     flex-wrap: wrap;
+   min-height:200px;
 }
 
 .note img{

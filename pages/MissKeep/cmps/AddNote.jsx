@@ -40,7 +40,6 @@ export class AddNote extends React.Component {
             style
         }
        
-        console.log(note);
         this.setState({type:'NoteText' ,info:{txt:'', url:''}})
         
         missKeepService.addNote(note)
@@ -67,7 +66,6 @@ export class AddNote extends React.Component {
     getInput=()=>{
         switch (this.state.type) {
             case "NoteText":
-                console.log();
                return <TextInput onChangeInput={this.onChangeInput} text={this.state.info.txt}/>
                 break;
             case "NoteImg":

@@ -1,25 +1,60 @@
+import { missKeepService } from "../../service/miss-keep-service.js"
 import { NoteTodos } from "../note-types/NoteTodos.jsx";
 
-export function TodosEditor(props){
+export class TodosEditor extends React.Component {
 
-    console.log(props);
-    const { id, info, style } = props.note
+    state = {
+        todos: this.props.note.info.todos,
+        newTodo: '',
+    }
 
-    return(
-        <section className="note-editor">
+    onInputChange = (ev) => {
+        
+        this.setState({ newTodo: ev.target.value })
+    }
 
-        <h1>Edit Note</h1>
 
-        <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
-            <NoteTodos note={props.note}/>
-        </div>
-        <form>
-            <input type="text" name="label" value={info.label} onChange={props.changeInput} />
-            <input type="color" value={style.backgroundColor} onChange={props.changeColor} />
+    markTodo = (todoId, noteId) => {
+        console.log(event.target);
+        missKeepService.markTodo(todoId, noteId)
+            .then(todos => this.setState({ todos }))
+    }
 
-            <button type="button" onClick={() => props.updateNote()}>Submit</button>
+    addTodo = () => {
+        event.preventDefault()
+        missKeepService.updateTodos(this.state.todos, this.state.newTodo)
+            .then(todos => this.setState({ todos , newTodo:''}))
 
-        </form>
-    </section>
-    )
+
+
+    }
+
+    removeTodo = (todoId, noteId) => {
+        event.preventDefault()
+        missKeepService.removeTodo(todoId, noteId)
+            .then(todos=> this.setState({ todos }))
+    }
+
+    render() {
+        const { id, info, style } = this.props.note
+
+        return (
+            <section className="note-editor">
+
+                <h1>Edit Note</h1>
+
+                <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
+                    <NoteTodos onInputChange={this.onInputChange} note={this.props.note} markTodo={this.markTodo} removeTodo={this.removeTodo} />
+                </div>
+                <form>
+                    Label:<input type="text" name="label" value={info.label} onChange={this.props.changeInput} />
+            Todos: <input type="text" value={this.state.newTodo} onChange={this.onInputChange} /><button onClick={() => this.addTodo()}>+</button>
+                    <input type="color" value={style.backgroundColor} onChange={this.props.changeColor} />
+
+                    <button type="button" onClick={() => this.props.updateNote()}>Submit</button>
+
+                </form>
+            </section>
+        )
+    }
 }

@@ -2,7 +2,7 @@ import { NoteImg } from "../note-types/NoteImg.jsx";
 
 export function ImageEditor(props){
 
-    console.log(props);
+    
     const { id, info, style } = props.note
 
     return(

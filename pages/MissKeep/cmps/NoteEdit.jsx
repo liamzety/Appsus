@@ -70,7 +70,7 @@ export class NoteEdit extends React.Component {
                 return <ImageEditor note={this.state} uploadImage={this.uploadImage} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote}/>
                 break;
             case 'NoteTodos':
-                return <TodosEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote}/>
+                return <TodosEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote} />
                 break;
 
             default:

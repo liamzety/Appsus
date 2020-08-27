@@ -26,6 +26,19 @@ export class KeepApp extends React.Component {
             .then(notes => this.setState({ notes }))
     }
 
+    markTodo = (todoId,noteId) => {
+       
+        console.log(todoId);
+        missKeepService.markTodo(todoId, noteId)
+        .then(todos=> this.setState({todos}))
+    }
+
+    removeTodo = (todoId, noteId) => {
+        event.preventDefault()
+        missKeepService.removeTodo(todoId, noteId)
+            .then(todos=> this.setState({ todos }))
+    }
+
 
     getNote(note) {
 
@@ -36,9 +49,8 @@ export class KeepApp extends React.Component {
             case 'NoteImg':
                 return <NoteImg note={note} />
                 break;
-            case 'NoteTodos':
-                
-                return <NoteTodos note={note} />
+            case 'NoteTodos':              
+                return <NoteTodos note={note} markTodo={this.markTodo} removeTodo={this.removeTodo}/>
                 break;
 
             default:
@@ -66,7 +78,6 @@ export class KeepApp extends React.Component {
     }
 
     notesToShow=()=>{
-        
         const searchedNotes= this.state.notes.filter((note)=>{
            
            if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy)

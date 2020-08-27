@@ -5,7 +5,10 @@ export const missKeepService={
     addNote,
     removeNote,
     updateNote,
-    pinNote
+    pinNote,
+    updateTodos,
+    markTodo,
+    removeTodo
 }
 
 const KEY= 'Notes'
@@ -17,6 +20,9 @@ var notes = [
     isPinned: true,
     info: {
     txt: "Fullstack Me Baby!"
+    },
+    style:{
+        backgroundColor:'#ffffff'
     },
     id: utilsService.getRandId()
     },
@@ -38,9 +44,12 @@ var notes = [
     label: "How was it:",
     txt:'',
     todos: [
-    { txt: "Do that", doneAt: null },
-    { txt: "Do this", doneAt: 187111111 }
+    { txt: "Do that", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "Do this", doneAt: 187111111 ,id: utilsService.getRandId() }
     ]
+    },
+    style:{
+        backgroundColor:'#ffffff'
     },
     id: utilsService.getRandId()
     }
@@ -90,4 +99,40 @@ var notes = [
     selectedNote.isPinned=true
     utilsService.saveToStorage(KEY, notes)
     return Promise.resolve(notes)
+   }
+
+   function updateTodos(todos, newTodo){
+    
+    const todo={
+        txt:newTodo,
+        doneAt: false,
+        id: utilsService.getRandId()
+    }
+
+    todos.push(todo)
+
+    utilsService.saveToStorage(KEY, notes)
+    return Promise.resolve(todos)
+   }
+
+   function markTodo(todoId,noteId){
+    let selectedNote= notes.find(note=> note.id===noteId)
+   
+    let selectedTodo= selectedNote.info.todos.find(todo => todo.id===todoId)
+    const todoIdx= selectedNote.info.todos.findIndex(todo=> todo.id===todoId)
+
+    selectedTodo.doneAt = !selectedTodo.doneAt ?  Date.now() : false
+
+    selectedNote.info.todos.splice(todoIdx,1,selectedTodo)
+
+    return Promise.resolve(selectedNote.info.todos)
+   }
+
+   function removeTodo(todoId, noteId){
+    let selectedNote= notes.find(note=> note.id===noteId)
+    const todoIdx= selectedNote.info.todos.findIndex(todo=> todo.id===todoId)
+
+    selectedNote.info.todos.splice(todoIdx,1)
+
+    return Promise.resolve(selectedNote.info.todos)
    }
