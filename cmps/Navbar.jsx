@@ -14,7 +14,7 @@ export class Navbar extends React.Component {
 
         return (
             <section className="navbar-section">
-                <i onClick={this.onToggleNav} class="fas fa-th-list"></i>
+                <i onClick={this.onToggleNav} className="fas fa-th-list"></i>
 
                 {this.state.isNavShown && <div className="nav-container">
 
