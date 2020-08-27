@@ -16,7 +16,6 @@ export class EmailApp extends React.Component {
         eventBusService.on('compose', this.onStartCompose)
     }
     loadEmails() {
-        console.log('hi',)
         emailService.getEmails()
             .then((emails) => {
                 this.setState({ emails })
@@ -32,8 +31,9 @@ export class EmailApp extends React.Component {
         this.loadEmails()
     }
     onStartCompose = (replayDetails) => {
+        console.log(replayDetails);
         this.setState({ isComposing: true })
-        this.setState({ replayDetails }, console.log('', this.state.replayDetails))
+        this.setState({ replayDetails })
     }
     onEndCompose = (emailDetails) => {
         emailService.addEmail(emailDetails, true)

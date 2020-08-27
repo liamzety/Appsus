@@ -265,10 +265,10 @@ function removeEmail(id) {
 function emailRead(emailRead) {
     emails.forEach((email) => {
         if (email.id === emailRead.id) {
-            if (email.isRead) return
             email.isRead = true
         }
     })
+    utilsService.saveToStorage('emails', emails)
 }
 function emailStar(emailStarred) {
     emails.forEach((email) => {
