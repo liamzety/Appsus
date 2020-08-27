@@ -109,16 +109,20 @@ export class EmailList extends React.Component {
         return (
             <React.Fragment>
                 <div className="hamburger">
-                    <button onClick={this.onToggleSideFilter}>HAMBURGER</button>
+                    <div onClick={this.onToggleSideFilter}>
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
                 <section className="email-list">
                     <div className={`side-filter ${this.state.isHamburger ? 'hide' : 'show'}`}>
-                        <button className="btn-compose" onClick={this.props.onStartCompose}>Compose</button>
-                        <div onClick={this.onShowStarred} className="filter-item">
-                            <p>Starred</p>
+                        <div className="btn-compose" onClick={this.props.onStartCompose}>
+                            <i class="fas fa-paper-plane"></i>
                         </div>
                         <div onClick={this.onShowAll} className="filter-item">
                             <p> All mails</p>
+                        </div>
+                        <div onClick={this.onShowStarred} className="filter-item">
+                            <p>Starred</p>
                         </div>
                         <div onClick={this.onShowDeleted} className="filter-item">
                             <p> Deleted</p>

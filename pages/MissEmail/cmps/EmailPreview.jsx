@@ -23,8 +23,8 @@ export class EmailPreview extends React.Component {
                             this.props.onStarEmail(email)
 
                         }}>
-                            {email.isStar && <i style={{ color: 'yellow' }} class="fas fa-star"></i>}
-                            {!email.isStar && <i class="far fa-star"></i>}
+                            {email.isStar && <i style={{ color: 'yellow' }} className="fas fa-star"></i>}
+                            {!email.isStar && <i className="far fa-star"></i>}
 
 
                         </div>

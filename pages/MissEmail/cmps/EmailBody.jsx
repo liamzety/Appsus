@@ -1,13 +1,19 @@
-
+import eventBusService from '../../../services/event-bus-service.js'
 export class EmailBody extends React.Component {
 
     render() {
 
         return (
             <section className="email-body">
-                <button onClick={() => this.props.onHideEmail(this.props.email)}>Back</button>
-                <h1>{this.props.email.subject}</h1>
+                <div onClick={() => this.props.onHideEmail(this.props.email)} className="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <p>{this.props.email.from}</p>
+                <h2>{this.props.email.subject}</h2>
                 <p>{this.props.email.body}</p>
+                <button onClick={() => {
+                    eventBusService.emit('compose', { email: this.props.email })
+                }}>REPLY</button>
             </section>
         )
     }

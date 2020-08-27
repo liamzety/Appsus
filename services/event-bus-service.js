@@ -10,9 +10,8 @@ function on(eventName, listener) {
 }
 
 function emit(eventName, data) {
-    
     window.dispatchEvent(new CustomEvent(eventName, { detail: data }));
-  
+
 }
 
 

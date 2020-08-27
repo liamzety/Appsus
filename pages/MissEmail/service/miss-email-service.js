@@ -235,7 +235,7 @@ function addEmail(emailDetails, isaDraft) {
 
     emails.unshift({
         id: utilsService.getRandId(),
-        from: 'Liam Zety',
+        from: 'Me',
         subject: emailDetails.subject || '<no subject>',
         body: emailDetails.body || '<no message>',
         isStar: false,

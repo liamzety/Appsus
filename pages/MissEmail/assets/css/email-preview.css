@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    padding: 5px 0;
 }
 
 .email-preview-container .main-wrapper {
@@ -27,6 +28,7 @@
 
 .txt-body-start-container {
     min-width: 200px;
+    margin-left: 10px;
 }
 
 .txt-body-start-container p {

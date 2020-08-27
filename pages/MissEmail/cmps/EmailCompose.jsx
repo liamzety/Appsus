@@ -15,7 +15,7 @@ export class EmailCompose extends React.Component {
 
 
     render() {
-
+        console.log('', this.props.replayDetails.email)
         return (
             <section className="email-compose">
                 <div className="form-header" onClick={() => {
@@ -29,9 +29,9 @@ export class EmailCompose extends React.Component {
                     this.props.onEndCompose()
                 }} action="">
                     <div className="form-inputs-container">
-                        <input placeholder='To:' name='to' type="text" />
-                        <input placeholder='Subject:' name='subject' onChange={this.onComposing} type="text" />
-                        <textarea name='body' onChange={this.onComposing} type="text" />
+                        <input value={this.props.replayDetails.email.from && this.props.replayDetails.email.from} placeholder='To:' name='to' type="text" />
+                        <input value={this.props.replayDetails.email.subject && `Re: ${this.props.replayDetails.email.subject}`} placeholder='Subject:' name='subject' onChange={this.onComposing} type="text" />
+                        <textarea value={this.props.replayDetails.email.body && `Re: ${this.props.replayDetails.email.body}`} name='body' onChange={this.onComposing} type="text" />
                     </div>
                     <div className="form-btn-container">
                         <button className="btn-send-email">Send</button>

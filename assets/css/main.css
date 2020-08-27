@@ -75,8 +75,25 @@ img {
   object-fit: cover;
 }
 
+h1 {
+  font-size: 2em;
+}
+
 h1, h2, h3, h4 {
   font-family: headers;
+}
+
+.btn-back {
+  padding: 5px 10px;
+  border-radius: 2px;
+  width: 35px;
+  height: 30px;
+  ;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background-color: #007efc36;
 }
 
 /* navbar */

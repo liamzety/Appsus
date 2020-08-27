@@ -1,6 +1,22 @@
 .email-body {
     padding: 50px;
-    background-color: antiquewhite;
-    width: 95%;
-    padding-left: 180px;
+    background-color: #f1f1f1;
+    width: 100%;
+    margin: 10px 10px 0 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-body * {
+    margin-bottom: 20px;
+}
+
+.email-body button {
+    width: 100px;
+}
+
+@media (max-width:780px) {
+    .email-body {
+        margin: 90px 10px 0 10px;
+    }
 }

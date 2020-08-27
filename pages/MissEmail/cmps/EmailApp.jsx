@@ -1,17 +1,19 @@
 import { emailService } from '../service/miss-email-service.js'
 import { EmailList } from './EmailList.jsx'
 import { EmailCompose } from './EmailCompose.jsx'
+import eventBusService from '../../../services/event-bus-service.js'
 export class EmailApp extends React.Component {
 
     state = {
         emails: null,
-        isComposing: false
+        isComposing: false,
+        replayDetails: ''
     }
 
 
     componentDidMount() {
         this.loadEmails()
-
+        eventBusService.on('compose', this.onStartCompose)
     }
     loadEmails() {
         console.log('hi',)
@@ -29,8 +31,9 @@ export class EmailApp extends React.Component {
         emailService.removeEmail(emailId)
         this.loadEmails()
     }
-    onStartCompose = () => {
+    onStartCompose = (replayDetails) => {
         this.setState({ isComposing: true })
+        this.setState({ replayDetails }, console.log('', this.state.replayDetails))
     }
     onEndCompose = (emailDetails) => {
         emailService.addEmail(emailDetails, true)
@@ -46,7 +49,7 @@ export class EmailApp extends React.Component {
             <section className="email-app">
 
                 <EmailList onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
-                {this.state.isComposing && <EmailCompose onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
+                {this.state.isComposing && <EmailCompose replayDetails={this.state.replayDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
         )
     }

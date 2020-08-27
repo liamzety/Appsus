@@ -25,7 +25,7 @@ export class Navbar extends React.Component {
                         <i className="fas fa-book"></i>
                     </NavLink>
                     <NavLink onClick={this.onToggleNav} exact to='/'>
-                        <i className="fas fa-at"></i>
+                        <i class="fas fa-mail-bulk"></i>
                     </NavLink>
 
                 </div>}
