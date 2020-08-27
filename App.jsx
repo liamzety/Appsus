@@ -5,7 +5,7 @@ const { Route, Switch, Link } = ReactRouterDOM
 import { MissKeep } from "./pages/MissKeep/MissKeep.jsx"
 import { MissEmail } from "./pages/MissEmail/MissEmail.jsx"
 import { MissBooks } from "./pages/MissBooks/MissBooks.jsx"
-import { Navbar } from '../../../cmps/Navbar.jsx'
+import { Navbar } from './cmps/Navbar.jsx'
 export class App extends React.Component {
 
     render() {
