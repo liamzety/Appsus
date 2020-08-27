@@ -1,10 +1,21 @@
 .note-adding-area{
     text-align: center;
-    padding: 20px;
+    margin: 0 auto;
+    max-width:500px;
+
 }
 
 .add-note{
     display: flex;
     margin:0 auto;
-    justify-content: center;
+    border:1px black solid;
+    width:100%;
+    align-content: center;
+
 }
+
+.add-note input{
+    border:0;
+    width:350px;
+}
+

@@ -1,7 +1,8 @@
-import { missKeepService } from "./service/miss-keep-service.js";
-import { NoteTxt } from "./cmps/NoteTxt.jsx";
-import { NoteImg } from "./cmps/NoteImg.jsx";
-import { NoteTodos } from "./cmps/NoteTodos.jsx";
+const { Link, Route } = ReactRouterDOM
+import { missKeepService } from "../service/miss-keep-service.js";
+import { NoteTxt } from "./NoteTxt.jsx";
+import { NoteImg } from "./NoteImg.jsx";
+import { NoteTodos } from "./NoteTodos.jsx";
 
 
 export class NoteEdit extends React.Component {
