@@ -12,7 +12,7 @@ export class EmailBody extends React.Component {
                 <h2>{this.props.email.subject}</h2>
                 <p>{this.props.email.body}</p>
                 <button onClick={() => {
-                    eventBusService.emit('compose', { email: this.props.email })
+                    eventBusService.emit('compose', { subject: this.props.email })
                 }}>REPLY</button>
             </section>
         )
