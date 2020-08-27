@@ -55,3 +55,12 @@
     width: 15%;
     justify-content: center;
 }
+
+.email-preview-icon {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.email-preview-icon:hover {
+    background-color: #5c5c5c38;
+}

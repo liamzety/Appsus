@@ -18,14 +18,14 @@ export class Navbar extends React.Component {
 
                 {this.state.isNavShown && <div className="nav-container">
 
-                    <NavLink to='/miss-keep'>
-                        <i onClick={this.onToggleNav} className="fas fa-clipboard"></i>
+                    <NavLink onClick={this.onToggleNav} to='/miss-keep'>
+                        <i className="fas fa-clipboard"></i>
                     </NavLink>
-                    <NavLink to='/miss-books'>
-                        <i onClick={this.onToggleNav} className="fas fa-book"></i>
+                    <NavLink onClick={this.onToggleNav} exact to='/miss-books'>
+                        <i className="fas fa-book"></i>
                     </NavLink>
-                    <NavLink exact to='/'>
-                        <i onClick={this.onToggleNav} className="fas fa-at"></i>
+                    <NavLink onClick={this.onToggleNav} exact to='/'>
+                        <i className="fas fa-at"></i>
                     </NavLink>
 
                 </div>}

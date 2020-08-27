@@ -12,13 +12,22 @@ export class EmailPreview extends React.Component {
                 }} className="email-preview-container mb-10">
 
                     <div className="txt-body-start-container">
-                        <div onClick={(ev) => {
+                        <div className='email-preview-icon' onClick={(ev) => {
                             ev.stopPropagation()
                             this.props.onRemoveEmail(email.id)
                         }}>
                             <i className="fas fa-trash"></i>
                         </div>
+                        <div className='email-preview-icon' onClick={(ev) => {
+                            ev.stopPropagation()
+                            this.props.onStarEmail(email)
 
+                        }}>
+                            {email.isStar && <i style={{ color: 'yellow' }} class="fas fa-star"></i>}
+                            {!email.isStar && <i class="far fa-star"></i>}
+
+
+                        </div>
                         <p>{email.from}</p>
                     </div>
                     <div className="txt-body-mid-container hide-long-txt">
