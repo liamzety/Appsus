@@ -1,21 +1,63 @@
 .note-adding-area{
     text-align: center;
     margin: 0 auto;
-    max-width:500px;
-
+    max-width:600px;
+    margin-top:80px;
 }
 
 .add-note{
     display: flex;
-    margin:0 auto;
-    border:1px black solid;
+    justify-content: space-between;
+    margin:20px auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px  grey;
     width:100%;
-    align-content: center;
-
+    align-content: center;   
 }
 
 .add-note input{
-    border:0;
-    width:350px;
+    border:0;  
+    flex-grow: 1;
+    padding-left: 10px;
 }
 
+.add-note-btn{
+    background-color: transparent;
+    color:grey;
+}
+
+.add-note-btn:hover{
+    background-color: transparent;
+    color:#036eda;
+}
+
+
+.note-type-btns button{
+background-color: transparent;
+color: grey;
+}
+
+.note-type-btns button:hover{
+    background-color: transparent;
+    color: #036eda;
+}
+
+.remove-todo{
+    background-color: transparent;
+    color:grey;
+    padding: 8px 0
+}
+
+.remove-todo:hover{
+    background-color: transparent;
+    color: #036eda;
+}
+
+.todo-text{
+    padding:5px 0;
+    cursor: pointer;
+}
+
+.mark-todo{
+    text-decoration-line: line-through;
+}

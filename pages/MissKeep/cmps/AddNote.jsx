@@ -90,21 +90,27 @@ export class AddNote extends React.Component {
         this.setState({type:'NoteTodos'})
     }
 
+    changeToText=()=>{
+        event.preventDefault()
+        this.setState({type:'NoteText'})
+    }
+
 
     render() {
 
        
         return (
             <div className="note-adding-area">
-            <h3>Add Quick Note</h3>
+            
             <form className="add-note">
                 
-                <button className="add-note-btn" onClick={this.addNote}>++</button>
+                <button className="add-note-btn" onClick={this.addNote}><i className="fas fa-plus"></i></button>
                 {this.getInput()}
                 <div className="note-type-btns">
 
-                <button onClick={this.changeToImage}>img</button>
-                <button onClick={this.changeToTodos}>todo</button>
+                <button onClick={this.changeToText}><i className="fas fa-paragraph"></i></button>
+                <button onClick={this.changeToImage}><i className="far fa-image"></i></button>
+                <button onClick={this.changeToTodos}><i className="fas fa-list"></i></button>
 
                 </div>
 

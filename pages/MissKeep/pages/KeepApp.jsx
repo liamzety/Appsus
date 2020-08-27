@@ -28,7 +28,8 @@ export class KeepApp extends React.Component {
 
     markTodo = (todoId,noteId) => {
        
-        console.log(todoId);
+        console.log(this.state.notes);
+        
         missKeepService.markTodo(todoId, noteId)
         .then(todos=> this.setState({todos}))
     }
@@ -103,8 +104,8 @@ export class KeepApp extends React.Component {
             <section className="miss-keep">
                 <h1>MISS KEEPS</h1>
                 <UserMsg />
-                {<NoteSearch searchByText={this.searchByText}/>}
                 {<AddNote saveNotes={this.saveNotes}/>}
+                {<NoteSearch searchByText={this.searchByText}/>}
                 {<div className="notes">
                 
                     {notes.map((note) =>
@@ -114,9 +115,9 @@ export class KeepApp extends React.Component {
                             <li>{this.getNote(note)} </li>
 
                             <div className="note-btns" >
-                            <button className="remove-note-btn" onClick={()=>this.removeNote(note.id)}>X</button>
-                            <button className="pin-note-btn" onClick={()=>this.pinNote(note.id)}>📌</button>
-                            <button className="edit-note-btn" onClick={()=> this.setState({noteSelected:note})}>🖊️</button>
+                            <button className="edit-note-btn" onClick={()=> this.setState({noteSelected:note})}><i class="fas fa-pen"></i></button>
+                            <button className="pin-note-btn" onClick={()=>this.pinNote(note.id)}><i class="fas fa-thumbtack"></i></button>
+                            <button className="remove-note-btn" onClick={()=>this.removeNote(note.id)}><i class="fas fa-trash"></i></button>
                                 
                             </div>
                             

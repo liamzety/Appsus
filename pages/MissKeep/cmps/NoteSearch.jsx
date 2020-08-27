@@ -6,12 +6,12 @@ export class NoteSearch extends React.Component {
 
         return (
             <section className="note-search">
+                <div className="search-input">
 
-
-                <h2>Note Search</h2>
-
-                <input type="text" placeholder={"Search"} onChange={(ev) =>
+                <input type="text" placeholder={"Search Note"} onChange={(ev) =>
                     this.props.searchByText(ev.target.value)} />
+                    <i class="fas fa-search"></i>
+                </div>
                
             </section>
         )
