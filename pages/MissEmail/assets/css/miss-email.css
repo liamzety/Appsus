@@ -3,8 +3,8 @@
 @import './email-body.css';
 @import './email-compose.css';
 .miss-email {
-  padding-top: 85px;
+  padding-top: 70px;
   min-height: 100vh;
   font-size: 16px;
-  background-color: #121212;
+  background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);
 }

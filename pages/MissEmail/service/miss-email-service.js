@@ -245,7 +245,6 @@ function addEmail(emailDetails, isaDraft) {
         isDraft: isaDraft,
         sentAt: Date.now()
     })
-    console.log(emails)
     utilsService.saveToStorage('emails', emails)
 }
 
@@ -254,14 +253,12 @@ function removeEmail(id) {
         if (email.id === id) {
             if (!email.isDeleted && !email.isDraft) {
                 email.isDeleted = true
-            }
-            else {
+            } else if (email.isDeleted && email.isStar) {
                 emails.splice(idx, 1)
             }
+            else emails.splice(idx, 1)
         }
     })
-
-
     utilsService.saveToStorage('emails', emails)
 }
 

@@ -1,5 +1,4 @@
 .email-preview-container {
-    padding: 10px 25px;
     color: #f1f1f1;
     background-color: #2a2a2ad8;
     display: flex;
@@ -27,7 +26,11 @@
 }
 
 .txt-body-start-container {
-    width: 15%;
+    min-width: 200px;
+}
+
+.txt-body-start-container p {
+    align-self: center;
 }
 
 .txt-body-start-container *:not(:first-child) {
@@ -35,7 +38,7 @@
 }
 
 .txt-body-mid-container {
-    width: 70%;
+    width: 700px;
     margin-left: 30px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -52,8 +55,7 @@
 }
 
 .txt-body-end-container {
-    width: 15%;
-    justify-content: center;
+    min-width: 100px
 }
 
 .email-preview-icon {
@@ -63,4 +65,10 @@
 
 .email-preview-icon:hover {
     background-color: #5c5c5c38;
+}
+
+@media (max-width:780px) {
+    .txt-body-mid-container {
+        visibility: hidden;
+    }
 }

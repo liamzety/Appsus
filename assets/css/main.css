@@ -96,6 +96,7 @@ h1, h2, h3, h4 {
   width: 100%;
   z-index: 1;
   padding: 15px;
+  border-bottom: 2px solid rgb(149 149 149 / 24%);
 }
 
 .nav-container {
@@ -125,6 +126,14 @@ h1, h2, h3, h4 {
 }
 
 /* helpers */
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
 
 .mb-25 {
   margin-bottom: 25px;

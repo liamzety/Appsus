@@ -11,7 +11,8 @@ export class EmailList extends React.Component {
         isStarredShown: false,
         isDeletedShown: false,
         isDraftsShown: false,
-        isSentShown: false
+        isSentShown: false,
+        isHamburger: false
     }
 
     onShowEmail = (email) => {
@@ -48,12 +49,70 @@ export class EmailList extends React.Component {
         this.setState({ isSentShown: true })
 
     }
+
+    onToggleSideFilter = () => {
+        this.setState({ isHamburger: !this.state.isHamburger })
+
+    }
+    renderEmails = () => {
+
+        return this.props.emails.map((email, idx) => {
+            if (email.isStar && !email.isDeleted && this.state.isStarredShown) {
+                return (
+                    <div key={idx}>
+                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                    </div>
+                )
+
+            }
+            else if (email.isDeleted && this.state.isDeletedShown) {
+                return (
+                    <div key={idx}>
+                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                    </div>
+                )
+
+            }
+            else if (email.isDraft && this.state.isDraftsShown) {
+                return (
+                    <div key={idx}>
+                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                    </div>
+                )
+
+            }
+            else if (email.isSent && this.state.isSentShown) {
+                return (
+                    <div key={idx}>
+                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                    </div>
+                )
+
+            }
+            else if (!this.state.isStarredShown &&
+                !this.state.isDeletedShown &&
+                !this.state.isDraftsShown &&
+                !this.state.isSentShown &&
+                !email.isDeleted
+
+            ) {
+                return (
+                    <div key={idx}>
+                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                    </div>
+                )
+            }
+
+        })
+    }
     render() {
         return (
             <React.Fragment>
+                <div className="hamburger">
+                    <button onClick={this.onToggleSideFilter}>HAMBURGER</button>
+                </div>
                 <section className="email-list">
-                    <div className="side-filter">
-
+                    <div className={`side-filter ${this.state.isHamburger ? 'hide' : 'show'}`}>
                         <button className="btn-compose" onClick={this.props.onStartCompose}>Compose</button>
                         <div onClick={this.onShowStarred} className="filter-item">
                             <p>Starred</p>
@@ -71,77 +130,12 @@ export class EmailList extends React.Component {
                             <p> Sent</p>
                         </div>
                     </div>
-                    {/* SHOW SENT */}
-                    {!this.state.isEmailShown && !this.state.isStarredShown && !this.state.isDeletedShown && !this.state.isDraftsShown && this.state.isSentShown &&
-                        <div className="email-previews-container">
-                            {this.props.emails.map((email, idx) => {
-                                if (email.isSent)
-                                    return (
-                                        <div key={idx}>
-                                            <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
-                                        </div>
-                                    )
-                            })}
-                        </div>
-                    }
-                    {/* SHOW DRAFTS */}
-                    {!this.state.isEmailShown && !this.state.isStarredShown && !this.state.isDeletedShown && this.state.isDraftsShown && !this.state.isSentShown &&
-                        <div className="email-previews-container">
-                            {this.props.emails.map((email, idx) => {
-                                if (email.isDraft)
-                                    return (
-                                        <div key={idx}>
-                                            <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
-                                        </div>
-                                    )
-                            })}
-                        </div>
-                    }
-                    {/* SHOW ALL */}
-                    {!this.state.isEmailShown && !this.state.isStarredShown && !this.state.isDeletedShown && !this.state.isDraftsShown && !this.state.isSentShown &&
-                        <div className="email-previews-container">
-                            {this.props.emails.map((email, idx) => {
-                                if (!email.isDeleted && !email.isDraft)
-                                    return (
-                                        <div key={idx}>
-                                            <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
-                                        </div>
-                                    )
-                            })}
-                        </div>
 
-                    }
-                    {/* SHOW STARRED */}
-                    {!this.state.isEmailShown && this.state.isStarredShown && !this.state.isDeletedShown && !this.state.isDraftsShown && !this.state.isSentShown &&
+                    {!this.state.isEmailShown &&
                         <div className="email-previews-container">
-                            {this.props.emails.map((email, idx) => {
-                                if (email.isStar && !email.isDeleted && !email.isDraft) {
-                                    return (
-                                        <div key={idx}>
-                                            <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
-                                        </div>
-                                    )
+                            {this.renderEmails()}
+                        </div>}
 
-                                }
-                            })}
-                        </div>
-
-                    }
-                    {/* SHOW DELETED */}
-                    {!this.state.isEmailShown && !this.state.isStarredShown && this.state.isDeletedShown && !this.state.isDraftsShown && !this.state.isSentShown &&
-                        <div className="email-previews-container">
-                            {this.props.emails.map((email, idx) => {
-                                if (email.isDeleted && !email.isDraft) {
-                                    return (
-                                        <div key={idx}>
-                                            <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
-                                        </div>
-                                    )
-
-                                }
-                            })}
-                        </div>
-                    }
                     {this.state.emailToShow && this.state.isEmailShown && <EmailBody onHideEmail={this.onHideEmail} onShowEmail={this.onShowEmail} email={this.state.emailToShow} />}
                 </section>
 
