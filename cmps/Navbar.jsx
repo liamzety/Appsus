@@ -1,3 +1,6 @@
+const Router = ReactRouterDOM.HashRouter
+const { Route, Switch, Link, NavLink } = ReactRouterDOM
+
 export class Navbar extends React.Component {
 
     state = {
@@ -10,12 +13,21 @@ export class Navbar extends React.Component {
     render() {
 
         return (
-            <section className="navbar">
-                <button onClick={this.onToggleNav}>NAVBAR</button>
+            <section className="navbar-section">
+                <i onClick={this.onToggleNav} class="fas fa-th-list"></i>
+
                 {this.state.isNavShown && <div className="nav-container">
-                    <i class="fas fa-book"></i>
-                    <i class="fas fa-clipboard"></i>
-                    <i class="fas fa-at"></i>
+
+                    <NavLink to='/miss-keep'>
+                        <i onClick={this.onToggleNav} className="fas fa-clipboard"></i>
+                    </NavLink>
+                    <NavLink to='/miss-books'>
+                        <i onClick={this.onToggleNav} className="fas fa-book"></i>
+                    </NavLink>
+                    <NavLink exact to='/'>
+                        <i onClick={this.onToggleNav} className="fas fa-at"></i>
+                    </NavLink>
+
                 </div>}
             </section>
         )

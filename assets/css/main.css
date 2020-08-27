@@ -3,10 +3,21 @@
 @import '../../pages/MissBooks/assets/css/miss-books.css';
 /* BASE */
 
+@font-face {
+  font-family: headers;
+  src: url(../font/Mukta-Regular.ttf);
+}
+
+@font-face {
+  font-family: all-site;
+  src: url(../font/Roboto-Regular.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 html {
@@ -14,6 +25,7 @@ html {
 }
 
 body {
+  font-family: all-site;
   margin: 0;
 }
 
@@ -23,6 +35,15 @@ main {
 
 button {
   cursor: pointer;
+  padding: 15px;
+  color: #f1f1f1;
+  background-color: #007DFC;
+  border: 0;
+  border-radius: 1px;
+}
+
+button:hover {
+  background-color: #036eda;
 }
 
 textarea {
@@ -33,13 +54,12 @@ textarea {
   cursor: pointer;
 }
 
-
 ul {
   list-style-type: none;
   padding: 0;
 }
 
-a{
+a {
   color: inherit;
 }
 
@@ -51,21 +71,57 @@ a:visited {
   text-decoration: none;
 }
 
-img{
+img {
   object-fit: cover;
 }
 
+h1, h2, h3, h4 {
+  font-family: headers;
+}
+
 /* navbar */
+
+.fa-th-list {
+  font-size: 40px;
+  color: #007DFC;
+}
+
+.fa-th-list:hover {
+  color: #036eda;
+}
+
+.navbar-section {
+  background-color: #121212;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: 15px;
+}
 
 .nav-container {
   position: absolute;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rebeccapurple;
+  background-color: #262626;
   left: 15px;
-  width: 300px;
-  height: 150px;
+  border-radius: 10px;
+  padding: 15px;
+  color: rgb(149, 149, 149);
+}
+
+.nav-container a {
+  font-size: 25px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.nav-container a:hover {
+  background-color: rgba(88, 88, 88, 0.315);
+}
+
+.nav-container a.active {
+  color: #007DFC;
 }
 
 /* helpers */

@@ -1,6 +1,5 @@
 import { EmailPreview } from './EmailPreview.jsx'
 import { EmailBody } from './EmailBody.jsx'
-import { Navbar } from '../../../cmps/Navbar.jsx'
 import { emailService } from '../service/miss-email-service.js'
 
 
@@ -25,7 +24,7 @@ export class EmailList extends React.Component {
             <React.Fragment>
                 <section className="email-list">
                     <div className="side-filter">
-                        <Navbar />
+
                         <button className="btn-compose" onClick={this.props.onStartCompose}>Compose</button>
                         <div className="filter-item">
                             <p> Starred</p>

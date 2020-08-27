@@ -1,4 +1,3 @@
-const {Link, Route}= ReactRouterDOM
 import { missKeepService } from "./service/miss-keep-service.js";
 import { NoteTxt } from "./cmps/NoteTxt.jsx";
 import { NoteImg } from "./cmps/NoteImg.jsx";
@@ -14,14 +13,14 @@ export class NoteEdit extends React.Component {
         info: {
             txt: this.props.note.info.txt,
             label: this.props.note.info.label,
-            todos:this.props.note.info.todos,
-            url:this.props.note.info.url
+            todos: this.props.note.info.todos,
+            url: this.props.note.info.url
         },
         id: this.props.note.id,
-        style:{
-            backgroundColor:this.props.note.style.backgroundColor || '#ffffff'
+        style: {
+            backgroundColor: this.props.note.style.backgroundColor || '#ffffff'
         },
-         
+
     }
 
     componentDidMount() {
@@ -52,22 +51,24 @@ export class NoteEdit extends React.Component {
     }
 
     changeColor = (ev) => {
-        this.setState({ style:{
-            backgroundColor: ev.target.value
-        }})
+        this.setState({
+            style: {
+                backgroundColor: ev.target.value
+            }
+        })
     }
 
-    updateNote= (note) =>{
-        
+    updateNote = (note) => {
+
         this.props.updateSelectedNote()
-    
+
         missKeepService.updateNote(note)
-        .then(notes => this.props.saveNotes(notes))
+            .then(notes => this.props.saveNotes(notes))
     }
 
-    backToNotes=()=>{
-        
-        event.target.id=== 'editor-bg' ? this.props.updateSelectedNote() : ''
+    backToNotes = () => {
+
+        event.target.id === 'editor-bg' ? this.props.updateSelectedNote() : ''
     }
 
 
@@ -76,30 +77,30 @@ export class NoteEdit extends React.Component {
 
 
         const { id, info, type, style } = this.state
-        
+
 
         return (
-           
+
 
             <div id="editor-bg" className="note-editor-bg" onClick={this.backToNotes}>
 
-            
-            <section className="note-editor">
-                
-                <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
-                    {this.getNote(this.state)}
-                </div>
-                <h1>Edit Note</h1>
-                <form>
-                    <textarea type="text" value={info.txt} onChange={this.changeInput} />
-                    <input type="color" value={style.backgroundColor}  onChange={this.changeColor}/>
-            
-                    <button type="button" onClick={()=>this.updateNote(this.state)}>Submit</button>
-            
-                </form>
-            </section>
+
+                <section className="note-editor">
+
+                    <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
+                        {this.getNote(this.state)}
+                    </div>
+                    <h1>Edit Note</h1>
+                    <form>
+                        <textarea type="text" value={info.txt} onChange={this.changeInput} />
+                        <input type="color" value={style.backgroundColor} onChange={this.changeColor} />
+
+                        <button type="button" onClick={() => this.updateNote(this.state)}>Submit</button>
+
+                    </form>
+                </section>
             </div>
-            
+
         )
     }
 }
