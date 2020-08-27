@@ -4,15 +4,20 @@ export const emailService = {
     getEmails,
     addEmail,
     removeEmail,
-    emailRead
+    emailRead,
+    emailStar
 }
 
 let emails = [
     {
         subject: 'Wassap?',
         from: 'Roei Arazi',
-        body: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit omnis, eius possimus quam qui perferendis natus ipsum deserunt, ea veniam mollitia repellat ipsam, dolores laudantium temporibus maxime doloremque. Corporis asperiores commodi dolores vero. Sit corrupti, totam quas quia enim nobis, veritatis, dolorem porro reprehenderit laboriosam cum numquam tempora. Quaerat, enim.',
+        body: "Need a day at the beach?",
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('7/7/2017')
     },
     {
@@ -20,7 +25,11 @@ let emails = [
         from: 'Roei Arazi',
         subject: 'subject',
         body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius asperiores nemo. Eius ex numquam expedita tempore maxime pariatur delectus soluta voluptate cum quo exercitationem illum deserunt, voluptas quis, modi tempora adipisci nulla, laborum consequuntur? Dicta iusto at beatae placeat architecto illo quaerat repudiandae debitis, aut nostrum doloremque nemo ad, doloribus veniam similique sed sequi, facere esse. Sequi, quo nam?',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('26/8/2010')
     },
     {
@@ -28,6 +37,7 @@ let emails = [
         subject: 'another sub',
         from: 'Liam Zety',
         body: 'roei clean ur nose',
+        isStar: false,
         isRead: true,
         sentAt: utilsService.getTimeStamp('15/12/1995')
     },
@@ -36,7 +46,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     }
     ,
@@ -45,7 +59,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -53,7 +71,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -61,7 +83,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -69,7 +95,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -77,7 +107,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -85,7 +119,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -93,7 +131,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -101,7 +143,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -109,7 +155,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -117,7 +167,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -125,7 +179,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -133,7 +191,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -141,7 +203,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     },
     {
@@ -149,7 +215,11 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isDraft: false,
+        isSent: false,
         sentAt: utilsService.getTimeStamp('8/1/2010')
     }
 ]
@@ -161,23 +231,36 @@ function getEmails() {
     return Promise.resolve(emails)
 }
 
-function addEmail(emailDetails) {
-    console.log('', emailDetails)
+function addEmail(emailDetails, isaDraft) {
 
     emails.unshift({
         id: utilsService.getRandId(),
         from: 'Liam Zety',
-        subject: emailDetails.subject,
-        body: emailDetails.body,
+        subject: emailDetails.subject || '<no subject>',
+        body: emailDetails.body || '<no message>',
+        isStar: false,
         isRead: false,
+        isDeleted: false,
+        isSent: true,
+        isDraft: isaDraft,
         sentAt: Date.now()
     })
+    console.log(emails)
     utilsService.saveToStorage('emails', emails)
 }
 
 function removeEmail(id) {
-    const emailToRemoveIdx = getIdxByIx(id)
-    emails = emails.filter((email, idx) => idx !== emailToRemoveIdx)
+    emails.forEach((email, idx) => {
+        if (email.id === id) {
+            if (!email.isDeleted && !email.isDraft) {
+                email.isDeleted = true
+            }
+            else {
+                emails.splice(idx, 1)
+            }
+        }
+    })
+
 
     utilsService.saveToStorage('emails', emails)
 }
@@ -186,11 +269,19 @@ function emailRead(emailRead) {
     emails.forEach((email) => {
         if (email.id === emailRead.id) {
             if (email.isRead) return
-            email.isRead = !email.isRead
+            email.isRead = true
         }
     })
 }
-
-function getIdxByIx(id) {
+function emailStar(emailStarred) {
+    emails.forEach((email) => {
+        if (email.id === emailStarred.id) {
+            email.isStar = !email.isStar
+            console.log('email', email)
+        }
+    })
+    utilsService.saveToStorage('emails', emails)
+}
+function getIdByIdx(id) {
     return emails.findIndex(email => email.id === id)
 }

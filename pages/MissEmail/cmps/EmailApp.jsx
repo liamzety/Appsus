@@ -21,7 +21,7 @@ export class EmailApp extends React.Component {
             })
     }
     onAddEmail = (emailDetails) => {
-        console.log('addemail',)
+        this.setState({ isComposing: false })
         emailService.addEmail(emailDetails)
         this.loadEmails()
     }
@@ -32,8 +32,10 @@ export class EmailApp extends React.Component {
     onStartCompose = () => {
         this.setState({ isComposing: true })
     }
-    onEndCompose = () => {
+    onEndCompose = (emailDetails) => {
+        emailService.addEmail(emailDetails, true)
         this.setState({ isComposing: false })
+        this.loadEmails()
     }
 
     render() {

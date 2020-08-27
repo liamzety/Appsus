@@ -18,7 +18,9 @@ export class EmailCompose extends React.Component {
 
         return (
             <section className="email-compose">
-                <div className="form-header" onClick={this.props.onEndCompose}>
+                <div className="form-header" onClick={() => {
+                    this.props.onEndCompose(this.state.emailDetails)
+                }}>
                     <i className="fas fa-times close-modal"></i>
                 </div>
                 <form onSubmit={(ev) => {

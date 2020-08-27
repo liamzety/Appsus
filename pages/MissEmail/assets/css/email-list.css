@@ -23,7 +23,6 @@
 
 .side-filter .filter-item:hover {
     transition: all 0.3s;
-    background-color: #fff;
     background-color: #5c5c5c38;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
