@@ -1,8 +1,7 @@
-const { Link, Route } = ReactRouterDOM
 import { missKeepService } from "../service/miss-keep-service.js";
-import { NoteTxt } from "./NoteTxt.jsx";
-import { NoteImg } from "./NoteImg.jsx";
-import { NoteTodos } from "./NoteTodos.jsx";
+import { TextEditor } from "./editor-types/TextEditor.jsx";
+import { ImageEditor } from "./editor-types/ImageEditor.jsx";
+import { TodosEditor } from "./editor-types/TodosEditor.jsx";
 
 
 export class NoteEdit extends React.Component {
@@ -15,40 +14,20 @@ export class NoteEdit extends React.Component {
             txt: this.props.note.info.txt,
             label: this.props.note.info.label,
             todos: this.props.note.info.todos,
-            url: this.props.note.info.url
+            url: this.props.note.info.url,
+            title:this.props.note.info.title
         },
         id: this.props.note.id,
         style: {
             backgroundColor: this.props.note.style.backgroundColor || '#ffffff'
-        },
-
-    }
-
-    componentDidMount() {
-        console.log(this.props.note);
-    }
-
-    getNote(note) {
-
-        switch (note.type) {
-            case 'NoteText':
-                return <NoteTxt note={note} />
-                break;
-            case 'NoteImg':
-                return <NoteImg note={note} />
-                break;
-            case 'NoteTodos':
-                return <NoteTodos note={note} />
-                break;
-
-            default:
-                break;
         }
+
     }
 
     changeInput = (ev) => {
-        console.log(this.state);
-        this.setState({ info: { txt: ev.target.value } })
+
+       
+        this.setState({info: {...this.state.info, [ev.target.name]: ev.target.value } })
     }
 
     changeColor = (ev) => {
@@ -59,11 +38,11 @@ export class NoteEdit extends React.Component {
         })
     }
 
-    updateNote = (note) => {
-
+    updateNote = () => {
+        
         this.props.updateSelectedNote()
 
-        missKeepService.updateNote(note)
+        missKeepService.updateNote(this.state)
             .then(notes => this.props.saveNotes(notes))
     }
 
@@ -72,12 +51,35 @@ export class NoteEdit extends React.Component {
         event.target.id === 'editor-bg' ? this.props.updateSelectedNote() : ''
     }
 
+    uploadImage=()=>{
+        event.preventDefault()
+   
+        if (event.target.files && event.target.files[0]) {
+            let img = event.target.files[0];
+            this.setState({info:{url: URL.createObjectURL(img) ,title:'Title'}})
+            
+        }
+    }
+
+    getEditor= ()=>{
+        switch (this.state.type) {
+            case 'NoteText':
+                return <TextEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote}/>
+                break;
+            case 'NoteImg':
+                return <ImageEditor note={this.state} uploadImage={this.uploadImage} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote}/>
+                break;
+            case 'NoteTodos':
+                return <TodosEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote}/>
+                break;
+
+            default:
+                break;
+        }
+    }
+
 
     render() {
-
-
-
-        const { id, info, type, style } = this.state
 
 
         return (
@@ -85,21 +87,7 @@ export class NoteEdit extends React.Component {
 
             <div id="editor-bg" className="note-editor-bg" onClick={this.backToNotes}>
 
-
-                <section className="note-editor">
-
-                    <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
-                        {this.getNote(this.state)}
-                    </div>
-                    <h1>Edit Note</h1>
-                    <form>
-                        <textarea type="text" value={info.txt} onChange={this.changeInput} />
-                        <input type="color" value={style.backgroundColor} onChange={this.changeColor} />
-
-                        <button type="button" onClick={() => this.updateNote(this.state)}>Submit</button>
-
-                    </form>
-                </section>
+                    {this.getEditor()}
             </div>
 
         )

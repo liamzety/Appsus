@@ -1,8 +1,8 @@
 
 import { missKeepService } from "../service/miss-keep-service.js";
-import { NoteTxt } from "../cmps/NoteTxt.jsx";
-import { NoteImg } from "../cmps/NoteImg.jsx";
-import { NoteTodos } from "../cmps/NoteTodos.jsx";
+import { NoteTxt } from "../cmps/note-types/NoteTxt.jsx";
+import { NoteImg } from "../cmps/note-types/NoteImg.jsx";
+import { NoteTodos } from "../cmps/note-types/NoteTodos.jsx";
 import { AddNote } from "../cmps/AddNote.jsx";
 import { NoteEdit } from "../cmps/NoteEdit.jsx";
 import { NoteSearch } from "../cmps/NoteSearch.jsx";

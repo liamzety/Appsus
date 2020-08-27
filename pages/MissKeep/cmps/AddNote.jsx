@@ -10,7 +10,9 @@ export class AddNote extends React.Component {
         info:{
             txt: '',
             url:'',
-            title:''
+            title:'',
+            todos:[],
+            label:''
         },
         isPinned: false,
         style:{
@@ -24,7 +26,8 @@ export class AddNote extends React.Component {
 
     onChangeInput = () => {
         
-        this.setState({ info:{[event.target.name]: event.target.value} })
+        this.setState({ info:{[event.target.name]: event.target.value,todos:[]} })
+        
     }
 
     addNote = () => {
@@ -37,7 +40,7 @@ export class AddNote extends React.Component {
             style
         }
        
-
+        console.log(note);
         this.setState({type:'NoteText' ,info:{txt:'', url:''}})
         
         missKeepService.addNote(note)
@@ -47,30 +50,31 @@ export class AddNote extends React.Component {
 
     uploadImage=()=>{
         event.preventDefault()
-       console.log(event);
+   
         if (event.target.files && event.target.files[0]) {
             let img = event.target.files[0];
             this.setState({info:{url: URL.createObjectURL(img) ,title:'Title'}})
-            console.log(img);
+            
         }
     }
 
     createTodo=()=>{
         event.preventDefault()
-        this.setState({type:'NoteTodos', placeholder:'Todos Note'})
+        this.setState({type:'NoteTodos', placeholder:'Todos Note' ,info:{todos:[]}})
 
     }
 
     getInput=()=>{
         switch (this.state.type) {
             case "NoteText":
+                console.log();
                return <TextInput onChangeInput={this.onChangeInput} text={this.state.info.txt}/>
                 break;
             case "NoteImg":
-                return<ImageInput uploadImage={this.uploadImage} url={this.state.info.url} />
+                return<ImageInput uploadImage={this.uploadImage} />
                 break;
             case "NoteTodos":
-               return <TodosInput />
+               return <TodosInput onChangeInput={this.onChangeInput}/>
                 break;
         
             default:
@@ -83,10 +87,14 @@ export class AddNote extends React.Component {
         this.setState({type:'NoteImg'})
     }
 
+    changeToTodos=()=>{
+        event.preventDefault()
+        this.setState({type:'NoteTodos'})
+    }
+
 
     render() {
 
-        const {placeholder,noteType,info,name}= this.state
        
         return (
             <div className="note-adding-area">
@@ -95,11 +103,10 @@ export class AddNote extends React.Component {
                 
                 <button className="add-note-btn" onClick={this.addNote}>++</button>
                 {this.getInput()}
-                {/* <input placeholder={placeholder} name={name} type="text" onChange={this.onChangeInput} value={info.txt} /> */}
                 <div className="note-type-btns">
 
                 <button onClick={this.changeToImage}>img</button>
-                <button onClick={this.getInput}>todo</button>
+                <button onClick={this.changeToTodos}>todo</button>
 
                 </div>
 

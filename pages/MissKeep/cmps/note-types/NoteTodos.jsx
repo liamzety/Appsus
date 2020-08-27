@@ -1,4 +1,4 @@
-import {utilsService} from "../../../services/utils.js"
+import {utilsService} from "../../../../services/utils.js"
 
 export function NoteTodos(props) {
 
