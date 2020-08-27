@@ -1,6 +1,7 @@
 .notes{
    display:flex;
    flex-wrap: wrap;
+   justify-content: center;
 }
 
 .note{
@@ -15,6 +16,13 @@
    min-height:200px;
    overflow: hidden;
    border-radius:5px;
+}
+
+.note-header{
+    text-align: center;
+    font-weight:700;
+    font-size: 1.2rem;
+    margin-bottom:5px;
 }
 
 .note img{
@@ -37,12 +45,13 @@
 }
 
 .note-btns button{
-    color:grey;
+    color:#121212;
     padding:10px 0 0 15px;
 }
 
 .note-btns button:hover{
     background-color: transparent;
+    transition:0.3s;
     color:#007DFC;
 }
 
