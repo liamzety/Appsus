@@ -69,13 +69,12 @@ export class KeepApp extends React.Component {
         
         const searchedNotes= this.state.notes.filter((note)=>{
            
-            if(note.info.txt) note.info.txt.toLowerCase().includes(this.state.searchBy)
-           else if(note.info.title) note.info.title.toLowerCase().includes(this.state.searchBy)
-           else if(note.info.label) note.info.label.toLowerCase().includes(this.state.searchBy)
-        
+           if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy)
+           else if(note.info.title) return note.info.title.toLowerCase().includes(this.state.searchBy)
+           else if(note.info.label) return note.info.label.toLowerCase().includes(this.state.searchBy)   
         })
         
-       console.log(searchedNotes);
+       
         return searchedNotes
     }
 
@@ -87,7 +86,7 @@ export class KeepApp extends React.Component {
     render() {
 
         const notes= this.notesToShow() || 'Loading...'
-        console.log(notes);
+       
        
         return (
             <section className="miss-keep">

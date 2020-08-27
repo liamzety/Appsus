@@ -9,8 +9,19 @@
     width: 200px;
     padding-left:10px;
     margin:10px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px 5px grey;
     flex-wrap: wrap;
+}
+
+.note img{
+    width: 90%;
+    height: 200px;
+}
+
+.note .note-img-container{
+    display: flex;
+    justify-content: center;
+    width:100%;
 }
 
 /* BUTTONS */
