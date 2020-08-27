@@ -5,17 +5,18 @@ export function NoteTodos(props) {
 
    
     return (
-        <ul>
+        <ul className="todo-note">
             <li>{props.note.info.label}</li>
-            <li>
+           
                 <ul>{props.note.info.todos.map(todo =>
 
-                    <li key={utilsService.getRandId()}>
-                        <input type="checkbox" onChange={()=>props.markTodo(todo.id, props.note.id)} />
-                        <div className="todo-text">{todo.txt}</div>
-                        <button onClick={()=>props.removeTodo(todo.id,props.note.id)}>X</button></li>)}
+                    <li key={utilsService.getRandId()} className="todo">
+                        <div className={todo.doneAt ? "todo-text mark-todo" : "todo-text"} onClick={()=>props.markTodo(todo.id, props.note.id)}>
+                        {todo.txt}
+                        </div>
+                        <button className="remove-todo" onClick={()=>props.removeTodo(todo.id,props.note.id)}>X</button></li>)}
                 </ul>
-            </li>
+            
         </ul>
     )
 }

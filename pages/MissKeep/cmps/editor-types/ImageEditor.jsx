@@ -13,12 +13,13 @@ export function ImageEditor(props){
         <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
             <NoteImg note={props.note}/>
         </div>
-        <form>
+        <form className="editor-form">
             <input type="text" name="title" value={info.title} onChange={props.changeInput} />
-            <input type="color" value={style.backgroundColor} onChange={props.changeColor} />
+            <label class="color-pallete" htmlFor="color"><i class="fas fa-palette"></i></label>
+            <input hidden id="color" type="color" value={style.backgroundColor} onChange={props.changeColor} />
             <input type="file" onChange={()=>props.uploadImage()}/>
 
-            <button type="button" onClick={() => props.updateNote()}>Submit</button>
+            <button className="submit-button" type="button" onClick={() => props.updateNote()}><i class="far fa-plus-square"></i></button>
 
         </form>
     </section>

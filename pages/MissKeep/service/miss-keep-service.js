@@ -124,7 +124,7 @@ var notes = [
     selectedTodo.doneAt = !selectedTodo.doneAt ?  Date.now() : false
 
     selectedNote.info.todos.splice(todoIdx,1,selectedTodo)
-
+    utilsService.saveToStorage(KEY, notes)
     return Promise.resolve(selectedNote.info.todos)
    }
 
@@ -133,6 +133,6 @@ var notes = [
     const todoIdx= selectedNote.info.todos.findIndex(todo=> todo.id===todoId)
 
     selectedNote.info.todos.splice(todoIdx,1)
-
+    utilsService.saveToStorage(KEY, notes)
     return Promise.resolve(selectedNote.info.todos)
    }
