@@ -45,7 +45,10 @@ export class EmailApp extends React.Component {
         this.loadEmails()
     }
 
+    onSearchByTxt = (txt) => {
+        this.setState({ emails: emailService.getAfterSearch(txt) })
 
+    }
     render() {
         const { emails } = this.state
         if (!emails) return <h1>Loading...</h1>
@@ -53,7 +56,7 @@ export class EmailApp extends React.Component {
         return (
             <section className="email-app">
 
-                <EmailList onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
+                <EmailList onSearchByTxt={this.onSearchByTxt} onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
                 {this.state.isComposing && <EmailCompose replayDetails={this.state.replayDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
         )

@@ -2,6 +2,7 @@
 @import './email-preview.css';
 @import './email-body.css';
 @import './email-compose.css';
+@import './email-filter.css';
 .miss-email {
   padding-top: 70px;
   min-height: 100vh;
@@ -9,6 +10,7 @@
   background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);
 }
 
-.miss-email button, .miss-email .hamburger, .miss-email .email-preview-icon, .miss-email .filter-item, .miss-email i, .btn-back {
+.miss-email button, .miss-email .hamburger, .miss-email .email-preview-icon, .miss-email .filter-item, .miss-email i, .btn-back, .btn-upload-img {
   transition: all .3s;
+  cursor: pointer;
 }

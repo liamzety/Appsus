@@ -6,7 +6,8 @@ export const emailService = {
     removeEmail,
     emailRead,
     emailStar,
-    sortEmails
+    sortEmails,
+    getAfterSearch
 }
 
 let emails = [
@@ -317,6 +318,18 @@ function sortEmails(target) {
 
             break;
     }
+}
+function getAfterSearch(txt) {
+
+    return emails.filter(email => {
+        const subject = email.subject.toLowerCase();
+        const body = email.body.toLowerCase();
+        const from = email.from.toLowerCase();
+
+        return subject.includes(txt) || body.includes(txt) || from.includes(txt)
+
+    })
+
 }
 
 function getIdByIdx(id) {

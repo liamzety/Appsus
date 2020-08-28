@@ -10,6 +10,8 @@
     background-color: #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    z-index: 999;
+    animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @media (max-width:550px) {
@@ -43,10 +45,19 @@
     align-items: flex-start;
 }
 
-.email-compose form input {
+.email-compose form input:not([type='file']) {
     height: 50px;
     padding: 15px;
     width: 100%;
+}
+
+.email-compose .btn-image-upload {
+    font-size: 30px;
+    color: #272727
+}
+
+.email-compose .btn-image-upload:hover {
+    color: #036eda;
 }
 
 .email-compose form textarea {
@@ -59,6 +70,10 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
 }
 
 .email-compose .btn-send-email {

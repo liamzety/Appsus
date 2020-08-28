@@ -2,15 +2,14 @@
 @import './cmps-css/add-note.css';
 @import './cmps-css/note-editor.css';
 @import './cmps-css/note-search.css';
-
 /* BASE */
 
-ul{
+ul {
   list-style-type: none;
   padding: 0;
 }
 
-.miss-keep{
+.miss-keep {
   padding-top: 90px;
   min-height: 100vh;
   background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);

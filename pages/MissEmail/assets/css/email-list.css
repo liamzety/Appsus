@@ -7,7 +7,7 @@
     color: #f1f1f1;
     background-color: #121212;
     position: fixed;
-    padding-top: 15px;
+    padding-top: 40px;
     padding-right: 15px;
     width: 170px;
     height: 100vh;
@@ -24,7 +24,7 @@
         right: 0;
         width: 100%;
         height: auto;
-        top: 70px;
+        top: 100px;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 15px;
@@ -34,6 +34,10 @@
 @media (max-width:550px) {
     .side-filter {
         flex-direction: column;
+        width: 50%;
+        display: none;
+        flex-wrap: wrap;
+        border-left: 2px solid rgb(149 149 149 / 24%);
     }
 }
 
@@ -48,7 +52,7 @@
     top: 10px;
     z-index: 1;
     color: #f1f1f1;
-    padding: 10px 50px 0 0;
+    padding: 30px 50px 0 0;
     font-size: 25px;
 }
 
@@ -62,10 +66,34 @@
     }
 }
 
+.side-filter .filter-dropdown {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: all-site;
+    color: #989898;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a2a2ad8;
+}
+
+@media (max-width:780px) {
+    .side-filter .filter-dropdown {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:550px) {
+    .side-filter .filter-dropdown {
+        margin-bottom: 15px;
+    }
+}
+
 .side-filter .filter-item {
     padding: 15px;
     cursor: pointer;
     text-align: center;
+    width: 100%;
 }
 
 .side-filter .filter-item:hover {
@@ -87,6 +115,18 @@
     font-size: 25px;
 }
 
+@media (max-width:780px) {
+    .btn-compose {
+        margin-right: 40px;
+    }
+}
+
+@media (max-width:550px) {
+    .btn-compose {
+        margin-right: 0;
+    }
+}
+
 .btn-compose:hover {
     color: #036eda;
 }
@@ -94,26 +134,19 @@
 .email-previews-container {
     min-height: 100vh;
     width: 100%;
-    padding: 10px 10px 0 180px;
+    padding: 40px 10px 0 180px;
 }
 
 @media (max-width:780px) {
     .email-previews-container {
         padding: 10px 10px 0 10px;
-        margin-top: 95px;
+        margin-top: 130px;
     }
 }
 
 @media (max-width:550px) {
     .email-previews-container {
         padding: 0;
-        margin-top: 10px;
-    }
-    .side-filter {
-        width: 50%;
-        display: none;
-        flex-wrap: wrap;
-        border-left: 2px solid rgb(149 149 149 / 24%);
-        border-bottom-left-radius: 8px;
+        margin-top: 40px;
     }
 }

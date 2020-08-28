@@ -1,5 +1,6 @@
 import { EmailPreview } from './EmailPreview.jsx'
 import { EmailBody } from './EmailBody.jsx'
+import { EmailFilter } from './EmailFilter.jsx'
 import { emailService } from '../service/miss-email-service.js'
 
 
@@ -116,6 +117,7 @@ export class EmailList extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <EmailFilter isHamburger={this.state.isHamburger} onSearchByTxt={this.props.onSearchByTxt} />
                 <div className="hamburger">
                     <div onClick={this.onToggleSideFilter}>
                         <i className="fas fa-bars"></i>
@@ -126,7 +128,7 @@ export class EmailList extends React.Component {
                         <div className="btn-compose" onClick={this.props.onStartCompose}>
                             <i className="fas fa-paper-plane"></i>
                         </div>
-                        <select ref={this.selectRef} defaultValue='Sort emails' onChange={(ev) => {
+                        <select className="filter-dropdown" ref={this.selectRef} defaultValue='Sort emails' onChange={(ev) => {
                             this.props.onSortBy(ev)
                             this.setDefaultVal()
                         }} name="" id="">

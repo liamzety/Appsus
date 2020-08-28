@@ -83,16 +83,6 @@ h1, h2, h3, h4 {
   font-family: headers;
 }
 
-select {
-  font-size: 16px;
-  font-family: all-site;
-  color: #f1f1f1;
-  border: 2px solid white;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #3c3c3c;
-}
-
 option {
   color: #f1f1f1;
 }
@@ -108,6 +98,13 @@ option {
 
 .btn-back:hover {
   background-color: #007efc36;
+}
+
+.appsus-logo {
+  width: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 30px;
 }
 
 /* navbar */
@@ -128,6 +125,8 @@ option {
   z-index: 1;
   padding: 15px;
   border-bottom: 2px solid rgb(149 149 149 / 24%);
+  display: flex;
+  align-items: center;
 }
 
 .nav-container {
@@ -137,12 +136,13 @@ option {
   align-items: center;
   background-color: #262626;
   left: 5px;
-  top: 60px;
+  top: 90px;
   border-radius: 10px;
   padding: 15px;
   color: rgb(149, 149, 149);
   flex-wrap: wrap;
   width: 200px;
+  animation: tilt-in-fwd-tl 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .nav-container a {
@@ -206,4 +206,36 @@ option {
 
 .mb-10 {
   margin-bottom: 10px;
+}
+
+/* ANIMATIONS */
+
+@keyframes scale-in-ver-bottom {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes tilt-in-fwd-tl {
+  0% {
+    -webkit-transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
+    transform: rotateY(-20deg) rotateX(35deg) translate(-300px, -300px) skew(35deg, -10deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
 }

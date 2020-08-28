@@ -42,7 +42,11 @@ export class EmailCompose extends React.Component {
                         <textarea value={this.state.emailDetails.body} name='body' onChange={this.onComposing} type="text" />
                     </div>
                     <div className="form-btn-container">
-                        <input name='img' onChange={this.onComposing} type="file" accept="image/*" />
+                        <label htmlFor="img">
+                            <i className="far fa-image btn-image-upload">
+                                <input id='img' name='img' onChange={this.onComposing} type="file" accept="image/*" hidden />
+                            </i>
+                        </label>
                         <button className="btn-send-email">Send</button>
                     </div>
                 </form>

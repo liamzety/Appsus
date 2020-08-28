@@ -72,6 +72,9 @@
 
 @media (max-width:550px) {
     .txt-body-mid-container {
-        visibility: hidden;
+        margin: 0;
+    }
+    .txt-body-mid-container * {
+        overflow: hidden;
     }
 }

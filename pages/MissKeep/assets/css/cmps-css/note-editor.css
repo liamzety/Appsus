@@ -1,7 +1,8 @@
 .note-editor-bg {
     height: 100vh;
     width: 100%;
-    background-color: #5c5c5cba;;
+    background-color: #5c5c5cba;
+    ;
     position: absolute;
     top: 0;
     display: flex;
@@ -14,21 +15,20 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width:250px;
+    min-width: 250px;
 }
 
-.note.edit-mode{
-    min-height:300px;
-    max-width:400px;
+.note.edit-mode {
+    min-height: 300px;
+    max-width: 400px;
     box-shadow: 0 0 0;
-    margin:20px 10px;
+    margin: 20px 10px;
 }
 
-@media screen and (max-width: 440px){
-    .note.edit-mode{
-        width:90%;
+@media screen and (max-width: 440px) {
+    .note.edit-mode {
+        width: 90%;
     }
-
 }
 
 .editor-form {
@@ -41,11 +41,11 @@
     flex-direction: column;
 }
 
-.editor-form textarea{
-    width:90%;
-    border:0;
+.editor-form textarea {
+    width: 90%;
+    border: 0;
     border-radius: 5px;
-    padding:10px 10px;
+    padding: 10px 10px;
 }
 
 .editor-form button {
@@ -55,45 +55,44 @@
     background-color: transparent;
 }
 
-
 .editor-form button:hover {
     background-color: transparent;
-    transition:0.3s;
+    transition: 0.3s;
     color: #007DFC;
 }
 
-.image-title{
+.image-title {
     width: 200px;
     height: 34px;
     border: 0;
     border-radius: 5px;
-    padding:0 10px;
-    background-color: #ffffff;
+    padding: 0 10px;
+    background-color: #f1f1f1;
 }
 
 .add-todo-input {
     width: 200px;
     height: 34px;
     border: 0;
-    padding:0 10px;
+    padding: 0 10px;
     border-radius: 5px;
     display: flex;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
-.add-todo-input button{
-    padding-top:2px;
-    color:#121212;
+.add-todo-input button {
+    padding-top: 2px;
+    color: #121212;
 }
 
-.add-todo-label{
+.add-todo-label {
     width: 200px;
     height: 34px;
     border: 0;
-    padding-left:10px;
+    padding-left: 10px;
     border-radius: 5px;
     display: flex;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .add-todo-input input {
@@ -101,19 +100,18 @@
     background-color: transparent;
 }
 
-
-.editor-btns button ,.editor-form label{
-    color:#121212;
+.editor-btns button, .editor-form label {
+    color: #121212;
     font-size: 2rem;
-    margin:20px;
+    margin: 20px;
 }
 
-.color-pallete:hover ,.image-upload:hover {
-    transition:0.3s;
+.color-pallete:hover, .image-upload:hover {
+    transition: 0.3s;
     color: #007DFC;
     cursor: pointer;
 }
 
-.image-upload{
-    margin-left:20px;
+.image-upload {
+    margin-left: 20px;
 }
