@@ -1,6 +1,6 @@
 export function NoteImg(props){
 
-    console.log(props.note.info.url);
+  
     return (
         <ul>
             <li className="note-header">{props.note.info.title}</li>

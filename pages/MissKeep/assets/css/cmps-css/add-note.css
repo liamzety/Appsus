@@ -2,15 +2,16 @@
     text-align: center;
     margin: 0 auto;
     max-width:600px;
-    margin-top:80px;
+   
 }
 
 .add-note{
     display: flex;
     justify-content: space-between;
-    margin:20px auto;
+    margin:0 auto 20px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px  grey;
+    box-shadow: 0px 0px 8px 0px #121212;
+    background-color: #2a2a2ad8;
     width:100%;
     align-content: center;   
 }
@@ -19,11 +20,14 @@
     border:0;  
     flex-grow: 1;
     padding-left: 10px;
+    background-color: #2a2a2ad8;
+    color: #ffffff;
 }
 
 .add-note-btn{
-    background-color: transparent;
-    color:#121212;
+    border-radius: 5px;
+    background-color: #2a2a2ad8;
+    color: #ffffff;
 }
 
 .add-note-btn:hover{
@@ -32,12 +36,21 @@
     color:#036eda;
 }
 
-
-
+.note-type-btns{
+    border-radius: 5px;
+    background-color: #2a2a2ad8;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
 
 .note-type-btns button, .note-type-btns label{
-background-color: transparent;
-color: #121212;
+    border-radius: 5px;
+    background-color: #2a2a2ad8;
+    color: #ffffff;
+    padding:0 10px 0 10px;
+    
 }
 
 .note-type-btns button:hover, .note-type-btns label:hover{
@@ -46,6 +59,7 @@ color: #121212;
     color: #036eda;
     cursor:pointer;
 }
+
 
 .remove-todo{
     background-color: transparent;

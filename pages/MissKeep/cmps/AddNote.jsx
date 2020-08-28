@@ -1,6 +1,7 @@
 import { missKeepService } from "../service/miss-keep-service.js"
 import { TextInput } from "./input-types/TextInput.jsx";
 import { TodosInput } from "./input-types/TodosInput.jsx";
+import { VideoInput } from "./input-types/VideoInput.jsx";
 
 export class AddNote extends React.Component {
 
@@ -25,26 +26,29 @@ export class AddNote extends React.Component {
 
     onChangeInput = () => {
         
-        this.setState({ info:{[event.target.name]: event.target.value,todos:[]} })
-        
+        this.setState({ info:{[event.target.name]: event.target.value,todos:[],title:'Title'} })
+        console.log(this.state.info);
     }
 
     addNote = () => {
         event.preventDefault()
         
         const {type,info,style,isPinned}= this.state
+        
         const note = {
             type,
             info,
             isPinned,
-            style
+            style:{
+                backgroundColor:'#ffffff'
+            }
         }
        
-        this.setState({type:'NoteText' ,info:{txt:'', url:''}})
         
         missKeepService.addNote(note)
         .then(notes => this.props.saveNotes(notes))
         
+        this.setState({type:'NoteText' ,info:{txt:'', url:''}})
     }
 
     uploadImage=()=>{
@@ -52,6 +56,7 @@ export class AddNote extends React.Component {
         
         if (event.target.files && event.target.files[0]) {
             let img = event.target.files[0];
+            
             const imgNote={
             type:'NoteImg',
             info:{
@@ -63,7 +68,8 @@ export class AddNote extends React.Component {
                 backgroundColor:'#ffffff'
             }
             }
-            console.log(imgNote);
+            console.log(imgNote.info.url);
+           
             missKeepService.addNote(imgNote)
             .then(notes => this.props.saveNotes(notes))
             this.setState({type:'NoteText' ,info:{txt:'', url:''}})
@@ -86,6 +92,10 @@ export class AddNote extends React.Component {
             case "NoteTodos":
                return <TodosInput onChangeInput={this.onChangeInput}/>
                 break;
+
+            case "NoteVideo":
+               return <VideoInput onChangeInput={this.onChangeInput}/>
+                break;
         
             default:
                 break;
@@ -101,6 +111,11 @@ export class AddNote extends React.Component {
     changeToText=()=>{
         event.preventDefault()
         this.setState({type:'NoteText'})
+    }
+
+    changeToVideo=()=>{
+        event.preventDefault()
+        this.setState({type:'NoteVideo' ,info:{title:'Video'}})
     }
 
 
@@ -120,6 +135,7 @@ export class AddNote extends React.Component {
                 <label htmlFor="image-upload"><i className="far fa-image"></i></label>
                 <input id="image-upload" hidden placeholder="Image File" name="url" type="file" onChange={this.uploadImage}  />
                 <button onClick={this.changeToTodos}><i className="fas fa-list"></i></button>
+                <button onClick={this.changeToVideo}><i className="fab fa-youtube"></i></button>
 
                 </div>
 

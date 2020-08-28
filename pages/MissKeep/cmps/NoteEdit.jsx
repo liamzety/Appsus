@@ -2,6 +2,7 @@ import { missKeepService } from "../service/miss-keep-service.js";
 import { TextEditor } from "./editor-types/TextEditor.jsx";
 import { ImageEditor } from "./editor-types/ImageEditor.jsx";
 import { TodosEditor } from "./editor-types/TodosEditor.jsx";
+import { VideoEditor } from "./editor-types/VideoEditor.jsx";
 
 
 export class NoteEdit extends React.Component {
@@ -71,6 +72,9 @@ export class NoteEdit extends React.Component {
                 break;
             case 'NoteTodos':
                 return <TodosEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote} />
+                break;
+            case 'NoteVideo':
+                return <VideoEditor note={this.state} changeInput={this.changeInput} changeColor={this.changeColor} updateNote={this.updateNote} />
                 break;
 
             default:
