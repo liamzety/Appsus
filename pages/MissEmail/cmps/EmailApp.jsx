@@ -31,17 +31,16 @@ export class EmailApp extends React.Component {
         this.loadEmails()
     }
     onStartCompose = (replayDetails) => {
-        console.log(replayDetails);
         this.setState({ isComposing: true })
         this.setState({ replayDetails })
     }
     onEndCompose = (emailDetails) => {
+
         emailService.addEmail(emailDetails, true)
         this.setState({ isComposing: false })
         this.loadEmails()
     }
     onSortBy = (ev) => {
-        console.log('imhere',)
         emailService.sortEmails(ev.target.value)
         this.loadEmails()
     }

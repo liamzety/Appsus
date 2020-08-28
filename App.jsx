@@ -14,7 +14,7 @@ export class App extends React.Component {
         return (
             <Router>
                 <header>
-                    <Navbar />
+                    <Route component={Navbar} />
                 </header>
                 <main>
                     <Switch>

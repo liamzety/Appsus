@@ -4,16 +4,20 @@ export class EmailCompose extends React.Component {
         emailDetails: {
             subject: this.props.replayDetails.subject && `Re: ${this.props.replayDetails.subject}` || '',
             body: this.props.replayDetails.body && `Re: ${this.props.replayDetails.body}` || '',
-            to: this.props.replayDetails.from && `Re: ${this.props.replayDetails.from}` || ''
+            to: this.props.replayDetails.from && `Re: ${this.props.replayDetails.from}` || '',
+            img: this.props.replayDetails.img
         }
     }
 
-    componentDidMount() {
-    }
 
 
     onComposing = (ev) => {
-        this.setState({ emailDetails: { ...this.state.emailDetails, [ev.target.name]: ev.target.value } });
+        if (ev.target.files && ev.target.files[0]) {
+            let img = ev.target.files[0];
+            this.setState({ emailDetails: { ...this.state.emailDetails, img: URL.createObjectURL(img) } });
+        } else {
+            this.setState({ emailDetails: { ...this.state.emailDetails, [ev.target.name]: ev.target.value } });
+        }
 
     };
 
@@ -38,6 +42,7 @@ export class EmailCompose extends React.Component {
                         <textarea value={this.state.emailDetails.body} name='body' onChange={this.onComposing} type="text" />
                     </div>
                     <div className="form-btn-container">
+                        <input name='img' onChange={this.onComposing} type="file" accept="image/*" />
                         <button className="btn-send-email">Send</button>
                     </div>
                 </form>

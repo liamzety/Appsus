@@ -1,4 +1,3 @@
-const Router = ReactRouterDOM.HashRouter
 const { Route, Switch, Link, NavLink } = ReactRouterDOM
 
 export class Navbar extends React.Component {
@@ -9,6 +8,19 @@ export class Navbar extends React.Component {
     }
 
 
+    componentDidMount() {
+        switch (this.props.location.pathname) {
+            case '/miss-books':
+                this.setState({ currPage: 'fas fa-book curr-page' })
+                break;
+            case '/miss-keep':
+                this.setState({ currPage: 'fas fa-clipboard curr-page' })
+                break;
+            case '/':
+                this.setState({ currPage: 'fas fa-mail-bulk curr-page' })
+                break;
+        }
+    }
 
     onToggleNav = (ev) => {
         let className;
@@ -40,6 +52,7 @@ export class Navbar extends React.Component {
     }
 
     render() {
+        if (!this.state.currPage) return
         return (
             <section className="navbar-section">
                 <i onClick={this.onToggleNav} className="fas fa-th-list"></i>

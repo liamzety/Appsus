@@ -1,6 +1,9 @@
 import eventBusService from '../../../services/event-bus-service.js'
 export class EmailBody extends React.Component {
 
+
+
+
     render() {
 
         return (
@@ -11,8 +14,9 @@ export class EmailBody extends React.Component {
                 <p>{this.props.email.from}</p>
                 <h2>{this.props.email.subject}</h2>
                 <p>{this.props.email.body}</p>
+                <img src={this.props.email.img} />
                 <button onClick={() => {
-                    eventBusService.emit('compose', { subject: this.props.email.subject, body: this.props.email.body, from: this.props.email.from })
+                    eventBusService.emit('compose', { subject: this.props.email.subject, body: this.props.email.body, from: this.props.email.from, file: this.props.email.file })
                 }}>REPLY</button>
             </section>
         )

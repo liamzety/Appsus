@@ -57,10 +57,12 @@
 
 .email-compose .form-btn-container {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 .email-compose .btn-send-email {
-    padding: 20px 30px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 20px;
 }

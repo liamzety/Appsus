@@ -18,6 +18,7 @@ export class EmailList extends React.Component {
     selectRef = React.createRef()
 
     onShowEmail = (email) => {
+        console.log(email);
         emailService.emailRead(email)
         emailService.sortEmails()
         this.setState({ isEmailShown: true, emailToShow: email })

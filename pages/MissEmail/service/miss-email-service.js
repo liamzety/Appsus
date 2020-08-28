@@ -14,6 +14,7 @@ let emails = [
         subject: 'Wassap?',
         from: 'Roei Arazi',
         body: "Need a day at the beach?",
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -26,6 +27,7 @@ let emails = [
         from: 'Roei Arazi',
         subject: 'subject',
         body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius asperiores nemo. Eius ex numquam expedita tempore maxime pariatur delectus soluta voluptate cum quo exercitationem illum deserunt, voluptas quis, modi tempora adipisci nulla, laborum consequuntur? Dicta iusto at beatae placeat architecto illo quaerat repudiandae debitis, aut nostrum doloremque nemo ad, doloribus veniam similique sed sequi, facere esse. Sequi, quo nam?',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -38,6 +40,7 @@ let emails = [
         subject: 'another sub',
         from: 'Liam Zety',
         body: 'roei clean ur nose',
+        img: '',
         isStar: false,
         isRead: true,
         sentAt: utilsService.getTimeStamp('15/12/1995')
@@ -47,6 +50,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -60,6 +64,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -72,6 +77,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -84,6 +90,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -96,6 +103,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -108,6 +116,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -120,6 +129,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -132,6 +142,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -144,6 +155,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -156,6 +168,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -168,6 +181,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -180,6 +194,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -192,6 +207,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -204,6 +220,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -216,6 +233,7 @@ let emails = [
         subject: 'date check?',
         from: 'Liam Zety',
         body: 'About that sweet rice, i dont get whats so good about it... any way call me ',
+        img: '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -234,11 +252,13 @@ function getEmails() {
 }
 
 function addEmail(emailDetails, isaDraft) {
+
     emails.unshift({
         id: utilsService.getRandId(),
         from: 'Me',
         subject: isaDraft && `Draft: ${emailDetails.subject}` || emailDetails.subject || '<no subject>',
         body: isaDraft && `Draft: ${emailDetails.body}` || emailDetails.body || '<no message>',
+        img: emailDetails.img || '',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -266,7 +286,6 @@ function removeEmail(id) {
 function emailRead(emailRead) {
 
     emails.forEach((email) => {
-        console.log('sorted', email.isRead)
         if (email.id === emailRead.id) {
             email.isRead = true
         }
@@ -277,7 +296,6 @@ function emailStar(emailStarred) {
     emails.forEach((email) => {
         if (email.id === emailStarred.id) {
             email.isStar = !email.isStar
-            console.log('email', email)
         }
     })
     utilsService.saveToStorage('emails', emails)
