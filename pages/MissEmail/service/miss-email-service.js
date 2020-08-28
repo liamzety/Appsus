@@ -7,7 +7,8 @@ export const emailService = {
     emailRead,
     emailStar,
     sortEmails,
-    getAfterSearch
+    getAfterSearch,
+    toggleRead
 }
 
 let emails = [
@@ -289,6 +290,15 @@ function emailRead(emailRead) {
     emails.forEach((email) => {
         if (email.id === emailRead.id) {
             email.isRead = true
+        }
+    })
+    utilsService.saveToStorage('emails', emails)
+}
+function toggleRead(emailRead) {
+
+    emails.forEach((email) => {
+        if (email.id === emailRead.id) {
+            email.isRead = !email.isRead
         }
     })
     utilsService.saveToStorage('emails', emails)

@@ -18,6 +18,14 @@ export class EmailPreview extends React.Component {
                         }}>
                             <i className="fas fa-trash"></i>
                         </div>
+
+                        <div className='email-preview-icon' onClick={(ev) => {
+                            ev.stopPropagation()
+                            this.props.onToggleRead(email)
+                        }}>
+                            <i className={email.isRead ? "far fa-check-square" : 'far fa-square'}></i>
+                        </div>
+
                         <div className='email-preview-icon' onClick={(ev) => {
                             ev.stopPropagation()
                             this.props.onStarEmail(email)

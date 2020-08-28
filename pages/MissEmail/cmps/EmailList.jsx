@@ -19,9 +19,7 @@ export class EmailList extends React.Component {
     selectRef = React.createRef()
 
     onShowEmail = (email) => {
-        console.log(email);
         emailService.emailRead(email)
-        emailService.sortEmails()
         this.setState({ isEmailShown: true, emailToShow: email })
 
     }
@@ -60,13 +58,18 @@ export class EmailList extends React.Component {
         this.setState({ isHamburger: !this.state.isHamburger })
 
     }
+
+    onToggleRead = (email) => {
+        emailService.toggleRead(email)
+        this.setState({})
+    }
     renderEmails = () => {
 
         return this.props.emails.map((email, idx) => {
             if (email.isStar && !email.isDeleted && this.state.isStarredShown) {
                 return (
                     <div key={idx}>
-                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                        <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
                     </div>
                 )
 
@@ -74,7 +77,7 @@ export class EmailList extends React.Component {
             else if (email.isDeleted && this.state.isDeletedShown) {
                 return (
                     <div key={idx}>
-                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                        <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
                     </div>
                 )
 
@@ -82,7 +85,7 @@ export class EmailList extends React.Component {
             else if (email.isDraft && this.state.isDraftsShown) {
                 return (
                     <div key={idx}>
-                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                        <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
                     </div>
                 )
 
@@ -90,7 +93,7 @@ export class EmailList extends React.Component {
             else if (email.isSent && this.state.isSentShown) {
                 return (
                     <div key={idx}>
-                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                        <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
                     </div>
                 )
 
@@ -104,7 +107,7 @@ export class EmailList extends React.Component {
             ) {
                 return (
                     <div key={idx}>
-                        <EmailPreview onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
+                        <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />
                     </div>
                 )
             }
