@@ -1,7 +1,7 @@
 .note-search{
     display:flex;
     flex-direction: column;
-    margin-left:10px;
+    align-items: center;
 }
 
 .search-input{
@@ -13,8 +13,23 @@
     border-radius: 5px;
     box-shadow: 5px 5px 5px grey;
     width:250px;
+    cursor: auto;
+    overflow: hidden;
+}
+
+.search-input .fas{
+    cursor: auto;
+    transform: translateY(22px)
 }
 
 .search-input input{
     border:0;
+    flex-grow: 1;
 }
+
+.search-input input:focus ~ .fas,.search-input input:hover ~ .fas{
+    transform: translateY(0);
+    transition:0.3s;
+}
+
+

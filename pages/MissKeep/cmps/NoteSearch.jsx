@@ -10,7 +10,7 @@ export class NoteSearch extends React.Component {
 
                 <input type="text" placeholder={"Search Note"} onChange={(ev) =>
                     this.props.searchByText(ev.target.value)} />
-                    <i class="fas fa-search"></i>
+                    <i className="fas fa-search"></i>
                 </div>
                
             </section>

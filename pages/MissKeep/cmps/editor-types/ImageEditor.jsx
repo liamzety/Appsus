@@ -8,23 +8,23 @@ export function ImageEditor(props) {
     return (
         <section className="note-editor">
 
-            <h1>Edit Note</h1>
-
             <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
                 <NoteImg note={props.note} />
             </div>
             <form className="editor-form">
-                <input type="text" name="title" value={info.title} onChange={props.changeInput} />
-                <label class="color-pallete" htmlFor="color"><i class="fas fa-palette"></i></label>
+                <input className="image-title" type="text" name="title" value={info.title} onChange={props.changeInput} />
+                
+                
+                <div className="editor-btns">
+                <label className="color-pallete" htmlFor="color"><i className="fas fa-palette"></i></label>
                 <input hidden id="color" type="color" value={style.backgroundColor} onChange={props.changeColor} />
-                <label htmlFor='img-file'>
-                    <i class="fas fa-file-upload">
+                <label className="image-upload" htmlFor='img-file'>
+                <i className="far fa-image">
                         <input hidden id='img-file' type="file" onChange={() => props.uploadImage()} />
                     </i>
                 </label>
-
-
-                <button className="submit-button" type="button" onClick={() => props.updateNote()}><i class="far fa-plus-square"></i></button>
+                <button className="submit-button" type="button" onClick={() => props.updateNote()}><i className="far fa-plus-square"></i></button>
+                </div>
 
             </form>
         </section>

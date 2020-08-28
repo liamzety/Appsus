@@ -23,33 +23,39 @@
 
 .add-note-btn{
     background-color: transparent;
-    color:grey;
+    color:#121212;
 }
 
 .add-note-btn:hover{
     background-color: transparent;
+    transition: 0.3s;
     color:#036eda;
 }
 
 
-.note-type-btns button{
+
+
+.note-type-btns button, .note-type-btns label{
 background-color: transparent;
-color: grey;
+color: #121212;
 }
 
-.note-type-btns button:hover{
+.note-type-btns button:hover, .note-type-btns label:hover{
     background-color: transparent;
+    transition: 0.3s;
     color: #036eda;
+    cursor:pointer;
 }
 
 .remove-todo{
     background-color: transparent;
-    color:grey;
+    color:#121212;
     padding: 8px 0
 }
 
 .remove-todo:hover{
     background-color: transparent;
+    transition: 0.3s;
     color: #036eda;
 }
 

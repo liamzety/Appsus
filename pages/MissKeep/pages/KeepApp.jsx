@@ -115,9 +115,9 @@ export class KeepApp extends React.Component {
                             <li>{this.getNote(note)} </li>
 
                             <div className="note-btns" >
-                            <button className="edit-note-btn" onClick={()=> this.setState({noteSelected:note})}><i class="fas fa-pen"></i></button>
-                            <button className="pin-note-btn" onClick={()=>this.pinNote(note.id)}><i class="fas fa-thumbtack"></i></button>
-                            <button className="remove-note-btn" onClick={()=>this.removeNote(note.id)}><i class="fas fa-trash"></i></button>
+                            <button className="edit-note-btn" onClick={()=> this.setState({noteSelected:note})}><i className="fas fa-pen"></i></button>
+                            <button className="pin-note-btn" onClick={()=>this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
+                            <button className="remove-note-btn" onClick={()=>this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
                                 
                             </div>
                             

@@ -6,7 +6,7 @@ export function NoteTodos(props) {
    
     return (
         <ul className="todo-note">
-            <li>{props.note.info.label}</li>
+            <li className="note-header">{props.note.info.label}</li>
            
                 <ul>{props.note.info.todos.map(todo =>
 
@@ -14,7 +14,7 @@ export function NoteTodos(props) {
                         <div className={todo.doneAt ? "todo-text mark-todo" : "todo-text"} onClick={()=>props.markTodo(todo.id, props.note.id)}>
                         {todo.txt}
                         </div>
-                        <button className="remove-todo" onClick={()=>props.removeTodo(todo.id,props.note.id)}>X</button></li>)}
+                        <button className="remove-todo" onClick={()=>props.removeTodo(todo.id,props.note.id)}><i className="fas fa-times"></i></button></li>)}
                 </ul>
             
         </ul>
