@@ -27,7 +27,7 @@ export class AddNote extends React.Component {
     onChangeInput = () => {
         
         this.setState({ info:{[event.target.name]: event.target.value,todos:[],title:'Title'} })
-        console.log(this.state.info);
+        
     }
 
     addNote = () => {
@@ -43,8 +43,10 @@ export class AddNote extends React.Component {
                 backgroundColor:'#ffffff'
             }
         }
-       
+
         
+       if (!note.info.title && !note.info.label)return 
+        else if(note.type=='NoteVideo' && !note.info.url && note.info.title)return
         missKeepService.addNote(note)
         .then(notes => this.props.saveNotes(notes))
         
