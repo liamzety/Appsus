@@ -32,7 +32,7 @@ export class KeepApp extends React.Component {
 
     markTodo = (todoId, noteId) => {
 
-        console.log(this.state.notes);
+
 
         missKeepService.markTodo(todoId, noteId)
             .then(todos => this.setState({ todos }))
@@ -87,7 +87,7 @@ export class KeepApp extends React.Component {
 
     notesToShow = () => {
 
-        console.log(this.state.notes);
+
         const searchedNotes = this.state.notes.filter((note) => {
 
             if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy)
@@ -95,7 +95,7 @@ export class KeepApp extends React.Component {
             else if (note.info.label) return note.info.label.toLowerCase().includes(this.state.searchBy)
         })
 
-        console.log(searchedNotes);
+
         return searchedNotes
     }
 
@@ -132,11 +132,11 @@ export class KeepApp extends React.Component {
 
                             <div className="note-btns" >
                                 <button className="edit-note-btn" onClick={() => this.setState({ noteSelected: note })}><i className="fas fa-pen"></i></button>
-                                <button className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
-                                <button className="remove-note-btn" onClick={() => this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
+                                {note.type === 'NoteVideo' ? '' : <button className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>}
                                 <Link to="/">
-                                    <button className="send-note-btn" onClick={() => this.sendNote(note.id)}><i class="fas fa-paper-plane"></i></button>
+                                    <button className="send-note-btn" onClick={() => this.sendNote(note.id)}><i className="fas fa-paper-plane"></i></button>
                                 </Link>
+                                <button className="remove-note-btn" onClick={() => this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
 
                             </div>
 

@@ -1,5 +1,5 @@
 .notes {
-    column-count: 5;
+    column-count: 4;
     column-gap: 1em;
     padding: 0 20px;
 }
@@ -25,11 +25,6 @@
         column-count: 2;
     }
 }
-@media(max-width: 820px) {
-    .notes {
-        column-count: 2;
-    }
-}
 
 .note-header {
     text-align: center;
@@ -39,8 +34,14 @@
 }
 
 .note img {
-    width: 90%;
-    height: 200px;
+    width: 100%;
+    height: 250px;
+}
+
+@media(max-width:620px){
+    .note img{
+        height:100%;
+    }
 }
 
 .note .note-img-container {
@@ -55,11 +56,24 @@
     transform: translateY(35px);
     align-self: flex-end;
     color: #007DFC;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
 }
+
+@media(max-width:500px){
+    .note-btns{
+        transform: translateY(-5px);
+        visibility: visible;
+    }
+}
+
 
 .note-btns button {
     color: #121212;
     padding: 10px 0 0 15px;
+    background-color: transparent;
+    border: 0;
 }
 
 .note-btns button:hover {
@@ -71,6 +85,7 @@
 .note:hover .note-btns {
     transform: translateY(-5px);
     transition: 0.3s;
+    visibility: visible;
 }
 
 .remove-note-btn {
@@ -123,5 +138,10 @@
 
 iframe {
     width: 100%;
-    height: 100%;
+}
+
+@media(max-width:620px){
+    iframe{
+        height:100%;
+    }
 }
