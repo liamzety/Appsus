@@ -6,8 +6,7 @@ export const emailService = {
     removeEmail,
     emailRead,
     emailStar,
-    sortEmailsByRead,
-    sortEmailsByDate
+    sortEmails
 }
 
 let emails = [
@@ -226,8 +225,9 @@ let emails = [
     }
 ]
 let isSortedByDate = false
+let isSortedByRead = false
+
 function getEmails() {
-    sortEmailsByRead()
     emails = utilsService.checkIfStorage('emails') ? utilsService.loadFromStorage('emails') : emails
     utilsService.saveToStorage('emails', emails)
     return Promise.resolve(emails)
@@ -264,7 +264,7 @@ function removeEmail(id) {
 }
 
 function emailRead(emailRead) {
-    sortEmailsByRead()
+
     emails.forEach((email) => {
         console.log('sorted', email.isRead)
         if (email.id === emailRead.id) {
@@ -282,15 +282,25 @@ function emailStar(emailStarred) {
     })
     utilsService.saveToStorage('emails', emails)
 }
-function sortEmailsByRead() {
-    emails.sort(function (email1, email2) { return email1.isRead - email2.isRead })
+function sortEmails(target) {
+    switch (target) {
+        case 'read':
+            if (isSortedByRead) emails.sort(function (email1, email2) { return email1.isRead - email2.isRead })
+            else emails.sort(function (email1, email2) { return email2.isRead - email1.isRead })
+            utilsService.saveToStorage('emails', emails)
+            isSortedByRead = !isSortedByRead
+
+            break;
+        case 'date':
+            if (isSortedByDate) emails.sort(function (email1, email2) { return email2.sentAt - email1.sentAt })
+            else emails.sort(function (email1, email2) { return email1.sentAt - email2.sentAt })
+            utilsService.saveToStorage('emails', emails)
+            isSortedByDate = !isSortedByDate
+
+            break;
+    }
 }
-function sortEmailsByDate() {
-    if (isSortedByDate) emails.sort(function (email1, email2) { return email2.sentAt - email1.sentAt })
-    else emails.sort(function (email1, email2) { return email1.sentAt - email2.sentAt })
-    utilsService.saveToStorage('emails', emails)
-    isSortedByDate = !isSortedByDate
-}
+
 function getIdByIdx(id) {
     return emails.findIndex(email => email.id === id)
 }

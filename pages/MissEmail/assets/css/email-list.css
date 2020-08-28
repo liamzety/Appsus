@@ -26,8 +26,14 @@
         height: auto;
         top: 70px;
         flex-direction: row;
+        justify-content: space-evenly;
         padding: 15px;
-        justify-content: center;
+    }
+}
+
+@media (max-width:550px) {
+    .side-filter {
+        flex-direction: column;
     }
 }
 
@@ -57,7 +63,6 @@
 }
 
 .side-filter .filter-item {
-    width: 100%;
     padding: 15px;
     cursor: pointer;
     text-align: center;

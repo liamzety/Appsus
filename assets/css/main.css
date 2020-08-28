@@ -83,6 +83,20 @@ h1, h2, h3, h4 {
   font-family: headers;
 }
 
+select {
+  font-size: 16px;
+  font-family: all-site;
+  color: #f1f1f1;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #3c3c3c;
+}
+
+option {
+  color: #f1f1f1;
+}
+
 .btn-back {
   padding: 5px 10px;
   border-radius: 2px;
@@ -127,6 +141,8 @@ h1, h2, h3, h4 {
   border-radius: 10px;
   padding: 15px;
   color: rgb(149, 149, 149);
+  flex-wrap: wrap;
+  width: 200px;
 }
 
 .nav-container a {
@@ -136,12 +152,42 @@ h1, h2, h3, h4 {
   border-radius: 10px;
 }
 
-.nav-container a:hover {
+.nav-container a:hover:not(.not-aviable) {
   background-color: rgba(88, 88, 88, 0.315);
 }
 
+.nav-container a.not-aviable, .nav-container i.not-aviable {
+  color: #343434;
+  cursor: no-drop;
+  background-color: none;
+}
+
 .nav-container a.active {
-  color: #007DFC;
+  display: none;
+}
+
+.curr-page {
+  margin-left: 50px;
+  font-size: 40px;
+  cursor: default;
+}
+
+.fa-clipboard {
+  background: linear-gradient(349deg, rgb(255 255 255) 14%, rgb(33 250 100) 64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-book {
+  background: linear-gradient(349deg, rgb(255 255 255) 14%, rgb(255 228 36) 64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-mail-bulk {
+  background: linear-gradient(349deg, rgb(255 255 255) 14%, rgb(255 106 0) 64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* helpers */

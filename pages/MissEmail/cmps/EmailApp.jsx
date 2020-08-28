@@ -18,7 +18,7 @@ export class EmailApp extends React.Component {
     loadEmails() {
         emailService.getEmails()
             .then((emails) => {
-                this.setState({ emails }, () => console.log('', emails))
+                this.setState({ emails })
             })
     }
     onAddEmail = (emailDetails) => {
@@ -40,11 +40,12 @@ export class EmailApp extends React.Component {
         this.setState({ isComposing: false })
         this.loadEmails()
     }
-    onSortDate = () => {
+    onSortBy = (ev) => {
         console.log('imhere',)
-        emailService.sortEmailsByDate()
+        emailService.sortEmails(ev.target.value)
         this.loadEmails()
     }
+
 
     render() {
         const { emails } = this.state
@@ -53,7 +54,7 @@ export class EmailApp extends React.Component {
         return (
             <section className="email-app">
 
-                <EmailList onSortDate={this.onSortDate} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
+                <EmailList onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
                 {this.state.isComposing && <EmailCompose replayDetails={this.state.replayDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
         )

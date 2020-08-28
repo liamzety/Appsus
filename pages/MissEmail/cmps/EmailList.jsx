@@ -15,9 +15,11 @@ export class EmailList extends React.Component {
         isHamburger: false
     }
 
+    selectRef = React.createRef()
+
     onShowEmail = (email) => {
         emailService.emailRead(email)
-        emailService.sortEmailsByRead()
+        emailService.sortEmails()
         this.setState({ isEmailShown: true, emailToShow: email })
 
     }
@@ -107,6 +109,9 @@ export class EmailList extends React.Component {
 
         })
     }
+    setDefaultVal = () => {
+        this.selectRef.current.value = 'Sort emails'
+    }
     render() {
         return (
             <React.Fragment>
@@ -120,7 +125,21 @@ export class EmailList extends React.Component {
                         <div className="btn-compose" onClick={this.props.onStartCompose}>
                             <i className="fas fa-paper-plane"></i>
                         </div>
-                        <button onClick={this.props.onSortDate}>SORT BY DATE</button>
+                        <select ref={this.selectRef} defaultValue='Sort emails' onChange={(ev) => {
+                            this.props.onSortBy(ev)
+                            this.setDefaultVal()
+                        }} name="" id="">
+                            <option value="Sort emails" disabled >
+                                Sort emails
+                        </option>
+                            <option value="date">
+                                By date
+                            </option>
+                            <option value="read">
+                                By read
+                            </option>
+                        </select>
+
                         <div onClick={this.onShowAll} className="filter-item">
                             <p> All mails</p>
                         </div>
