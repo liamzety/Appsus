@@ -7,13 +7,31 @@ export class EmailApp extends React.Component {
     state = {
         emails: null,
         isComposing: false,
-        replayDetails: ''
+        replyDetails: '',
+        noteDetails: ''
     }
 
 
     componentDidMount() {
+
         this.loadEmails()
-        eventBusService.on('compose', this.onStartCompose)
+        eventBusService.on('composeNote', this.onComposeNote)
+        eventBusService.on('composeReply', this.onComposeReply)
+    }
+
+
+    onComposeNote = (noteDetails) => {
+        this.setState({ noteDetails })
+        this.setState({ isComposing: true })
+
+    }
+    onComposeReply = (replyDetails) => {
+        console.log('', replyDetails.target)
+        this.setState({ isComposing: true })
+        this.setState({ replyDetails })
+    }
+    onStartCompose = () => {
+        this.setState({ isComposing: true })
     }
     loadEmails() {
         emailService.getEmails()
@@ -30,12 +48,9 @@ export class EmailApp extends React.Component {
         emailService.removeEmail(emailId)
         this.loadEmails()
     }
-    onStartCompose = (replayDetails) => {
-        this.setState({ isComposing: true })
-        this.setState({ replayDetails })
-    }
     onEndCompose = (emailDetails) => {
-
+        this.setState({ noteDetails: '' })
+        this.setState({ replyDetails: '' })
         emailService.addEmail(emailDetails, true)
         this.setState({ isComposing: false })
         this.loadEmails()
@@ -50,14 +65,14 @@ export class EmailApp extends React.Component {
 
     }
     render() {
+
         const { emails } = this.state
         if (!emails) return <h1>Loading...</h1>
 
         return (
             <section className="email-app">
-
                 <EmailList onSearchByTxt={this.onSearchByTxt} onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
-                {this.state.isComposing && <EmailCompose replayDetails={this.state.replayDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
+                {this.state.isComposing && <EmailCompose noteDetails={this.state.noteDetails} replyDetails={this.state.replyDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
         )
     }

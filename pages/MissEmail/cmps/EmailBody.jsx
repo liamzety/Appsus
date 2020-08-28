@@ -16,7 +16,7 @@ export class EmailBody extends React.Component {
                 <p>{this.props.email.body}</p>
                 <img src={this.props.email.img} />
                 <button onClick={() => {
-                    eventBusService.emit('compose', { subject: this.props.email.subject, body: this.props.email.body, from: this.props.email.from, file: this.props.email.file })
+                    eventBusService.emit('composeReply', { subject: this.props.email.subject, body: this.props.email.body, from: this.props.email.from, file: this.props.email.file })
                 }}>REPLY</button>
             </section>
         )

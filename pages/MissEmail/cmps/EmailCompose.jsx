@@ -2,14 +2,29 @@
 export class EmailCompose extends React.Component {
     state = {
         emailDetails: {
-            subject: this.props.replayDetails.subject && `Re: ${this.props.replayDetails.subject}` || '',
-            body: this.props.replayDetails.body && `Re: ${this.props.replayDetails.body}` || '',
-            to: this.props.replayDetails.from && `Re: ${this.props.replayDetails.from}` || '',
-            img: this.props.replayDetails.img
+            subject: '',
+            body: '',
+            to: '',
+            img: ''
         }
     }
 
+    componentDidMount() {
 
+        if (this.props.noteDetails) {
+            const { subject, body } = this.props.noteDetails
+            this.setState({ emailDetails: { ...this.state.emailDetails, subject: subject || '', body: body || '' } });
+        }
+        else if (this.props.replyDetails) {
+            console.log('replay', this.props.replyDetails)
+            const { subject, body, to } = this.props.replyDetails
+            this.setState({ emailDetails: { ...this.state.emailDetails, subject: `Re:${subject}` || '', body: `Re: ${body} ` || '', to: `Re: ${to}` || '' } });
+        } else {
+            console.log('imhere',)
+        }
+
+
+    }
 
     onComposing = (ev) => {
         if (ev.target.files && ev.target.files[0]) {
@@ -24,7 +39,7 @@ export class EmailCompose extends React.Component {
 
 
     render() {
-        if (!this.props.replayDetails) return
+        console.log('details', this.props.replyDetails)
         return (
             <section className="email-compose">
                 <div className="form-header" onClick={() => {
