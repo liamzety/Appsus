@@ -41,7 +41,7 @@ export class TodosEditor extends React.Component {
         return (
             <section className="note-editor">
 
-                <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
+                <div className="note edit-mode" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
                     <NoteTodos onInputChange={this.onInputChange} note={this.props.note} markTodo={this.markTodo} removeTodo={this.removeTodo} />
                 </div>
                 <form className="editor-form">

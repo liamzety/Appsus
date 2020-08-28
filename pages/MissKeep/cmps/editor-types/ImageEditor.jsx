@@ -8,7 +8,7 @@ export function ImageEditor(props) {
     return (
         <section className="note-editor">
 
-            <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
+            <div className="note edit-mode" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
                 <NoteImg note={props.note} />
             </div>
             <form className="editor-form">

@@ -1,22 +1,24 @@
 .notes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display:grid;
+    width:100%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 15px;
+  padding:0 10px;
 }
 
 .note {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 200px;
-    margin: 10px;
+    width: 100%;
     padding: 10px 10px 0 10px;
     box-shadow: 5px 5px 5px 5px grey;
     flex-wrap: wrap;
-    min-height: 200px;
+    height: 100%;
     overflow: hidden;
     border-radius: 5px;
 }
+
 
 .note-header {
     text-align: center;

@@ -8,7 +8,7 @@ export function TextEditor(props){
     return(
         <section className="note-editor">
 
-        <div className="note" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
+        <div className="note edit-mode" style={{ backgroundColor: style ? style.backgroundColor : '' }}>
             <NoteTxt note={props.note}/>
         </div>
         <form className="editor-form">
