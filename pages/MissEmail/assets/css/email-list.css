@@ -21,6 +21,7 @@
 
 @media (max-width:780px) {
     .side-filter {
+        right: 0;
         width: 100%;
         height: auto;
         top: 70px;
@@ -40,13 +41,13 @@
     right: 0;
     top: 10px;
     z-index: 1;
-    color: #ff9a18;
+    color: #f1f1f1;
     padding: 10px 50px 0 0;
     font-size: 25px;
 }
 
 .hamburger:hover {
-    color: #F0AF66;
+    color: #797979;
 }
 
 @media (max-width:550px) {
@@ -63,10 +64,16 @@
 }
 
 .side-filter .filter-item:hover {
-    transition: all 0.3s;
     background-color: #5c5c5c38;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+@media (max-width:780px) {
+    .side-filter .filter-item:hover {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .btn-compose {
@@ -101,5 +108,7 @@
         width: 50%;
         display: none;
         flex-wrap: wrap;
+        border-left: 2px solid rgb(149 149 149 / 24%);
+        border-bottom-left-radius: 8px;
     }
 }

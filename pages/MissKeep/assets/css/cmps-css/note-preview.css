@@ -1,102 +1,100 @@
-.notes{
-   display:flex;
-   flex-wrap: wrap;
+.notes {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.note{
+.note {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     width: 200px;
-    margin:10px;
-    padding:10px 10px 0 10px;
+    margin: 10px;
+    padding: 10px 10px 0 10px;
     box-shadow: 5px 5px 5px 5px grey;
     flex-wrap: wrap;
-   min-height:200px;
-   overflow: hidden;
-   border-radius:5px;
+    min-height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
-.note img{
+.note img {
     width: 90%;
     height: 200px;
 }
 
-.note .note-img-container{
+.note .note-img-container {
     display: flex;
     justify-content: center;
-    width:100%;
+    width: 100%;
 }
 
 /* BUTTONS */
 
-.note-btns{
+.note-btns {
     transform: translateY(35px);
     align-self: flex-end;
-    color:#007DFC;
+    color: #007DFC;
 }
 
-.note-btns button{
-    color:grey;
-    padding:10px 0 0 15px;
+.note-btns button {
+    color: grey;
+    padding: 10px 0 0 15px;
 }
 
-.note-btns button:hover{
+.note-btns button:hover {
     background-color: transparent;
-    color:#007DFC;
+    color: #007DFC;
 }
 
-.note:hover .note-btns{
+.note:hover .note-btns {
     transform: translateY(-5px);
     transition: 0.3s;
 }
 
-.remove-note-btn{
+.remove-note-btn {
     align-self: flex-start;
     background-color: transparent;
-    border:0;
+    border: 0;
 }
 
-.remove-note-btn:hover{
-cursor: pointer;
-}
-
-.edit-note-btn{
-    align-self: flex-start;
-    background-color: transparent;
-    border:0;
-
-}
-
-.edit-note-btn:hover{
+.remove-note-btn:hover {
     cursor: pointer;
-    }
-
-.pin-note-btn{
-    align-self: flex-start;
-    background-color: transparent;
-    border:0;
-
 }
 
-.pin-note-btn:hover{
+.edit-note-btn {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 0;
+}
+
+.edit-note-btn:hover {
     cursor: pointer;
-    }
+}
 
-    .todo-note{
-        display:flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
+.pin-note-btn {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 0;
+}
 
-    .todo{
-        display: flex;
-        justify-content: space-between;
-    }
+.pin-note-btn:hover {
+    cursor: pointer;
+}
 
-    .remove-todo{
-        width:20px;
-        height:20px;
-        padding:0;
-    }
+.todo-note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-todo {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}

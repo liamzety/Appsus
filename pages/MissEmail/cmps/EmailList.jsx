@@ -17,11 +17,12 @@ export class EmailList extends React.Component {
 
     onShowEmail = (email) => {
         emailService.emailRead(email)
+        emailService.sortEmailsByRead()
         this.setState({ isEmailShown: true, emailToShow: email })
 
     }
     onHideEmail = () => {
-        this.setState({ isEmailShown: false })
+        this.setState({ isEmailShown: false, isHamburger: false })
     }
 
     onStarEmail = (email) => {
@@ -30,23 +31,24 @@ export class EmailList extends React.Component {
     }
     onShowStarred = () => {
         this.onShowAll()
-        this.setState({ isStarredShown: true })
+        this.setState({ isStarredShown: true, isHamburger: false })
     }
     onShowAll = () => {
-        this.setState({ isStarredShown: false, isEmailShown: false, isDeletedShown: false, isDraftsShown: false, isSentShown: false })
+        this.setState({ isHamburger: false, isStarredShown: false, isEmailShown: false, isDeletedShown: false, isDraftsShown: false, isSentShown: false })
     }
     onShowDeleted = () => {
         this.onShowAll()
-        this.setState({ isDeletedShown: true })
+        this.setState({ isDeletedShown: true, isHamburger: false })
     }
     onShowDrafts = () => {
         this.onShowAll()
-        this.setState({ isDraftsShown: true })
+        this.setState({ isDraftsShown: true, isHamburger: false })
 
     }
     onShowSent = () => {
+
         this.onShowAll()
-        this.setState({ isSentShown: true })
+        this.setState({ isSentShown: true, isHamburger: false })
 
     }
 
@@ -114,10 +116,11 @@ export class EmailList extends React.Component {
                     </div>
                 </div>
                 <section className="email-list">
-                    <div className={`side-filter ${this.state.isHamburger ? 'hide' : 'show'}`}>
+                    <div className={`side-filter ${this.state.isHamburger ? 'show' : ''}`}>
                         <div className="btn-compose" onClick={this.props.onStartCompose}>
                             <i className="fas fa-paper-plane"></i>
                         </div>
+                        <button onClick={this.props.onSortDate}>SORT BY DATE</button>
                         <div onClick={this.onShowAll} className="filter-item">
                             <p> All mails</p>
                         </div>

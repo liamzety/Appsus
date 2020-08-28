@@ -8,3 +8,7 @@
   font-size: 16px;
   background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);
 }
+
+.miss-email button, .miss-email .hamburger, .miss-email .email-preview-icon, .miss-email .filter-item, .miss-email i, .btn-back {
+  transition: all .3s;
+}

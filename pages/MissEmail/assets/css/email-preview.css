@@ -3,6 +3,7 @@
     background-color: #2a2a2ad8;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     padding: 5px 0;
 }
@@ -40,7 +41,7 @@
 }
 
 .txt-body-mid-container {
-    width: 700px;
+    width: 100%;
     margin-left: 30px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -69,7 +70,7 @@
     background-color: #5c5c5c38;
 }
 
-@media (max-width:780px) {
+@media (max-width:550px) {
     .txt-body-mid-container {
         visibility: hidden;
     }

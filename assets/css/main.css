@@ -122,13 +122,15 @@ h1, h2, h3, h4 {
   justify-content: space-around;
   align-items: center;
   background-color: #262626;
-  left: 15px;
+  left: 5px;
+  top: 60px;
   border-radius: 10px;
   padding: 15px;
   color: rgb(149, 149, 149);
 }
 
 .nav-container a {
+  transition: all .3s;
   font-size: 25px;
   padding: 25px;
   border-radius: 10px;

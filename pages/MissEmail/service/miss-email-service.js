@@ -5,7 +5,9 @@ export const emailService = {
     addEmail,
     removeEmail,
     emailRead,
-    emailStar
+    emailStar,
+    sortEmailsByRead,
+    sortEmailsByDate
 }
 
 let emails = [
@@ -64,7 +66,7 @@ let emails = [
         isDeleted: false,
         isDraft: false,
         isSent: false,
-        sentAt: utilsService.getTimeStamp('8/1/2010')
+        sentAt: utilsService.getTimeStamp('1/1/2006')
     },
     {
         id: utilsService.getRandId(),
@@ -76,7 +78,7 @@ let emails = [
         isDeleted: false,
         isDraft: false,
         isSent: false,
-        sentAt: utilsService.getTimeStamp('8/1/2010')
+        sentAt: utilsService.getTimeStamp('8/1/2020')
     },
     {
         id: utilsService.getRandId(),
@@ -223,21 +225,20 @@ let emails = [
         sentAt: utilsService.getTimeStamp('8/1/2010')
     }
 ]
-
+let isSortedByDate = false
 function getEmails() {
+    sortEmailsByRead()
     emails = utilsService.checkIfStorage('emails') ? utilsService.loadFromStorage('emails') : emails
     utilsService.saveToStorage('emails', emails)
-
     return Promise.resolve(emails)
 }
 
 function addEmail(emailDetails, isaDraft) {
-
     emails.unshift({
         id: utilsService.getRandId(),
         from: 'Me',
-        subject: emailDetails.subject || '<no subject>',
-        body: emailDetails.body || '<no message>',
+        subject: isaDraft && `Draft: ${emailDetails.subject}` || emailDetails.subject || '<no subject>',
+        body: isaDraft && `Draft: ${emailDetails.body}` || emailDetails.body || '<no message>',
         isStar: false,
         isRead: false,
         isDeleted: false,
@@ -263,7 +264,9 @@ function removeEmail(id) {
 }
 
 function emailRead(emailRead) {
+    sortEmailsByRead()
     emails.forEach((email) => {
+        console.log('sorted', email.isRead)
         if (email.id === emailRead.id) {
             email.isRead = true
         }
@@ -278,6 +281,15 @@ function emailStar(emailStarred) {
         }
     })
     utilsService.saveToStorage('emails', emails)
+}
+function sortEmailsByRead() {
+    emails.sort(function (email1, email2) { return email1.isRead - email2.isRead })
+}
+function sortEmailsByDate() {
+    if (isSortedByDate) emails.sort(function (email1, email2) { return email2.sentAt - email1.sentAt })
+    else emails.sort(function (email1, email2) { return email1.sentAt - email2.sentAt })
+    utilsService.saveToStorage('emails', emails)
+    isSortedByDate = !isSortedByDate
 }
 function getIdByIdx(id) {
     return emails.findIndex(email => email.id === id)

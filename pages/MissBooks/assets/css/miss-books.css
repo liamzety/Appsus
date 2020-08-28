@@ -1,11 +1,8 @@
-
 @import './details.css';
 @import './filter.css';
-
-
-.container{
+.container {
   margin-left: 50px;
-  margin-right:50px;
+  margin-right: 50px;
 }
 
 .booklist {
@@ -17,33 +14,27 @@
 .book-preview {
   display: flex;
   flex-direction: column;
-  padding:20px 20px 0 0;
-  width:200px;
-  height:100%;
+  padding: 20px 20px 0 0;
+  width: 200px;
+  height: 100%;
 }
 
-.book-preview:hover{
-  -webkit-filter: brightness(50%);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
+.book-preview:hover {
   transition: all 0.5s ease;
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-.list-image{
-  
-  width:100%;
+.list-image {
+  width: 100%;
 }
 
-.search-add-button{
-  width:20px;
-  height:20px;
+.search-add-button {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  font-size:1rem;
+  font-size: 1rem;
   padding: 0px;
 }
