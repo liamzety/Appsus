@@ -1,80 +1,88 @@
 .note-adding-area {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
 }
 
 .add-note {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 8px 0px #121212;
-    background-color: #2a2a2ad8;
-    width: 100%;
-    align-content: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 0px #121212;
+  background-color: #2a2a2ad8;
+  width: 100%;
+  align-content: center;
 }
 
 .add-note input {
-    border: 0;
-    flex-grow: 1;
-    padding-left: 10px;
-    background-color: #2a2a2ad8;
-    color: #f1f1f1;
+  border: 0;
+  flex-grow: 1;
+  padding-left: 10px;
+  background-color: #2a2a2ad8;
+  color: #f1f1f1;
+}
+@media (max-width: 390px) {
+  .add-note input {
+    width: 100%;
+  }
 }
 
 .add-note-btn {
-    border-radius: 5px;
-    background-color: #2a2a2ad8;
-    color: #f1f1f1;
+  border-radius: 5px;
+  background-color: #2a2a2ad8;
+  color: #f1f1f1;
 }
 
 .add-note-btn:hover {
-    background-color: transparent;
-    transition: 0.3s;
-    color: #036eda;
+  background-color: transparent;
+  transition: 0.3s;
+  color: #036eda;
 }
 
 .note-type-btns {
-    border-radius: 5px;
-    background-color: #2a2a2ad8;
-    color: #f1f1f1;
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
+  border-radius: 5px;
+  background-color: #2a2a2ad8;
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
 }
 
-.note-type-btns button, .note-type-btns label {
-    border-radius: 5px;
-    background-color: #2a2a2ad8;
-    color: #f1f1f1;
-    padding: 0 10px 0 10px;
+.note-type-btns button,
+.note-type-btns label {
+  border-radius: 5px;
+  background-color: #2a2a2ad8;
+  color: #f1f1f1;
+  padding: 0 10px 0 10px;
 }
 
-.note-type-btns button:hover, .note-type-btns label:hover {
-    background-color: transparent;
-    transition: 0.3s;
-    color: #036eda;
-    cursor: pointer;
+.note-type-btns button:hover,
+.note-type-btns label:hover {
+  background-color: transparent;
+  transition: 0.3s;
+  color: #036eda;
+  cursor: pointer;
 }
 
 .remove-todo {
-    background-color: transparent;
-    color: #121212;
-    padding: 8px 0
+  background-color: transparent;
+  color: #121212;
+  padding: 8px 0;
 }
 
 .remove-todo:hover {
-    background-color: transparent;
-    transition: 0.3s;
-    color: #036eda;
+  background-color: transparent;
+  transition: 0.3s;
+  color: #036eda;
 }
 
 .todo-text {
-    padding: 5px 0;
-    cursor: pointer;
+  padding: 5px 0;
+  cursor: pointer;
 }
 
 .mark-todo {
-    text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }

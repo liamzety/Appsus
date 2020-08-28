@@ -1,4 +1,6 @@
 
+const {Link} = ReactRouterDOM
+
 import { missKeepService } from "../service/miss-keep-service.js";
 import { NoteTxt } from "../cmps/note-types/NoteTxt.jsx";
 import { NoteImg } from "../cmps/note-types/NoteImg.jsx";
@@ -8,6 +10,7 @@ import { AddNote } from "../cmps/AddNote.jsx";
 import { NoteEdit } from "../cmps/NoteEdit.jsx";
 import { NoteSearch } from "../cmps/NoteSearch.jsx";
 import { UserMsg } from "../../../cmps/UserMsg.jsx";
+import  eventBusService  from "../../../services/event-bus-service.js";
 
 export class KeepApp extends React.Component {
 
@@ -101,6 +104,13 @@ export class KeepApp extends React.Component {
         .then(notes=> this.setState({notes}))
     }
 
+    sendNote=(noteId)=>{
+        missKeepService.sendNote(noteId)
+        .then(note=>eventBusService.emit('compose', 
+        { subject: note.info.title || note.info.label || '' ,body: note.info.txt 
+        || note.info.url || note.info.todos.map(todo=> todo.txt) || ''}))    
+    }
+
     render() {
         const notes= this.notesToShow() || 'Loading...'
         
@@ -122,6 +132,9 @@ export class KeepApp extends React.Component {
                             <button className="edit-note-btn" onClick={()=> this.setState({noteSelected:note})}><i className="fas fa-pen"></i></button>
                             <button className="pin-note-btn" onClick={()=>this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
                             <button className="remove-note-btn" onClick={()=>this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
+                            <Link to="/">
+                            <button className="send-note-btn" onClick={()=>this.sendNote(note.id)}><i class="fas fa-paper-plane"></i></button>
+                            </Link>
                                 
                             </div>
                             

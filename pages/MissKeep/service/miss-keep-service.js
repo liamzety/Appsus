@@ -6,6 +6,7 @@ export const missKeepService={
     removeNote,
     updateNote,
     pinNote,
+    sendNote,
     updateTodos,
     markTodo,
     removeTodo
@@ -99,6 +100,13 @@ var notes = [
     selectedNote.isPinned=true
     utilsService.saveToStorage(KEY, notes)
     return Promise.resolve(notes)
+   }
+
+   function sendNote(noteId){
+       const selectedNote= notes.find(note=> note.id===noteId)
+
+
+       return Promise.resolve(selectedNote)
    }
 
    function updateTodos(todos, newTodo){
