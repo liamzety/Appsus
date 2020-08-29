@@ -42,10 +42,10 @@ export class Navbar extends React.Component {
             case 'mail':
                 this.setState({ currPage: 'Mail' })
                 break;
-            case 'about':
+            case 'about-page':
                 this.setState({ currPage: 'About' })
                 break;
-            case 'home':
+            case 'home-page':
                 this.setState({ currPage: 'Home' })
                 break;
 
@@ -60,7 +60,6 @@ export class Navbar extends React.Component {
 
     render() {
         if (!this.state.currPage) return
-        console.log('', this.state.currPage)
         return (
             <section className="navbar-section">
                 <img title="App menu" className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
@@ -82,11 +81,11 @@ export class Navbar extends React.Component {
                     <NavLink className="mail" onClick={this.onToggleNav} exact to='/miss-email'>
                         <i className="fas fa-mail-bulk"></i>
                     </NavLink>
-                    <NavLink className="about" onClick={this.onToggleNav} exact to='/about'>
-                        <h3 style={{ fontSize: '15px' }} className='about'><i class="fas fa-user"></i></h3>
+                    <NavLink className="about-page" onClick={this.onToggleNav} exact to='/about'>
+                        <h3 style={{ fontSize: '15px' }} className='about-page'>ABOUT</h3>
                     </NavLink>
-                    <NavLink className="home" onClick={this.onToggleNav} exact to='/'>
-                        <h3 style={{ fontSize: '15px' }} className='home'><i class="fas fa-home"></i></h3>
+                    <NavLink className="home-page" onClick={this.onToggleNav} exact to='/'>
+                        <h3 style={{ fontSize: '15px' }} className='home-page'>HOME</h3>
                     </NavLink>
 
 
