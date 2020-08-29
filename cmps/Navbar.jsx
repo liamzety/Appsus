@@ -42,10 +42,10 @@ export class Navbar extends React.Component {
             case 'mail':
                 this.setState({ currPage: 'Mail' })
                 break;
-            case 'about-page':
+            case 'fas fa-user':
                 this.setState({ currPage: 'About' })
                 break;
-            case 'home-page':
+            case 'fas fa-home':
                 this.setState({ currPage: 'Home' })
                 break;
 
@@ -82,10 +82,10 @@ export class Navbar extends React.Component {
                         <i className="fas fa-mail-bulk"></i>
                     </NavLink>
                     <NavLink className="about-page" onClick={this.onToggleNav} exact to='/about'>
-                        <h3 style={{ fontSize: '15px' }} className='about-page'>ABOUT</h3>
+                    <i class="fas fa-user"></i>
                     </NavLink>
                     <NavLink className="home-page" onClick={this.onToggleNav} exact to='/'>
-                        <h3 style={{ fontSize: '15px' }} className='home-page'>HOME</h3>
+                        <i className="fas fa-home"></i>
                     </NavLink>
 
 
