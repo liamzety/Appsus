@@ -16,11 +16,9 @@ export class EmailCompose extends React.Component {
             this.setState({ emailDetails: { ...this.state.emailDetails, subject: subject || '', body: body || '' } });
         }
         else if (this.props.replyDetails) {
-            console.log('replay', this.props.replyDetails)
             const { subject, body, to } = this.props.replyDetails
             this.setState({ emailDetails: { ...this.state.emailDetails, subject: `Re:${subject}` || '', body: `Re: ${body} ` || '', to: `Re: ${to}` || '' } });
         } else {
-            console.log('imhere',)
         }
 
 
@@ -39,7 +37,6 @@ export class EmailCompose extends React.Component {
 
 
     render() {
-        console.log('details', this.props.replyDetails)
         return (
             <section className="email-compose">
                 <div className="form-header" onClick={() => {
@@ -53,11 +50,11 @@ export class EmailCompose extends React.Component {
                 }} action="">
                     <div className="form-inputs-container">
                         <input value={this.state.emailDetails.from} onChange={this.onComposing} placeholder='To:' name='to' type="text" />
-                        <input value={this.state.emailDetails.subject} placeholder='Subject:' name='subject' onChange={this.onComposing} type="text" />
+                        <input className="input-subject" value={this.state.emailDetails.subject} placeholder='Subject:' name='subject' onChange={this.onComposing} type="text" />
                         <textarea value={this.state.emailDetails.body} name='body' onChange={this.onComposing} type="text" />
                     </div>
                     <div className="form-btn-container">
-                        <label htmlFor="img">
+                        <label title="Upload image" htmlFor="img">
                             <i className="far fa-image btn-image-upload">
                                 <input id='img' name='img' onChange={this.onComposing} type="file" accept="image/*" hidden />
                             </i>

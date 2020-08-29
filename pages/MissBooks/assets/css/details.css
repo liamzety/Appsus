@@ -18,10 +18,19 @@
   flex-direction: column;
   justify-content: center;
   width: 50%;
+  line-height: 2;
 }
 
 .book-details img {
+  border-top: 7px inset#d2d2d2;
+  border-left: 7px outset #d2d2d2;
+  border-bottom: 7px outset #d2d2d2;
+  border-right: 7px inset #d2d2d2;
   width: 250px;
+}
+
+.book-details a {
+  width: fit-content;
 }
 
 .book-details-image {
@@ -70,6 +79,16 @@
 
 .back-button {
   margin-bottom: 20px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  width: 35px;
+  height: 30px;
+  ;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #007efc36;
 }
 
 .submit-button {
@@ -131,6 +150,7 @@
 
 .delete-button {
   transform: translateY(-47px);
+  float: right;
 }
 
 .review:hover .delete-button {
@@ -179,4 +199,11 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
+}
+
+.review-details {
+  line-height: 2;
+  background-color: #e9e9e936;
+  padding: 10px;
+  height: 100%;
 }
