@@ -62,7 +62,7 @@ export class Navbar extends React.Component {
         if (!this.state.currPage) return
         return (
             <section className="navbar-section">
-                <img title="App menu" className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
+                <img title="App menu" className="appsus-logo" onClick={this.onToggleNav} src="assets/img/appsus2.png" alt="" />
                 {
                     this.state.currPage === 'Home' && <h1 className="curr-page">{this.state.currPage}</h1> || this.state.currPage === 'About' && <h1 className="curr-page">{this.state.currPage}</h1>
                     || <h1 className="curr-page">App<span>{this.state.currPage}</span></h1>
