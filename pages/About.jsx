@@ -1,8 +1,16 @@
+const {Route} =ReactRouterDOM;
+import { Navbar } from "../cmps/Navbar.jsx";
+
 export class About extends React.Component {
 
     render() {
         return (
+            <React.Fragment>
+            <header>
+                <Route component={Navbar}/>
+                </header>
             <section className="about">
+                
                 <h1>About The Creators</h1>
 
                 <section className="creators-container">
@@ -55,6 +63,7 @@ export class About extends React.Component {
                     </div>
                 </section>
             </section>
+            </React.Fragment>
         )
     }
 }

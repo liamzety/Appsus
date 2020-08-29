@@ -1,5 +1,7 @@
 
-const { Link } = ReactRouterDOM
+const { Link,Route } = ReactRouterDOM
+
+import { Navbar } from "../../../cmps/Navbar.jsx";
 
 import { missKeepService } from "../service/miss-keep-service.js";
 import { NoteTxt } from "../cmps/note-types/NoteTxt.jsx";
@@ -118,7 +120,12 @@ export class KeepApp extends React.Component {
 
 
         return (
+            <React.Fragment>
+                <header>
+                    <Route component={Navbar} />
+                </header>
             <section className="miss-keep">
+
                 <UserMsg />
                 {<AddNote saveNotes={this.saveNotes} />}
                 {<NoteSearch searchByText={this.searchByText} />}
@@ -147,6 +154,7 @@ export class KeepApp extends React.Component {
                 {this.state.noteSelected && <NoteEdit note={this.state.noteSelected} saveNotes={this.saveNotes} updateSelectedNote={this.updateNote} />}
 
             </section>
+            </React.Fragment>
         )
     }
 }
