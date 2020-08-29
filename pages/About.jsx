@@ -47,7 +47,7 @@ export class About extends React.Component {
                                     <img src="assets/img/liam.jpeg" alt="" />
                                 </div>
                                 <div className="text-container">
-                                    <p>Liam is 26 years old, originaly started Web developing as a self-taught and later went on Coding Academy 3-months intense bootcamp. and ever since, is in over the top relationship with coding. </p>
+                                    <p>Liam is 26 years old, originally started Web developing as a self-taught and later went on Coding Academy 3-months intense bootcamp. and ever since, is in over the top relationship with coding. </p>
 
                                     <ul className="social-links">
                                         <a href="https://www.facebook.com/liamzety"><li className="facebook"><i className="fab fa-facebook-square"></i></li></a>
