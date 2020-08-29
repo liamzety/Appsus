@@ -23,9 +23,9 @@ export class About extends React.Component {
                                 as a former trainer Roei believes that you have to put
                                 the work in order to achieve results!</p>
                                 <ul className="social-links">
-                                   <a href="https://www.facebook.com/FriZe6/"><li className="facebook"><i class="fab fa-facebook-square"></i></li></a>
-                                    <a href="https://www.instagram.com/roeifit/"><li className="instagram"><i class="fab fa-instagram-square"></i></li></a>
-                                    <a href="https://www.linkedin.com/in/roei-arazi-b1b42a19a/"><li className="linkedin"><i class="fab fa-linkedin"></i></li></a>
+                                   <a href="https://www.facebook.com/FriZe6/"><li className="facebook"><i className="fab fa-facebook-square"></i></li></a>
+                                    <a href="https://www.instagram.com/roeifit/"><li className="instagram"><i className="fab fa-instagram"></i></li></a>
+                                    <a href="https://www.linkedin.com/in/roei-arazi-b1b42a19a/"><li className="linkedin"><i className="fab fa-linkedin"></i></li></a>
                                 </ul>
                         </div>
 
