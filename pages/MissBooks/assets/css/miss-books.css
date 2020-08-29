@@ -1,26 +1,34 @@
 @import './details.css';
 @import './filter.css';
+
+.bg{
+  background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);
+}
+
 .container {
   margin-left: 50px;
   margin-right: 50px;
+  padding-top:120px;
 }
 
 .booklist {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap:15px;
+  padding:20px 0;
 }
 
 .book-preview {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 0 0;
-  width: 200px;
   height: 100%;
+  height: 100%;
+  color: #ffffff;
 }
 
 .book-preview:hover {
   transition: all 0.5s ease;
+  color:#007dfc;
 }
 
 .hidden {

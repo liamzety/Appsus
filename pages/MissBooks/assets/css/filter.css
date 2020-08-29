@@ -1,3 +1,83 @@
-.book-filter{
-    margin-top:20px;
+.books-filter-search{
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-filter {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2ad8;
+    justify-content: space-between;
+    padding: 5px 10px 10px;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    border-radius: 5px;
+    width: 250px;
+    cursor: auto;
+    overflow: hidden;
+}
+
+
+.book-filter input {
+    background-color: transparent;
+    color: #f1f1f1;
+    border: 0;
+    border-bottom:1px solid black;
+    margin-left:5px;
+}
+
+.filter-by-price{
+    margin-top: 10px;
+}
+
+.filter-by-price input{
+    width: 40px;
+}
+
+
+.search-books {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2ad8;
+    padding: 5px 10px 10px;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    border-radius: 5px;
+    width: 250px;
+    cursor: auto;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.search-input-books .fas {
+    cursor: auto;
+    transform: translateY(22px);
+    visibility: hidden;
+}
+
+.search-input-books{
+    border-bottom:1px solid black;
+    display: flex;
+}
+
+.search-books input {
+    background-color: transparent;
+    color: #f1f1f1;
+    border: 0;   
+    flex-grow: 1;
+}
+
+
+.search-input-books input:focus~.fas, .search-input-books input:hover~.fas {
+    transform: translateY(-3px);
+    transition: 0.3s;
+    visibility: visible;
+}
+
+.searched-books{
+    color:#ffffff;
+    position:absolute;
+    top: 226px;
+    background-color: #121212;
+    padding: 10px;
 }

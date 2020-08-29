@@ -96,15 +96,18 @@ export class BookApp extends React.Component {
 
         return (
 
-            <section>
+            <React.Fragment>
+                <div className="books-filter-search">
                 {!this.state.bookSelected && <BookAdd searchForBooks={this.searchForBooks}/>}
-                {!this.state.searchValue ? '' : <ul>
-                    {searchedBooks.map(book=> <li>{book.volumeInfo.title} <button className="search-add-button" onClick={()=>this.addGoogleBook(book)}>+</button></li>)}
+                {!this.state.searchValue ? '' : <ul className="searched-books">
+                    {searchedBooks.map((book,idx)=> <li key={idx}>{book.volumeInfo.title} <button className="search-add-button" onClick={()=>this.addGoogleBook(book)}>+</button></li>)}
                     </ul>}
                 {!this.state.bookSelected && <BookFilter filterBy={this.state.filterBy} setFilterByName={this.onSetFilterByName} setFilterByPrice={this.setFilterByPrice} />}
+
+                </div>
                 {!this.state.bookSelected && <BookList books={books} />}
                 {this.state.bookSelected && <BookDetails book={this.state.bookSelected} />}
-            </section>
+                </React.Fragment>
         )
     }
 }

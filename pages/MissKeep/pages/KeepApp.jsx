@@ -132,7 +132,7 @@ export class KeepApp extends React.Component {
 
                             <div className="note-btns" >
                                 <button className="edit-note-btn" onClick={() => this.setState({ noteSelected: note })}><i className="fas fa-pen"></i></button>
-                                {note.type === 'NoteVideo' ? '' : <button className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>}
+                                <button className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
                                 <Link to="/">
                                     <button className="send-note-btn" onClick={() => this.sendNote(note.id)}><i className="fas fa-paper-plane"></i></button>
                                 </Link>
