@@ -7,6 +7,14 @@
 
 .vid-wrapper {
     display: flex;
+    width: 500px;
+    margin: auto;
+}
+
+@media (max-width:550px) {
+    .vid-wrapper {
+        width: 250px;
+    }
 }
 
 .vid-wrapper video {
