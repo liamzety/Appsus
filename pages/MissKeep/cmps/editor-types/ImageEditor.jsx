@@ -23,7 +23,7 @@ export function ImageEditor(props) {
                         <input hidden id='img-file' type="file" onChange={() => props.uploadImage()} />
                     </i>
                 </label>
-                <button className="submit-button" type="button" onClick={() => props.updateNote()}><i className="far fa-plus-square"></i></button>
+                <button className="submit-button" type="button" onClick={() => props.updateNote()}>Submit</button>
                 </div>
 
             </form>

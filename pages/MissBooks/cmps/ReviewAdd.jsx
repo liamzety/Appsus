@@ -132,7 +132,7 @@ export class ReviewAdd extends React.Component {
 
                 <div className="review-details">
                   <li><h3>{review.name}</h3></li>
-                  <li>Rating:{review.rating}</li>
+                  <li>Rating: {'★'.repeat(review.rating)}</li>
                   <li >Date read:{review.date}</li>
                   <li>{review.text}</li>
                 </div>

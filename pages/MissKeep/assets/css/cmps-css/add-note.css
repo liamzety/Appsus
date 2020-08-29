@@ -85,4 +85,5 @@
 
 .mark-todo {
   text-decoration-line: line-through;
+  color:grey;
 }

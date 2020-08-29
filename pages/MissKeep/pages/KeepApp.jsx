@@ -89,10 +89,10 @@ export class KeepApp extends React.Component {
 
 
         const searchedNotes = this.state.notes.filter((note) => {
-
-            if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy)
-            else if (note.info.title) return note.info.title.toLowerCase().includes(this.state.searchBy)
-            else if (note.info.label) return note.info.label.toLowerCase().includes(this.state.searchBy)
+            console.log(this.state.searchBy.toLowerCase());
+            if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy.toLowerCase())
+            else if (note.info.title) return note.info.title.toLowerCase().includes(this.state.searchBy.toLowerCase())
+            else if (note.info.label) return note.info.label.toLowerCase().includes(this.state.searchBy.toLowerCase())
         })
 
 
@@ -131,12 +131,12 @@ export class KeepApp extends React.Component {
                             <li>{this.getNote(note)} </li>
 
                             <div className="note-btns" >
-                                <button className="edit-note-btn" onClick={() => this.setState({ noteSelected: note })}><i className="fas fa-pen"></i></button>
-                                <button className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
+                                <button title="Edit" className="edit-note-btn" onClick={() => this.setState({ noteSelected: note })}><i className="fas fa-pen"></i></button>
+                                <button title="Pin" className="pin-note-btn" onClick={() => this.pinNote(note.id)}><i className="fas fa-thumbtack"></i></button>
                                 <Link to="/">
-                                    <button className="send-note-btn" onClick={() => this.sendNote(note.id)}><i className="fas fa-paper-plane"></i></button>
+                                    <button title="Send" className="send-note-btn" onClick={() => this.sendNote(note.id)}><i className="fas fa-paper-plane"></i></button>
                                 </Link>
-                                <button className="remove-note-btn" onClick={() => this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
+                                <button title="Remove" className="remove-note-btn" onClick={() => this.removeNote(note.id)}><i className="fas fa-trash"></i></button>
 
                             </div>
 

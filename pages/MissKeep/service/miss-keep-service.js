@@ -16,8 +16,18 @@ const KEY= 'Notes'
 
 
 var notes = [
-    {
-    type: "NoteText",
+
+    {type: "NoteText",
+    isPinned: true,
+    info: {
+    txt: "I went to this girl’s party the week after she beat the shit out of my friend. While everyone was getting trashed, I went around putting tuna inside all the curtain rods and so like weeks went by and they couldn’t figure out why the house smelled like festering death. They caught me through this video where these guys at the party were singing Beyoncé while I was in the background with a can of tuna."
+    },
+    style:{
+        backgroundColor:'#ffffff'
+    },
+    id: utilsService.getRandId()},
+
+    {type: "NoteText",
     isPinned: true,
     info: {
     txt: "Fullstack Me Baby!"
@@ -25,10 +35,19 @@ var notes = [
     style:{
         backgroundColor:'#ffffff'
     },
-    id: utilsService.getRandId()
+    id: utilsService.getRandId()},
+
+    {type: "NoteText",
+    isPinned: true,
+    info: {
+    txt: "Fullstack Me Baby!"
     },
-    {
-    type: "NoteImg",
+    style:{
+        backgroundColor:'#ffffff'
+    },
+    id: utilsService.getRandId()},
+
+    {type: "NoteImg",
     info: {
     url: "http://some-img/me",
     title: "Me playing Mi",
@@ -37,24 +56,44 @@ var notes = [
     style: {
     backgroundColor: "#00d"
     },
-    id: utilsService.getRandId()
+    id: utilsService.getRandId()},
+
+    {type: "NoteImg",
+    info: {
+    url: "http://some-img/me",
+    title: "Me playing Mi",
+    txt:'',
     },
-    {
-    type: "NoteTodos",
+    style: {
+    backgroundColor: "#00d"
+    },
+    id: utilsService.getRandId()},
+
+    {type: "NoteTodos",
+    info: {
+    label: "How was it:",
+    txt:'',
+    todos: [
+    { txt: "Do that", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "Do this", doneAt: 187111111 ,id: utilsService.getRandId() }]
+    },
+    style:{
+        backgroundColor:'#ffffff'
+    },
+    id: utilsService.getRandId()},
+    {type: "NoteTodos",
     info: {
     label: "How was it:",
     txt:'',
     todos: [
     { txt: "Do that", doneAt: null ,id: utilsService.getRandId()},
     { txt: "Do this", doneAt: 187111111 ,id: utilsService.getRandId() }
-    ]
-    },
+    ]},
     style:{
         backgroundColor:'#ffffff'
     },
     id: utilsService.getRandId()
-    }
-   ];
+    }];
 
 
    function query(){

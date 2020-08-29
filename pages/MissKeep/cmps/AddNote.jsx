@@ -129,15 +129,15 @@ export class AddNote extends React.Component {
             
             <form className="add-note">
                 
-                <button className="add-note-btn" onClick={this.addNote}><i className="fas fa-plus"></i></button>
+                <button title="Add-Note" className="add-note-btn" onClick={this.addNote}><i className="fas fa-plus"></i></button>
                 {this.getInput()}
                 <div className="note-type-btns">
 
-                <button onClick={this.changeToText}><i className="fas fa-paragraph"></i></button>
-                <label htmlFor="image-upload"><i className="far fa-image"></i></label>
+                <button title="Text-Note" onClick={this.changeToText}><i className="fas fa-paragraph"></i></button>
+                <label title="Image-Note" htmlFor="image-upload"><i className="far fa-image"></i></label>
                 <input id="image-upload" hidden placeholder="Image File" name="url" type="file" onChange={this.uploadImage}  />
-                <button onClick={this.changeToTodos}><i className="fas fa-list"></i></button>
-                <button onClick={this.changeToVideo}><i className="fab fa-youtube"></i></button>
+                <button title="Todos-Note" onClick={this.changeToTodos}><i className="fas fa-list"></i></button>
+                <button title="Video-Note" onClick={this.changeToVideo}><i className="fab fa-youtube"></i></button>
 
                 </div>
 

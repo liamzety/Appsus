@@ -1,7 +1,7 @@
 .note-editor-bg {
     min-height: 100vh;
     width: 100%;
-    background-color: #5c5c5cba;
+    background-color:#000000e6;;
     position: fixed;
     top: 0;
     display: flex;
@@ -48,16 +48,31 @@
 }
 
 .editor-form button {
-    width: 30px;
-    height: 30px;
     padding: 0;
     background-color: transparent;
+    color: #007DFC;
 }
 
 .editor-form button:hover {
-    background-color: transparent;
     transition: 0.3s;
-    color: #007DFC;
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+
+.editor-form .submit-button{
+    background-color: #007DFC;
+    color:#ffffff;
+    padding:10px;
+    border-radius:5px;
+    width:fit-content;
+    font-size:1.2rem
+}
+
+.editor-form .submit-button:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    filter: brightness(70%);
 }
 
 .image-title {
@@ -97,18 +112,19 @@
 .add-todo-input input {
     border: 0;
     background-color: transparent;
+    flex-grow: 1;
 }
 
 .editor-btns button, .editor-form label {
-    color: #121212;
+    color: #007DFC;
     font-size: 2rem;
-    margin: 20px;
+    margin: 20px;    
 }
 
 .color-pallete:hover, .image-upload:hover {
     transition: 0.3s;
-    color: #007DFC;
     cursor: pointer;
+    filter: brightness(70%);
 }
 
 .image-upload {
