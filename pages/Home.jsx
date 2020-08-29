@@ -1,3 +1,6 @@
+const { Link } = ReactRouterDOM
+
+
 export class Home extends React.Component {
 
     render() {
@@ -5,16 +8,33 @@ export class Home extends React.Component {
             <React.Fragment>
 
                 <section className="home">
+
+
                     <div className="vid-wrapper">
                         <video autoPlay src="../assets/vid/appsus-vid.mp4"></video>
                     </div>
                     <div className="home-links">
-                        <div className="home-link"> <i className="fas fa-clipboard"></i></div>
-                        <div className="home-link">    <i className="fas fa-book"></i></div>
-                        <div className="home-link">  <i className="fas fa-mail-bulk"></i></div>
-                        <div className="home-link">
-                            <i className="fas fa-user"></i></div>
+                        <Link to="/miss-keep">
+                            <div className="home-link">
+                                <i className="fas fa-clipboard"></i>
+                            </div>
+                        </Link>
+                        <Link to="/miss-books">
+                            <div className="home-link">
+                                <i className="fas fa-book"></i>
+                            </div>
+                        </Link>
+                        <Link to="/miss-email">
 
+                            <div className="home-link">
+                                <i className="fas fa-mail-bulk"></i>
+                            </div>
+                        </Link>
+                        <Link to="/about">
+                            <div className="home-link">
+                                <i className="fas fa-user"></i>
+                            </div>
+                        </Link>
 
 
                     </div>
