@@ -18,7 +18,7 @@ export function NoteVideo(props) {
             <li className="note-header">{props.note.info.title}</li>
             <li>
                 <div className="note-video-container">
-                    <iframe height="250px" src={'http://www.youtube.com/embed/'+videoId} frameBorder="0" allowFullScreen>
+                    <iframe height="250px" src={'https://www.youtube.com/embed/'+videoId} frameBorder="0" allowFullScreen>
                     </iframe>
                 </div>
             </li>
