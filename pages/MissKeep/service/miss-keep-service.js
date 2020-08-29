@@ -23,7 +23,7 @@ var notes = [
     txt: "I went to this girl’s party the week after she beat the shit out of my friend. While everyone was getting trashed, I went around putting tuna inside all the curtain rods and so like weeks went by and they couldn’t figure out why the house smelled like festering death. They caught me through this video where these guys at the party were singing Beyoncé while I was in the background with a can of tuna."
     },
     style:{
-        backgroundColor:'#ffffff'
+        backgroundColor:'red'
     },
     id: utilsService.getRandId()},
 
@@ -31,7 +31,7 @@ var notes = [
     isPinned: false,
     info: {
         title:'love it',
-    url: "https://www.youtube.com/watch?v=mxK9F6UBhBE"
+    url: "https://www.youtube.com/watch?v=aR-KAldshAE&feature=emb_rel_err"
     },
     style:{
         backgroundColor:'grey'
