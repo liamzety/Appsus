@@ -11,36 +11,34 @@ export class Navbar extends React.Component {
     componentDidMount() {
         switch (this.props.location.pathname) {
             case '/miss-books':
-                this.setState({ currPage: 'fas fa-book curr-page' })
+                this.setState({ currPage: 'Miss Books' })
                 break;
             case '/miss-keep':
-                this.setState({ currPage: 'fas fa-clipboard curr-page' })
+                this.setState({ currPage: 'Miss Keep' })
                 break;
             case '/':
-                this.setState({ currPage: 'fas fa-mail-bulk curr-page' })
+                this.setState({ currPage: 'Miss Email' })
                 break;
         }
     }
-
+    // TODO CHANGE!
     onToggleNav = (ev) => {
         let className;
         className = ev.target.className
         switch (className) {
             case 'fas fa-clipboard':
             case 'clipboard':
-                className = 'fas fa-clipboard curr-page'
+                this.setState({ currPage: 'Miss Keep' })
                 break;
             case 'fas fa-book':
             case 'book':
-                className = 'fas fa-book curr-page'
+                this.setState({ currPage: 'Miss Books' })
                 break;
             case 'fas fa-mail-bulk':
             case 'mail':
-                className = 'fas fa-mail-bulk curr-page'
+                this.setState({ currPage: 'Miss Email' })
                 break;
-            default:
-                className = this.state.currPage
-                break;
+
         }
         console.log('', ev.target.className)
         this.setState({ isNavShown: !this.state.isNavShown, currPage: className })
@@ -55,9 +53,10 @@ export class Navbar extends React.Component {
         if (!this.state.currPage) return
         return (
             <section className="navbar-section">
-                <img className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus-icon.png" alt="" />
+                <img className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
                 {/* <i  className="fas fa-th-list"></i> */}
 
+                <h1>{this.state.currPage}</h1>
                 <i className={this.state.currPage}></i>
 
                 {this.state.isNavShown && <div className="nav-container">
@@ -68,15 +67,6 @@ export class Navbar extends React.Component {
                     <NavLink className="book" onClick={this.onToggleNav} exact to='/miss-books'>
                         <i className="fas fa-book"></i>
                     </NavLink>
-                    {/* <a onClick={this.onNotAv} className="not-aviable">
-                        <i class="fab fa-algolia not-aviable"></i>
-                    </a>
-                    <a onClick={this.onNotAv} className="not-aviable">
-                        <i className="fab fa-aws not-aviable"></i>
-                    </a>
-                    <a onClick={this.onNotAv} className="not-aviable">
-                        <i className="far fa-address-book not-aviable"></i>
-                    </a> */}
                     <NavLink className="mail" onClick={this.onToggleNav} exact to='/'>
                         <i className="fas fa-mail-bulk"></i>
                     </NavLink>
