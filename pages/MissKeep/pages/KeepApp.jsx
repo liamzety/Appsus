@@ -89,7 +89,6 @@ export class KeepApp extends React.Component {
 
 
         const searchedNotes = this.state.notes.filter((note) => {
-            console.log(this.state.searchBy.toLowerCase());
             if (note.info.txt) return note.info.txt.toLowerCase().includes(this.state.searchBy.toLowerCase())
             else if (note.info.title) return note.info.title.toLowerCase().includes(this.state.searchBy.toLowerCase())
             else if (note.info.label) return note.info.label.toLowerCase().includes(this.state.searchBy.toLowerCase())
@@ -120,6 +119,7 @@ export class KeepApp extends React.Component {
 
         return (
             <section className="miss-keep">
+                <UserMsg />
                 {<AddNote saveNotes={this.saveNotes} />}
                 {<NoteSearch searchByText={this.searchByText} />}
                 {<div className="notes">

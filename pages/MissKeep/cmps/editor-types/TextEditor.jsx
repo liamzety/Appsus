@@ -2,7 +2,7 @@ import { NoteTxt } from "../note-types/NoteTxt.jsx";
 
 export function TextEditor(props){
 
-    
+    const editor='editor'
     const { id, info, style } = props.note
 
     return(

@@ -2,6 +2,7 @@ import { missKeepService } from "../service/miss-keep-service.js"
 import { TextInput } from "./input-types/TextInput.jsx";
 import { TodosInput } from "./input-types/TodosInput.jsx";
 import { VideoInput } from "./input-types/VideoInput.jsx";
+import eventBus from "../../../services/event-bus-service.js";
 
 export class AddNote extends React.Component {
 
@@ -49,7 +50,7 @@ export class AddNote extends React.Component {
         else if(note.type=='NoteVideo' && !note.info.url && note.info.title)return
         missKeepService.addNote(note)
         .then(notes => this.props.saveNotes(notes))
-        
+        eventBus.emit('notify', {msg: `Note Added`, type: 'success' })
         this.setState({type:'NoteText' ,info:{txt:'', url:''}})
     }
 
@@ -70,7 +71,7 @@ export class AddNote extends React.Component {
                 backgroundColor:'#ffffff'
             }
             }
-            console.log(imgNote.info.url);
+
            
             missKeepService.addNote(imgNote)
             .then(notes => this.props.saveNotes(notes))
@@ -119,7 +120,6 @@ export class AddNote extends React.Component {
         event.preventDefault()
         this.setState({type:'NoteVideo' ,info:{title:'Video'}})
     }
-
 
     render() {
 

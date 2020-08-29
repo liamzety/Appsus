@@ -27,7 +27,6 @@ export class NoteEdit extends React.Component {
 
     changeInput = (ev) => {
 
-       
         this.setState({info: {...this.state.info, [ev.target.name]: ev.target.value } })
     }
 

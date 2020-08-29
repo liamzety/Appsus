@@ -29,6 +29,7 @@
 .book-preview:hover {
   transition: all 0.5s ease;
   color:#007dfc;
+  filter:brightness(70%);
 }
 
 .hidden {

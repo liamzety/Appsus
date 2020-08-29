@@ -76,8 +76,6 @@ export class BookDetails extends React.Component {
 
     componentDidUpdate(prevProps, prevState){
 
-        console.log('Prev', prevProps);
-        console.log('Curr', this.props);
         if (prevProps.match.params.bookId !== this.props.match.params.bookId) {
             bookService.selectBook(this.props.match.params.bookId)
             .then(book => {

@@ -97,6 +97,7 @@
 .add-todo-input button {
     padding-top: 2px;
     color: #121212;
+    background-color: transparent;
 }
 
 .add-todo-label {
@@ -111,8 +112,12 @@
 
 .add-todo-input input {
     border: 0;
-    background-color: transparent;
     flex-grow: 1;
+}
+
+.add-todo-input button:hover{
+    background-color: transparent;
+    color:#007DFC;
 }
 
 .editor-btns button, .editor-form label {

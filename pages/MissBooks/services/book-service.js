@@ -22,8 +22,6 @@ function query() {
 function selectBook(bookId) {
   
   const selectedBook = books.find(book => book.id === bookId)
-  console.log(books);
-  console.log(bookId);
   
   return Promise.resolve(selectedBook)
 }

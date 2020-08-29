@@ -15,17 +15,15 @@ export class TodosEditor extends React.Component {
 
 
     markTodo = (todoId, noteId) => {
-        console.log(event.target);
         missKeepService.markTodo(todoId, noteId)
             .then(todos => this.setState({ todos }))
     }
 
     addTodo = () => {
         event.preventDefault()
+        if(!this.state.newTodo)return
         missKeepService.updateTodos(this.state.todos, this.state.newTodo)
             .then(todos => this.setState({ todos, newTodo: '' }))
-
-
 
     }
 
