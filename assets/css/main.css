@@ -1,6 +1,9 @@
 @import '../../pages/MissEmail/assets/css/miss-email.css';
 @import '../../pages/MissKeep/assets/css/miss-keep.css';
 @import '../../pages/MissBooks/assets/css/miss-books.css';
+@import './about.css';
+@import './home.css';
+
 /* BASE */
 
 @font-face {

@@ -1,0 +1,20 @@
+.about{
+    padding-top:120px;
+}
+
+.roei-container{
+    display: flex;
+}
+
+.about .img-container{
+    width:300px;
+    height:300px;
+    margin-right:30px;
+}
+
+.about img{
+    object-fit: cover;
+    border-radius: 50%;
+    width:100%;
+    max-height:100%;
+}
