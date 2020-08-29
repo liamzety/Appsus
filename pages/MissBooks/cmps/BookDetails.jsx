@@ -107,7 +107,13 @@ export class BookDetails extends React.Component {
                     
                     <li className="book-details-image">
                         <img src={this.state.book.thumbnail} />
-                        {this.state.book.listPrice.isOnSale ? <div className="on-sale"><h1>!! On Sale !!</h1></div> : ''}
+                        {this.state.book.listPrice.isOnSale ?
+                        <div className="sale-triangle">
+                            <div className="triangle"></div>
+                             <div className="on-sale"><h1>On<br/> Sale!</h1></div>
+                        
+                            </div>
+                             : ''}
                     </li>
                     <section className="book-info">
                     <li>

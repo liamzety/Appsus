@@ -11,7 +11,6 @@
   margin-bottom: 20px;
   display: flex;
   width: 100%;
-  justify-content: space-around;
 }
 
 .book-info {
@@ -23,18 +22,30 @@
 
 .book-details img {
   width: 250px;
+  
 }
 
 .book-details-image {
   position: relative;
+  margin-right:30px;
 }
 
-.on-sale {
+.triangle {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 2rem;
-  background-color: green;
+  width: 0; 
+  height: 0; 
+  border-left: 125px solid transparent;
+  border-top: 150px solid red;
+}
+
+.on-sale{
+    position:absolute;
+    top:0;
+    right:10px;
+    text-align: center;
+    font-size:0.8rem;
 }
 
 .decription-area {
@@ -55,7 +66,7 @@
 .read-more {
   cursor: pointer;
   font-size: 1.2rem;
-  color: black;
+  color: grey;
 }
 
 .back-button {
@@ -84,6 +95,15 @@
   width: 250px;
 }
 
+.rating{
+    background-color: #2a2a2ad8;
+    padding: 5px 10px 10px;
+    margin-bottom: 10px;
+    border: 0;
+    color: #f1f1f1;
+    border-radius: 5px;
+}
+
 .review-add textarea {
   background-color: #2a2a2ad8;
   padding: 5px 10px 10px;
@@ -98,10 +118,54 @@
   grid-gap: 15px;
 }
 
-.review button{
-visibility: hidden;
-transform: translateY();
+.review{
+    overflow: hidden;
 }
+
+.delete-button{
+    transform: translateY(-47px);
+}
+
+.review:hover .delete-button{
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+  }
+  
+  .rate:not(:checked)>input {
+    display: none;
+  }
+  
+  .rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+  }
+  
+  .rate:not(:checked)>label:before {
+    content: '★ ';
+  }
+  
+  .rate>input:checked~label {
+    color: #ffc700;
+  }
+  
+  .rate:not(:checked)>label:hover, .rate:not(:checked)>label:hover~label {
+    color: #deb217;
+  }
+  
+  .rate>input:checked+label:hover, .rate>input:checked+label:hover~label, .rate>input:checked~label:hover, .rate>input:checked~label:hover~label, .rate>label:hover~input:checked~label {
+    color: #c59b08;
+  }
 
 .prev-next {
   display: flex;

@@ -54,8 +54,64 @@ export class ReviewAdd extends React.Component {
                     </div>
 
                     <div className="rating-add">
-                        Rating:<br/>
-                        <select name="rating" onChange={this.setValue}>
+                        Rating:
+                        <br/>
+                        <div className="rate">
+                       <form action="">     
+              <input
+                onChange={this.setValue}
+                type="radio"
+                id="star5"
+                name="rating"
+                value="5"
+              />
+              <label htmlFor="star5" title="text">
+                5 stars
+              </label>
+              <input
+                onChange={this.setValue}
+                type="radio"
+                id="star4"
+                name="rating"
+                value="4"
+              />
+              <label htmlFor="star4" title="text">
+                4 stars
+              </label>
+              <input
+                onChange={this.setValue}
+                type="radio"
+                id="star3"
+                name="rating"
+                value="3"
+              />
+              <label htmlFor="star3" title="text">
+                3 stars
+              </label>
+              <input
+                onChange={this.setValue}
+                type="radio"
+                id="star2"
+                name="rating"
+                value="2"
+              />
+              <label htmlFor="star2" title="text">
+                2 stars
+              </label>
+              <input
+                onChange={this.setValue}
+                type="radio"
+                id="star1"
+                name="rating"
+                value="1"
+              />
+              <label htmlFor="star1" title="text">
+                1 star
+              </label>
+           
+        </form></div>
+        
+                        <select className="rating" name="rating" onChange={this.setValue}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -81,7 +137,7 @@ export class ReviewAdd extends React.Component {
                         {this.state.reviews.map((review) =>
                             <ul key={review.id} className="review">
                                 
-                                <li><button className="delete-button" onClick={() => this.removeReview(review.id)}>X</button></li>
+                                <button className="delete-button" onClick={() => this.removeReview(review.id)}>X</button>
                                 
                                 <div className="review-details">
                                 <li><h3>{review.name}</h3></li>
