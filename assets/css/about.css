@@ -1,14 +1,33 @@
 .about{
-    padding-top:120px;
+    padding:120px 20px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #f1f1f1;
+    background: linear-gradient(0deg, rgba(51, 51, 51, 1) 6%, rgba(18, 18, 18, 1) 47%);
+    min-height: 100vh;
+}
+
+.creators-container{
+    display: flex;
+    margin-top:100px;
 }
 
 .roei-container{
     display: flex;
+    flex-direction: column;
+    width:50%;
+    flex-wrap: wrap;
+    margin-right:20px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
 }
 
 .about .img-container{
-    width:300px;
-    height:300px;
+    max-width:300px;
+    max-height:300px;
     margin-right:30px;
 }
 
@@ -17,4 +36,39 @@
     border-radius: 50%;
     width:100%;
     max-height:100%;
+}
+
+.liam-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links{
+    display: flex;
+}
+
+.social-links li{
+    font-size:1.5rem;
+    margin:10px 10px 0 0;
+}
+
+.facebook{
+color: #4267B2
+}
+
+.instagram{
+    
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.linkedin{
+color:#0e76a8;
+}
+
+.social-links li:hover{
+filter:brightness(80%);
+transition:0.3s;
+
 }
