@@ -41,6 +41,7 @@ export class EmailApp extends React.Component {
             })
     }
     onAddEmail = (emailDetails) => {
+        // eventBusService.emit('notify', { msg: 'Email sent', type: 'success' })
         this.setState({ isComposing: false })
         emailService.addEmail(emailDetails)
         this.loadEmails()

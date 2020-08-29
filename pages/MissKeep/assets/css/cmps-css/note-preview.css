@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-gap: 15px;
-  padding-bottom:20px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 620px) {
@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: bounce-in-top 0.7s both;
 }
 
 .note-header {

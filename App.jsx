@@ -23,9 +23,9 @@ export class App extends React.Component {
                     <Switch>
                         <Route component={MissKeep} path="/miss-keep" />
                         <Route component={MissBooks} path="/miss-books" />
-                        <Route component={MissEmail} path="/email" />
-                        <Route component={About} path="/about"/>
-                        <Route component={Home} path="/"/>
+                        <Route component={MissEmail} path="/miss-email" />
+                        <Route component={About} path="/about" />
+                        <Route component={Home} path="/" />
 
                     </Switch>
                 </main>
