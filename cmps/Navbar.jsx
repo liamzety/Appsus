@@ -1,4 +1,4 @@
-const { Route, Switch, Link, NavLink } = ReactRouterDOM
+const { NavLink } = ReactRouterDOM
 
 export class Navbar extends React.Component {
 
@@ -82,7 +82,7 @@ export class Navbar extends React.Component {
                         <i className="fas fa-mail-bulk"></i>
                     </NavLink>
                     <NavLink className="about-page" onClick={this.onToggleNav} exact to='/about'>
-                    <i className="fas fa-user"></i>
+                        <i className="fas fa-user"></i>
                     </NavLink>
                     <NavLink className="home-page" onClick={this.onToggleNav} exact to='/'>
                         <i className="fas fa-home"></i>

@@ -46,6 +46,7 @@ export class EmailCompose extends React.Component {
                 </div>
                 <form onSubmit={(ev) => {
                     ev.preventDefault();
+
                     this.props.onAddEmail(this.state.emailDetails)
                 }} action="">
                     <div className="form-inputs-container">

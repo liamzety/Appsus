@@ -181,6 +181,15 @@ option {
   -webkit-text-fill-color: transparent;
 }
 
+@media (max-width:550px) {
+  .curr-page {
+    display: none;
+  }
+  .curr-page span {
+    display: none;
+  }
+}
+
 .fa-clipboard, .fa-book, .fa-mail-bulk, .fa-home, .fa-user {
   background: linear-gradient(349deg, rgb(52 72 227 / 88%) 14%, rgb(26 115 255) 64%);
   -webkit-background-clip: text;

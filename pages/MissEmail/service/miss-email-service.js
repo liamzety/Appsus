@@ -1,5 +1,5 @@
 import { utilsService } from '../../../services/utils.js'
-
+import eventBusService from '../../../services/event-bus-service.js'
 export const emailService = {
     getEmails,
     addEmail,
@@ -258,6 +258,7 @@ function getEmailsCount() {
 }
 function addEmail(emailDetails, isaDraft) {
     if (!emailDetails.body && !emailDetails.subject) return
+    if (!isaDraft) eventBusService.emit('notify', { msg: 'Email sent', type: 'success' })
     emails.unshift({
         id: utilsService.getRandId(),
         from: 'Me',

@@ -77,8 +77,8 @@
 
 .email-compose .form-btn-container {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -92,7 +92,7 @@ export class EmailList extends React.Component {
                 )
 
             }
-            else if (email.isSent && this.state.isSentShown) {
+            else if (email.isSent && !email.isDeleted && this.state.isSentShown) {
                 return (
                     <div key={idx}>
                         <EmailPreview onToggleRead={this.onToggleRead} onStarEmail={this.onStarEmail} onShowEmail={this.onShowEmail} onRemoveEmail={this.props.onRemoveEmail} email={email} />

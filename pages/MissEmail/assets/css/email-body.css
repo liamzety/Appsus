@@ -21,6 +21,12 @@
 
 @media (max-width:780px) {
     .email-body {
-        margin: 0 10px 0 10px;
+        margin: 110px 10px 0 10px;
+    }
+}
+
+@media (max-width:550px) {
+    .email-body {
+        margin: 10px;
     }
 }
