@@ -12,21 +12,21 @@ export class EmailPreview extends React.Component {
                 }} className="email-preview-container mb-10">
 
                     <div className="txt-body-start-container">
-                        <div className='email-preview-icon' onClick={(ev) => {
+                        <div title="Remove email" className='email-preview-icon' onClick={(ev) => {
                             ev.stopPropagation()
                             this.props.onRemoveEmail(email.id)
                         }}>
                             <i className="fas fa-trash"></i>
                         </div>
 
-                        <div className='email-preview-icon' onClick={(ev) => {
+                        <div title={email.isRead ? "Mark as unread" : "Mark as read"} className='email-preview-icon' onClick={(ev) => {
                             ev.stopPropagation()
                             this.props.onToggleRead(email)
                         }}>
                             <i className={email.isRead ? "far fa-check-square" : 'far fa-square'}></i>
                         </div>
 
-                        <div className='email-preview-icon' onClick={(ev) => {
+                        <div title={email.isStar ? "Un-favorite email" : "Favorite email"} className='email-preview-icon' onClick={(ev) => {
                             ev.stopPropagation()
                             this.props.onStarEmail(email)
 
