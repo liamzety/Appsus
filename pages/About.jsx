@@ -21,7 +21,7 @@ export class About extends React.Component {
                             <div className="info">
 
                                 <div className="img-container">
-                                    <img src="../assets/img/prrofile-pic.jpeg" alt="" />
+                                    <img src={"../assets/img/prrofile-pic.jpeg"} alt="" />
                                 </div>
                                 <div className="text-container">
                                     <p>Roei is a 28 years old who started coding as a hobby and immediatly
@@ -44,7 +44,7 @@ export class About extends React.Component {
                             <h2>Liam Zety</h2>
                             <div className="info">
                                 <div className="img-container">
-                                    <img src="../assets/img/liam.jpeg" alt="" />
+                                    <img src={"../assets/img/liam.jpeg"} alt="" />
                                 </div>
                                 <div className="text-container">
                                     <p>Liam is 26 years old, originaly started Web developing as a self-taught and later went on Coding Academy 3-months intense bootcamp. and ever since, is in over the top relationship with coding. </p>
