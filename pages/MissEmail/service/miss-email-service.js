@@ -172,8 +172,8 @@ let emails = [
     {
         id: utilsService.getRandId(),
         subject: 'b',
-        from: 'Julius Ceasar',
-        body: 'e tu brutu?',
+        from: 'Draft: Julius Ceasar',
+        body: 'Draft: e tu brutu?',
         img: '',
         isStar: false,
         isRead: false,
@@ -185,8 +185,8 @@ let emails = [
     {
         id: utilsService.getRandId(),
         subject: 'blood',
-        from: 'Vlad the impaler',
-        body: 'i need more bl',
+        from: 'Draft: Vlad the impaler',
+        body: 'Draft: i need more bl',
         img: '',
         isStar: false,
         isRead: false,
