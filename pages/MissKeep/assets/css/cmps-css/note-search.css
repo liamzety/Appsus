@@ -6,7 +6,7 @@
 
 .search-input {
     display: flex;
-    background-color: #2a2a2ad8;
+    background-color: #2a2a2a;
     justify-content: space-between;
     padding: 5px 10px;
     margin-bottom: 20px;
@@ -24,7 +24,7 @@
 }
 
 .search-input input {
-    background-color: #2a2a2ad8;
+    background-color: #2a2a2a;
     color: #f1f1f1;
     border: 0;
     flex-grow: 1;
