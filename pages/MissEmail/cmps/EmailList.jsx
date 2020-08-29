@@ -170,7 +170,7 @@ export class EmailList extends React.Component {
                                 <div className="prog-txt">
                                     <p>{this.props.progress}%</p>
                                 </div>
-                                <div class="prog-bar" style={{ height: '24px', width: this.props.progress + '%' }}></div>
+                                <div class="prog-bar" style={{ width: this.props.progress + '%' }}></div>
                             </div>
 
                         </div>

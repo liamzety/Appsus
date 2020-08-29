@@ -45,10 +45,19 @@
     align-items: flex-start;
 }
 
+.email-compose .form-inputs-container input, .email-compose .form-inputs-container textarea {
+    border: 0;
+    border-bottom: 1px solid grey
+}
+
 .email-compose form input:not([type='file']) {
     height: 50px;
     padding: 15px;
     width: 100%;
+}
+
+.email-compose .input-subject {
+    font-weight: 700;
 }
 
 .email-compose .btn-image-upload {

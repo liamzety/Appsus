@@ -40,7 +40,7 @@ export class EmailPreview extends React.Component {
                     </div>
                     <div className="txt-body-mid-container hide-long-txt">
                         <h2 style={{ fontWeight: email.isRead ? 400 : 700 }}>{email.subject}</h2>
-                        <p >{email.body}</p>
+                        <p style={{ fontWeight: email.isRead ? 400 : 700 }} >{email.body}</p>
                     </div>
 
 

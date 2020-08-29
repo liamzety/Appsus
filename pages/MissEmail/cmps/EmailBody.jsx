@@ -12,6 +12,7 @@ export class EmailBody extends React.Component {
                     <i className="fas fa-arrow-left"></i>
                 </div>
                 <p>{this.props.email.from}</p>
+                <hr />
                 <h2>{this.props.email.subject}</h2>
                 <p>{this.props.email.body}</p>
                 <img src={this.props.email.img} />
