@@ -3,7 +3,6 @@
 @import '../../pages/MissBooks/assets/css/miss-books.css';
 @import './about.css';
 @import './home.css';
-
 /* BASE */
 
 @font-face {
@@ -176,12 +175,13 @@ option {
 }
 
 .curr-page span {
-  color: #007DFC;
+  background: -webkit-linear-gradient(268deg, rgb(255 255 255 / 95%) 14%, rgb(26 115 255) 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-clipboard, .fa-book, .fa-mail-bulk {
   background: linear-gradient(349deg, rgb(255 255 255 / 88%) 14%, rgb(26 115 255) 64%);
-  -webkit-background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
