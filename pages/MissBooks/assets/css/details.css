@@ -22,30 +22,29 @@
 
 .book-details img {
   width: 250px;
-  
 }
 
 .book-details-image {
   position: relative;
-  margin-right:30px;
+  margin-right: 30px;
 }
 
 .triangle {
   position: absolute;
   top: 0;
   right: 0;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 125px solid transparent;
   border-top: 150px solid red;
 }
 
-.on-sale{
-    position:absolute;
-    top:0;
-    right:10px;
-    text-align: center;
-    font-size:0.8rem;
+.on-sale {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .decription-area {
@@ -79,10 +78,13 @@
 }
 
 .review-add {
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+.review-add * {
+  max-width: 250px;
 }
 
 .review-add input {
@@ -92,24 +94,29 @@
   border: 0;
   color: #f1f1f1;
   border-radius: 5px;
-  width: 250px;
+  width: 100%
 }
 
-.rating{
-    background-color: #2a2a2ad8;
-    padding: 5px 10px 10px;
-    margin-bottom: 10px;
-    border: 0;
-    color: #f1f1f1;
-    border-radius: 5px;
+.rating {
+  background-color: #2a2a2ad8;
+  padding: 5px 10px 10px;
+  margin-bottom: 10px;
+  border: 0;
+  color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .review-add textarea {
+  width: 100%;
   background-color: #2a2a2ad8;
   padding: 5px 10px 10px;
   border: 0;
   color: #f1f1f1;
   border-radius: 5px;
+}
+
+.review-add .text-add {
+  max-width: 250px;
 }
 
 .reviews-list {
@@ -118,54 +125,55 @@
   grid-gap: 15px;
 }
 
-.review{
-    overflow: hidden;
+.review {
+  overflow: hidden;
 }
 
-.delete-button{
-    transform: translateY(-47px);
+.delete-button {
+  transform: translateY(-47px);
 }
 
-.review:hover .delete-button{
-    transform: translateY(0);
-    transition: 0.3s;
+.review:hover .delete-button {
+  transform: translateY(0);
+  transition: 0.3s;
 }
 
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-  }
-  
-  .rate:not(:checked)>input {
-    display: none;
-  }
-  
-  .rate:not(:checked)>label {
-    float: right;
-    width: 1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 30px;
-    color: #ccc;
-  }
-  
-  .rate:not(:checked)>label:before {
-    content: '★ ';
-  }
-  
-  .rate>input:checked~label {
-    color: #ffc700;
-  }
-  
-  .rate:not(:checked)>label:hover, .rate:not(:checked)>label:hover~label {
-    color: #deb217;
-  }
-  
-  .rate>input:checked+label:hover, .rate>input:checked+label:hover~label, .rate>input:checked~label:hover, .rate>input:checked~label:hover~label, .rate>label:hover~input:checked~label {
-    color: #c59b08;
-  }
+.rating-add {
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+  justify-content: space-between;
+}
+
+.rating-add:not(:checked)>input {
+  display: none;
+}
+
+.rating-add:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.rating-add:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rating-add>input:checked~label {
+  color: #ffc700;
+}
+
+.rating-add:not(:checked)>label:hover, .rating-add:not(:checked)>label:hover~label {
+  color: #deb217;
+}
+
+.rating-add>input:checked+label:hover, .rating-add>input:checked+label:hover~label, .rating-add>input:checked~label:hover, .rating-add>input:checked~label:hover~label, .rating-add>label:hover~input:checked~label {
+  color: #c59b08;
+}
 
 .prev-next {
   display: flex;

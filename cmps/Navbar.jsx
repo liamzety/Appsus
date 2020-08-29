@@ -9,17 +9,18 @@ export class Navbar extends React.Component {
 
 
     componentDidMount() {
-        switch (this.props.location.pathname) {
-            case '/miss-books':
-                this.setState({ currPage: 'Books' })
-                break;
-            case '/miss-keep':
-                this.setState({ currPage: 'Keep' })
-                break;
-            case '/':
-                this.setState({ currPage: 'Mail' })
-                break;
+        console.log('is it?', this.props.location.pathname.includes('/miss-books'))
+        console.log('is it?', this.props.location.pathname.includes('/miss-books'))
+        if (this.props.location.pathname.includes('/miss-books')) {
+            this.setState({ currPage: 'Books' })
         }
+        else if (this.props.location.pathname.includes('/miss-keep')) {
+            this.setState({ currPage: 'Keep' })
+        }
+        else if (this.props.location.pathname.includes('/')) {
+            this.setState({ currPage: 'Mail' })
+        }
+
     }
 
     onToggleNav = (ev) => {
