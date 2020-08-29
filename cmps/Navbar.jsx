@@ -83,10 +83,10 @@ export class Navbar extends React.Component {
                         <i className="fas fa-mail-bulk"></i>
                     </NavLink>
                     <NavLink className="about" onClick={this.onToggleNav} exact to='/about'>
-                        <h3 style={{ fontSize: '15px' }} className='about'>ABOUT</h3>
+                        <h3 style={{ fontSize: '15px' }} className='about'><i class="fas fa-user"></i></h3>
                     </NavLink>
                     <NavLink className="home" onClick={this.onToggleNav} exact to='/'>
-                        <h3 style={{ fontSize: '15px' }} className='home'>HOME</h3>
+                        <h3 style={{ fontSize: '15px' }} className='home'><i class="fas fa-home"></i></h3>
                     </NavLink>
 
 
