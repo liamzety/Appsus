@@ -11,37 +11,35 @@ export class Navbar extends React.Component {
     componentDidMount() {
         switch (this.props.location.pathname) {
             case '/miss-books':
-                this.setState({ currPage: 'Miss Books' })
+                this.setState({ currPage: 'Books' })
                 break;
             case '/miss-keep':
-                this.setState({ currPage: 'Miss Keep' })
+                this.setState({ currPage: 'Keep' })
                 break;
             case '/':
-                this.setState({ currPage: 'Miss Email' })
+                this.setState({ currPage: 'Mail' })
                 break;
         }
     }
-    // TODO CHANGE!
+
     onToggleNav = (ev) => {
-        let className;
-        className = ev.target.className
-        switch (className) {
+
+        switch (ev.target.className) {
             case 'fas fa-clipboard':
             case 'clipboard':
-                this.setState({ currPage: 'Miss Keep' })
+                this.setState({ currPage: 'Keep' })
                 break;
             case 'fas fa-book':
             case 'book':
-                this.setState({ currPage: 'Miss Books' })
+                this.setState({ currPage: 'Books' })
                 break;
             case 'fas fa-mail-bulk':
             case 'mail':
-                this.setState({ currPage: 'Miss Email' })
+                this.setState({ currPage: 'Mail' })
                 break;
 
         }
-        console.log('', ev.target.className)
-        this.setState({ isNavShown: !this.state.isNavShown, currPage: className })
+        this.setState({ isNavShown: !this.state.isNavShown })
 
     }
 
@@ -56,8 +54,8 @@ export class Navbar extends React.Component {
                 <img className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
                 {/* <i  className="fas fa-th-list"></i> */}
 
-                <h1>{this.state.currPage}</h1>
-                <i className={this.state.currPage}></i>
+                <h1 className="curr-page">App<span>{this.state.currPage}</span></h1>
+
 
                 {this.state.isNavShown && <div className="nav-container">
 

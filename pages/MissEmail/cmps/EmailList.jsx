@@ -13,13 +13,15 @@ export class EmailList extends React.Component {
         isDeletedShown: false,
         isDraftsShown: false,
         isSentShown: false,
-        isHamburger: false
+        isHamburger: false,
+
     }
 
     selectRef = React.createRef()
 
     onShowEmail = (email) => {
         emailService.emailRead(email)
+        this.props.updateProgBar()
         this.setState({ isEmailShown: true, emailToShow: email })
 
     }
@@ -61,7 +63,7 @@ export class EmailList extends React.Component {
 
     onToggleRead = (email) => {
         emailService.toggleRead(email)
-        this.setState({})
+        this.props.updateProgBar()
     }
     renderEmails = () => {
 
@@ -118,6 +120,7 @@ export class EmailList extends React.Component {
         this.selectRef.current.value = 'Sort emails'
     }
     render() {
+        console.log('from list', this.props.progress)
         return (
             <React.Fragment>
                 <EmailFilter isHamburger={this.state.isHamburger} onSearchByTxt={this.props.onSearchByTxt} />
@@ -160,6 +163,9 @@ export class EmailList extends React.Component {
                         </div>
                         <div onClick={this.onShowSent} className="filter-item">
                             <p> Sent</p>
+                        </div>
+                        <div className="prog-bar">
+                            {this.props.progress}%
                         </div>
                     </div>
 

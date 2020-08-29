@@ -8,7 +8,8 @@ export class EmailApp extends React.Component {
         emails: null,
         isComposing: false,
         replyDetails: '',
-        noteDetails: ''
+        noteDetails: '',
+        progress: 0
     }
 
 
@@ -35,8 +36,8 @@ export class EmailApp extends React.Component {
     }
     loadEmails() {
         emailService.getEmails()
-            .then((emails) => {
-                this.setState({ emails })
+            .then(({ emails, percentage }) => {
+                this.setState({ emails, progress: percentage })
             })
     }
     onAddEmail = (emailDetails) => {
@@ -64,6 +65,9 @@ export class EmailApp extends React.Component {
         this.setState({ emails: emailService.getAfterSearch(txt) })
 
     }
+    updateProgBar = () => {
+        this.loadEmails()
+    }
     render() {
 
         const { emails } = this.state
@@ -71,7 +75,7 @@ export class EmailApp extends React.Component {
 
         return (
             <section className="email-app">
-                <EmailList onSearchByTxt={this.onSearchByTxt} onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
+                <EmailList updateProgBar={this.updateProgBar} progress={this.state.progress} onSearchByTxt={this.onSearchByTxt} onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
                 {this.state.isComposing && <EmailCompose noteDetails={this.state.noteDetails} replyDetails={this.state.replyDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
         )

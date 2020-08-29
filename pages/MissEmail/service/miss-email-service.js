@@ -8,7 +8,8 @@ export const emailService = {
     emailStar,
     sortEmails,
     getAfterSearch,
-    toggleRead
+    toggleRead,
+    getEmailsCount
 }
 
 let emails = [
@@ -244,15 +245,26 @@ let emails = [
         sentAt: utilsService.getTimeStamp('8/1/2010')
     }
 ]
+
+
 let isSortedByDate = false
 let isSortedByRead = false
 
 function getEmails() {
     emails = utilsService.checkIfStorage('emails') ? utilsService.loadFromStorage('emails') : emails
+    const emailsCount = emails.length;
+    let emailsRead = 0
+    emails.forEach(email => {
+        if (email.isRead) emailsRead++
+    })
+    let percentage = emailsCount / emailsRead
+    percentage = (100 / percentage).toFixed(0)
     utilsService.saveToStorage('emails', emails)
-    return Promise.resolve(emails)
+    return Promise.resolve({ emails, percentage })
 }
-
+function getEmailsCount() {
+    return emails.length
+}
 function addEmail(emailDetails, isaDraft) {
 
     emails.unshift({

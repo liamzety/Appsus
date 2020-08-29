@@ -166,9 +166,14 @@ option {
 }
 
 .curr-page {
+  color: #f1f1f1;
   margin-left: 50px;
   font-size: 40px;
   cursor: default;
+}
+
+.curr-page span {
+  color: #007DFC;
 }
 
 .fa-clipboard {
