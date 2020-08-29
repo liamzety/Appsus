@@ -15,7 +15,7 @@ export const emailService = {
 let emails = [
     {
         subject: 'No leather in the office, starting tomorrow',
-        from: 'Jack hyde',
+        from: 'Jack Hyde',
         body: "HR just notified me that we have a new employee who starts tomorrow that is allergic to leather. To protect his health and productivity, all leather will be prohibited from the office. This includes bags, shoes, pants, belts, and any other leather accessories. Please leave your leather at home! Thanks for your support.",
         img: '',
         isStar: false,
@@ -81,7 +81,7 @@ let emails = [
     {
         id: utilsService.getRandId(),
         subject: 'Help me keep my eyes well!',
-        from: 'Ashley sobriety',
+        from: 'Ashley Sobriety',
         body: 'After several years of getting increasingly bad eyes and stronger prescriptions, I’ve finally gotten a diagnosis. My optometrist informed me that I have a condition in which the color black is damaging my eyesight, sort of like an allergy. I’ll be wearing shaded glasses for the next couple of weeks while I undergo treatment. Please refrain from using black on any team documents or presentations (bright colors are okay).',
         img: '',
         isStar: false,
@@ -171,8 +171,8 @@ let emails = [
     },
     {
         id: utilsService.getRandId(),
-        subject: 'b',
-        from: 'Draft: Julius Ceasar',
+        subject: 'Draft: b',
+        from: 'Julius Ceasar',
         body: 'Draft: e tu brutu?',
         img: '',
         isStar: false,
@@ -184,8 +184,8 @@ let emails = [
     },
     {
         id: utilsService.getRandId(),
-        subject: 'blood',
-        from: 'Draft: Vlad the impaler',
+        subject: 'Draft: blood',
+        from: 'Vlad The Impaler',
         body: 'Draft: i need more bl',
         img: '',
         isStar: false,
