@@ -166,11 +166,11 @@ export class EmailList extends React.Component {
                         </div>
                         <div title="Percetange emails read" className="prog-bar-container">
 
-                            <div class="prog-bar-border">
+                            <div className="prog-bar-border">
                                 <div className="prog-txt">
                                     <p>{this.props.progress}%</p>
                                 </div>
-                                <div class="prog-bar" style={{ width: this.props.progress + '%' }}></div>
+                                <div className="prog-bar" style={{ width: this.props.progress + '%' }}></div>
                             </div>
 
                         </div>
