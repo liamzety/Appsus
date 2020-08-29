@@ -7,7 +7,6 @@ import { MissEmail } from "./pages/MissEmail/MissEmail.jsx"
 import { MissBooks } from "./pages/MissBooks/MissBooks.jsx"
 import { About } from "./pages/About.jsx";
 import { Home } from "./pages/Home.jsx";
-import { Navbar } from './cmps/Navbar.jsx';
 
 export class App extends React.Component {
 
@@ -16,9 +15,7 @@ export class App extends React.Component {
 
         return (
             <Router>
-                <header>
-                    <Route component={Navbar} />
-                </header>
+              
                 <main>
                     <Switch>
                         <Route component={MissKeep} path="/miss-keep" />
