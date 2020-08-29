@@ -120,6 +120,12 @@
     color:#007DFC;
 }
 
+.editor-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .editor-btns button, .editor-form label {
     color: #007DFC;
     font-size: 2rem;
