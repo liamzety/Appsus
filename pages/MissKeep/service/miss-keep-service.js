@@ -18,7 +18,7 @@ const KEY= 'Notes'
 var notes = [
 
     {type: "NoteText",
-    isPinned: true,
+    isPinned: false,
     info: {
     txt: "I went to this girl’s party the week after she beat the shit out of my friend. While everyone was getting trashed, I went around putting tuna inside all the curtain rods and so like weeks went by and they couldn’t figure out why the house smelled like festering death. They caught me through this video where these guys at the party were singing Beyoncé while I was in the background with a can of tuna."
     },
@@ -27,10 +27,61 @@ var notes = [
     },
     id: utilsService.getRandId()},
 
-    {type: "NoteText",
-    isPinned: true,
+    {type: "NoteVideo",
+    isPinned: false,
     info: {
-    txt: "Fullstack Me Baby!"
+        title:'love it',
+    url: "https://www.youtube.com/watch?v=mxK9F6UBhBE"
+    },
+    style:{
+        backgroundColor:'grey'
+    },
+    id: utilsService.getRandId()},
+
+    {type: "NoteImg",
+    isPinned: false,
+    info: {
+        title:"SO sad....",
+    url: "https://media.giphy.com/media/lszAB3TzFtRaU/giphy.gif"
+    },
+    style:{
+        backgroundColor:'#00d'
+    },
+    id: utilsService.getRandId()},
+  
+    
+    {type: "NoteTodos",
+    info: {
+        label: "CROSSFIT!!!",
+        txt:'',
+        todos: [
+            { txt: "Lift sumtin", doneAt: null ,id: utilsService.getRandId()},
+            { txt: "Throw sumtin", doneAt: null ,id: utilsService.getRandId()},
+            { txt: "Carry sumtin", doneAt: 187111111 ,id: utilsService.getRandId()},
+            { txt: "Throw someone", doneAt: null ,id: utilsService.getRandId()},
+            { txt: "Puke", doneAt: null ,id: utilsService.getRandId()},
+            { txt: "Repeat", doneAt: 187111111 ,id: utilsService.getRandId() }]
+        },
+        style:{
+        backgroundColor:'darkgrey'
+    },
+    id: utilsService.getRandId()},
+    
+        {type: "NoteImg",
+        info: {
+        url: "https://media.giphy.com/media/de9SDw6PGRsubN1o3X/giphy.gif",
+        title: "nop",
+        txt:'',
+        },
+        style: {
+        backgroundColor: "pink"
+        },
+        id: utilsService.getRandId()},
+
+    {type: "NoteVideo",
+    info: {
+    title: "Listen to this!",
+    url:'https://www.youtube.com/watch?v=-J9FuvPmMoI'
     },
     style:{
         backgroundColor:'#ffffff'
@@ -38,9 +89,25 @@ var notes = [
     id: utilsService.getRandId()},
 
     {type: "NoteText",
-    isPinned: true,
     info: {
-    txt: "Fullstack Me Baby!"
+    txt:"In the English language, the breed's officially recognized name is German Shepherd Dog (GSD). The breed was officially known as the Alsatian in the UK from after the First World War until 1977 when its name was changed back to German Shepherd.",
+    },
+    style:{
+        backgroundColor:'#1a994f'
+    },
+    id: utilsService.getRandId()},
+
+    {type: "NoteTodos",
+    info: {
+    label: "Grocery List",
+    txt:'',
+    todos: [
+    { txt: "Milk", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "MEAT!!", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "MEAT!!!", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "1 Cucumber", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "2 halves of the same cucumber", doneAt: null ,id: utilsService.getRandId()},
+    { txt: "Cheese", doneAt: 187111111 ,id: utilsService.getRandId() }]
     },
     style:{
         backgroundColor:'#ffffff'
@@ -49,48 +116,21 @@ var notes = [
 
     {type: "NoteImg",
     info: {
-    url: "http://some-img/me",
-    title: "Me playing Mi",
-    txt:'',
-    },
-    style: {
-    backgroundColor: "#00d"
-    },
-    id: utilsService.getRandId()},
-
-    {type: "NoteImg",
-    info: {
-    url: "http://some-img/me",
-    title: "Me playing Mi",
-    txt:'',
-    },
-    style: {
-    backgroundColor: "#00d"
-    },
-    id: utilsService.getRandId()},
-
-    {type: "NoteTodos",
-    info: {
-    label: "How was it:",
-    txt:'',
-    todos: [
-    { txt: "Do that", doneAt: null ,id: utilsService.getRandId()},
-    { txt: "Do this", doneAt: 187111111 ,id: utilsService.getRandId() }]
+    title: "Do you even?",
+    url:'https://media.giphy.com/media/3mJyfDFH0BqgbdghWJ/giphy.gif',
     },
     style:{
         backgroundColor:'#ffffff'
     },
     id: utilsService.getRandId()},
-    {type: "NoteTodos",
+    
+    {type: "NoteVideo",
     info: {
-    label: "How was it:",
-    txt:'',
-    todos: [
-    { txt: "Do that", doneAt: null ,id: utilsService.getRandId()},
-    { txt: "Do this", doneAt: 187111111 ,id: utilsService.getRandId() }
-    ]},
+    title: "get to know this guy!",
+    url:'https://www.youtube.com/watch?v=zwQd0iqvbMg',
+    },
     style:{
-        backgroundColor:'#ffffff'
+        backgroundColor:'#007DFC'
     },
     id: utilsService.getRandId()
     }];
