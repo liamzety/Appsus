@@ -7,7 +7,7 @@
     color: #f1f1f1;
     background-color: #121212;
     position: fixed;
-    padding-top: 40px;
+    padding-top: 15px;
     padding-right: 15px;
     width: 170px;
     height: 100vh;
@@ -23,7 +23,7 @@
     .side-filter {
         right: 0;
         width: 100%;
-        height: auto;
+        height: 100px;
         top: 100px;
         flex-direction: row;
         justify-content: space-evenly;
@@ -37,7 +37,9 @@
         width: 50%;
         display: none;
         flex-wrap: wrap;
+        height: 470px;
         border-left: 2px solid rgb(149 149 149 / 24%);
+        border-bottom-left-radius: 12px;
     }
 }
 
@@ -136,31 +138,64 @@
     padding: 15px;
 }
 
+@media (max-width:780px) {
+    .prog-bar-container {
+        display: none;
+    }
+}
+
+@media (max-width:550px) {
+    .prog-bar-container {
+        display: initial;
+    }
+}
+
 .prog-bar-border {
+    position: relative;
     width: 100%;
     border: 1px solid #f1f1f1;
+    height: 26px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .prog-bar {
-    background-color: #027DFC
+    background-color: #027DFC;
+    height: 24px;
+    width: 33%;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+}
+
+.prog-txt {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prog-txt p {
+    z-index: 1;
 }
 
 .email-previews-container {
     min-height: 100vh;
     width: 100%;
-    padding: 40px 10px 0 180px;
+    padding: 10px 10px 0 180px;
 }
 
 @media (max-width:780px) {
     .email-previews-container {
         padding: 10px 10px 0 10px;
-        margin-top: 130px;
+        margin-top: 100px;
     }
 }
 
 @media (max-width:550px) {
     .email-previews-container {
         padding: 0;
-        margin-top: 40px;
+        margin-top: 15px;
     }
 }

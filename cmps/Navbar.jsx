@@ -52,8 +52,7 @@ export class Navbar extends React.Component {
         if (!this.state.currPage) return
         return (
             <section className="navbar-section">
-                <img className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
-                {/* <i  className="fas fa-th-list"></i> */}
+                <img title="App menu" className="appsus-logo" onClick={this.onToggleNav} src="../assets/img/appsus2.png" alt="" />
 
                 <h1 className="curr-page">App<span>{this.state.currPage}</span></h1>
 

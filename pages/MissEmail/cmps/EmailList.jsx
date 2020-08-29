@@ -131,7 +131,7 @@ export class EmailList extends React.Component {
                 </div>
                 <section className="email-list">
                     <div className={`side-filter ${this.state.isHamburger ? 'show' : ''}`}>
-                        <div className="btn-compose" onClick={this.props.onStartCompose}>
+                        <div title="Compose email" className="btn-compose" onClick={this.props.onStartCompose}>
                             <i className="fas fa-paper-plane"></i>
                         </div>
                         <select className="filter-dropdown" ref={this.selectRef} defaultValue='Sort emails' onChange={(ev) => {
@@ -153,7 +153,7 @@ export class EmailList extends React.Component {
                             <p> All mails</p>
                         </div>
                         <div onClick={this.onShowStarred} className="filter-item">
-                            <p>Starred</p>
+                            <p>Favorite</p>
                         </div>
                         <div onClick={this.onShowDeleted} className="filter-item">
                             <p> Deleted</p>
@@ -164,9 +164,13 @@ export class EmailList extends React.Component {
                         <div onClick={this.onShowSent} className="filter-item">
                             <p> Sent</p>
                         </div>
-                        <div className="prog-bar-container">
+                        <div title="Percetange emails read" className="prog-bar-container">
+
                             <div class="prog-bar-border">
-                                <div class="prog-bar" style={{ height: '24px', width: this.props.progress + '%' }}>{this.props.progress}%</div>
+                                <div className="prog-txt">
+                                    <p>{this.props.progress}%</p>
+                                </div>
+                                <div class="prog-bar" style={{ height: '24px', width: this.props.progress + '%' }}></div>
                             </div>
 
                         </div>

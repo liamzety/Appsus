@@ -8,6 +8,10 @@
     padding: 5px 0;
 }
 
+.email-preview-container:hover {
+    filter: brightness(90%);
+}
+
 .email-preview-container .main-wrapper {
     display: flex;
 }

@@ -8,7 +8,7 @@ export class EmailBody extends React.Component {
 
         return (
             <section className="email-body">
-                <div onClick={() => this.props.onHideEmail(this.props.email)} className="btn-back">
+                <div title="Go back" onClick={() => this.props.onHideEmail(this.props.email)} className="btn-back">
                     <i className="fas fa-arrow-left"></i>
                 </div>
                 <p>{this.props.email.from}</p>
