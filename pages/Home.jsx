@@ -15,23 +15,23 @@ export class Home extends React.Component {
                     </div>
                     <div className="home-links">
                         <Link to="/miss-keep">
-                            <div className="home-link">
+                            <div title="Go to AppKeep" className="home-link">
                                 <i className="fas fa-clipboard"></i>
                             </div>
                         </Link>
                         <Link to="/miss-books">
-                            <div className="home-link">
+                            <div title="Go to AppBooks" className="home-link">
                                 <i className="fas fa-book"></i>
                             </div>
                         </Link>
                         <Link to="/miss-email">
 
-                            <div className="home-link">
+                            <div title="Go to AppEmail" className="home-link">
                                 <i className="fas fa-mail-bulk"></i>
                             </div>
                         </Link>
                         <Link to="/about">
-                            <div className="home-link">
+                            <div title="Go to About" className="home-link">
                                 <i className="fas fa-user"></i>
                             </div>
                         </Link>

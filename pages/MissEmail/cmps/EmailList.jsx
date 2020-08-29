@@ -120,7 +120,6 @@ export class EmailList extends React.Component {
         this.selectRef.current.value = 'Sort emails'
     }
     render() {
-        console.log('from list', this.props.progress)
         return (
             <React.Fragment>
                 <EmailFilter isHamburger={this.state.isHamburger} onSearchByTxt={this.props.onSearchByTxt} />

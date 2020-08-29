@@ -2,7 +2,6 @@ export class EmailFilter extends React.Component {
 
 
     render() {
-        console.log('', this.props.isHamburger)
         return (
 
             <section className={`email-filter ${this.props.isHamburger ? 'show' : ''}`}>

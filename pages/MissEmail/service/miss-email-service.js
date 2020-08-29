@@ -249,7 +249,6 @@ function getEmails() {
     })
     let percentage = emailsCount / emailsRead
     percentage = (100 / percentage).toFixed(0)
-    console.log('', emails)
     if (emails.length === 0) percentage = 100
     utilsService.saveToStorage('emails', emails)
     return Promise.resolve({ emails, percentage })

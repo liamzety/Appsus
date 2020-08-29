@@ -59,38 +59,17 @@ export class ReviewAdd extends React.Component {
           </div>
 
           <div className="rating-add">
-            <p>Rating:</p>
 
 
             <input
               onChange={this.setValue}
               type="radio"
-              id="star5"
+              id="star1"
               name="rating"
-              value="5"
+              value="1"
             />
-            <label htmlFor="star5" title="text">
-              5 stars
-              </label>
-            <input
-              onChange={this.setValue}
-              type="radio"
-              id="star4"
-              name="rating"
-              value="4"
-            />
-            <label htmlFor="star4" title="text">
-              4 stars
-              </label>
-            <input
-              onChange={this.setValue}
-              type="radio"
-              id="star3"
-              name="rating"
-              value="3"
-            />
-            <label htmlFor="star3" title="text">
-              3 stars
+            <label htmlFor="star1" >
+              1 star
               </label>
             <input
               onChange={this.setValue}
@@ -99,19 +78,43 @@ export class ReviewAdd extends React.Component {
               name="rating"
               value="2"
             />
-            <label htmlFor="star2" title="text">
+            <label htmlFor="star2" >
               2 stars
               </label>
             <input
               onChange={this.setValue}
               type="radio"
-              id="star1"
+              id="star3"
               name="rating"
-              value="1"
+              value="3"
             />
-            <label htmlFor="star1" title="text">
-              1 star
+            <label htmlFor="star3" >
+              3 stars
               </label>
+
+            <input
+              onChange={this.setValue}
+              type="radio"
+              id="star4"
+              name="rating"
+              value="4"
+            />
+            <label htmlFor="star4" >
+              4 stars
+              </label>
+
+            <input
+              onChange={this.setValue}
+              type="radio"
+              id="star5"
+              name="rating"
+              value="5"
+            />
+            <label htmlFor="star5" >
+              5 stars
+              </label>
+
+            <p>Rating:</p>
           </div>
 
 

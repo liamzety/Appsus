@@ -1,6 +1,6 @@
-const {Route}= ReactRouterDOM
+const { Route } = ReactRouterDOM
 
-import{Navbar} from '../../../cmps/Navbar.jsx'
+import { Navbar } from '../../../cmps/Navbar.jsx'
 import { emailService } from '../service/miss-email-service.js'
 import { EmailList } from './EmailList.jsx'
 import { EmailCompose } from './EmailCompose.jsx'
@@ -30,7 +30,6 @@ export class EmailApp extends React.Component {
 
     }
     onComposeReply = (replyDetails) => {
-        console.log('', replyDetails.target)
         this.setState({ isComposing: true })
         this.setState({ replyDetails })
     }
@@ -78,13 +77,13 @@ export class EmailApp extends React.Component {
         if (!emails) return <h1>Loading...</h1>
 
         return (
-           
-                
+
+
             <section className="email-app">
                 <EmailList updateProgBar={this.updateProgBar} progress={this.state.progress} onSearchByTxt={this.onSearchByTxt} onSortBy={this.onSortBy} onStartCompose={this.onStartCompose} onRemoveEmail={this.onRemoveEmail} onAddEmail={this.onAddEmail} emails={emails} />
                 {this.state.isComposing && <EmailCompose noteDetails={this.state.noteDetails} replyDetails={this.state.replyDetails} onEndCompose={this.onEndCompose} onAddEmail={this.onAddEmail} />}
             </section>
-            
+
         )
     }
 }
