@@ -10,8 +10,8 @@ export class Home extends React.Component {
                 <section className="home">
 
 
-                    <div className="vid-wrapper">
-                        <video autoPlay src="assets/vid/appsus-vid.mp4"></video>
+                    <div className="img-wrapper">
+                        <img src="assets/img/appsus-home.png" alt="" />
                     </div>
                     <div className="home-links">
                         <Link to="/miss-keep">
