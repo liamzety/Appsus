@@ -164,8 +164,11 @@ export class EmailList extends React.Component {
                         <div onClick={this.onShowSent} className="filter-item">
                             <p> Sent</p>
                         </div>
-                        <div className="prog-bar">
-                            {this.props.progress}%
+                        <div className="prog-bar-container">
+                            <div class="prog-bar-border">
+                                <div class="prog-bar" style={{ height: '24px', width: this.props.progress + '%' }}>{this.props.progress}%</div>
+                            </div>
+
                         </div>
                     </div>
 

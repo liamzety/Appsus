@@ -131,6 +131,20 @@
     color: #036eda;
 }
 
+.prog-bar-container {
+    width: 140px;
+    padding: 15px;
+}
+
+.prog-bar-border {
+    width: 100%;
+    border: 1px solid #f1f1f1;
+}
+
+.prog-bar {
+    background-color: #027DFC
+}
+
 .email-previews-container {
     min-height: 100vh;
     width: 100%;
