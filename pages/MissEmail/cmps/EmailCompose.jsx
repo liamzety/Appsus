@@ -1,4 +1,4 @@
-
+import eventBusService from '../../../services/event-bus-service.js'
 export class EmailCompose extends React.Component {
     state = {
         emailDetails: {
@@ -26,6 +26,7 @@ export class EmailCompose extends React.Component {
 
     onComposing = (ev) => {
         if (ev.target.files && ev.target.files[0]) {
+            eventBusService.emit('notify', { msg: 'Image added', type: 'success' })
             let img = ev.target.files[0];
             this.setState({ emailDetails: { ...this.state.emailDetails, img: URL.createObjectURL(img) } });
         } else {
