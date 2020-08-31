@@ -17,6 +17,7 @@
 @media (max-width:550px) {
     .email-compose {
         width: 100%;
+        height: 100%;
         border-radius: 0;
     }
 }
@@ -50,7 +51,7 @@
     border-bottom: 1px solid grey
 }
 
-.email-compose form input:not([type='file']) {
+.email-compose input:not([type='file']) {
     height: 50px;
     padding: 15px;
     width: 100%;
@@ -89,4 +90,16 @@
     padding: 15px 25px;
     border-radius: 8px;
     font-size: 20px;
+}
+
+@media (max-width:550px) {
+    .form-header {
+        height: 5vh;
+    }
+    .email-compose .form-inputs-container textarea {
+        height: 75vh;
+    }
+    .email-compose .form-inputs-container input {
+        height: 10vh;
+    }
 }
