@@ -11,6 +11,11 @@
     margin-bottom: 20px;
 }
 
+.email-body .body-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .email-body button {
     width: 100px;
 }

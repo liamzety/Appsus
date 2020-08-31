@@ -9,7 +9,7 @@ export class EmailPreview extends React.Component {
             <React.Fragment>
                 <section style={{ backgroundColor: email.isRead ? '#4c4c4cd8' : '#2a2a2ad8' }} onClick={() => {
                     this.props.onShowEmail(email)
-                }} className="email-preview-container mb-10">
+                }} className="email-preview-container ">
 
                     <div className="txt-body-start-container">
                         <div title="Remove email" className='email-preview-icon' onClick={(ev) => {
@@ -36,13 +36,14 @@ export class EmailPreview extends React.Component {
 
 
                         </div>
-                        <p>{email.from}</p>
+                        <div className="sender-body-container">
+                            <p>{email.from}</p>
+                            <div className="txt-body-mid-container hide-long-txt">
+                                <h2 style={{ fontWeight: email.isRead ? 400 : 700 }}>{email.subject}</h2>
+                                <p style={{ fontWeight: email.isRead ? 400 : 700 }} >{email.body}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="txt-body-mid-container hide-long-txt">
-                        <h2 style={{ fontWeight: email.isRead ? 400 : 700 }}>{email.subject}</h2>
-                        <p style={{ fontWeight: email.isRead ? 400 : 700 }} >{email.body}</p>
-                    </div>
-
 
                     <div className='txt-body-end-container '>
                         <p>{sentAt}</p>

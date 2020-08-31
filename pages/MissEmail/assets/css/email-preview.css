@@ -1,4 +1,5 @@
 .email-preview-container {
+    margin-bottom: 10px;
     color: #f1f1f1;
     background-color: #2a2a2ad8;
     display: flex;
@@ -8,6 +9,15 @@
     padding: 5px 0;
     box-shadow: inset 0px 0px 7px 0px #0c0c0c;
     border-radius: 8px;
+    height: 110px;
+}
+
+@media (max-width:550px) {
+    .email-preview-container {
+        margin-bottom: 0;
+        border-radius: 0;
+        position: relative;
+    }
 }
 
 .email-preview-container:hover {
@@ -24,7 +34,7 @@
 
 .email-preview-container .hide-long-txt {
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -36,6 +46,8 @@
 .txt-body-start-container {
     min-width: 200px;
     margin-left: 10px;
+    margin-right: 20px;
+    align-items: center;
 }
 
 .txt-body-start-container p {
@@ -49,27 +61,27 @@
 @media (max-width:550px) {
     .txt-body-start-container {
         min-width: 180px;
+        align-items: initial;
     }
     .txt-body-start-container *:not(:first-child) {
         margin-left: 0;
     }
     .txt-body-start-container p {
-        width: 50px;
+        width: 100%
     }
+}
+
+.sender-body-container {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .txt-body-mid-container {
     width: 100%;
     margin: 0 30px;
     text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.txt-body-mid-container * {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 @media (max-width:550px) {
@@ -80,7 +92,9 @@
 
 .txt-body-mid-container h2 {
     font-size: 18px;
+    text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .txt-body-mid-container p {
@@ -89,6 +103,14 @@
 
 .txt-body-end-container {
     min-width: 100px
+}
+
+@media (max-width:550px) {
+    .txt-body-end-container {
+        position: absolute;
+        top: 60px;
+        left: 20px;
+    }
 }
 
 .email-preview-icon {

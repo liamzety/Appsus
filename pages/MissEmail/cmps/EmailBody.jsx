@@ -1,4 +1,5 @@
 import eventBusService from '../../../services/event-bus-service.js'
+import { utilsService } from '../../../services/utils.js'
 export class EmailBody extends React.Component {
 
 
@@ -6,12 +7,16 @@ export class EmailBody extends React.Component {
 
     render() {
 
+        const sentAt = utilsService.getFormattedDate(this.props.email.sentAt)
         return (
             <section className="email-body">
                 <div title="Go back" onClick={() => this.props.onHideEmail(this.props.email)} className="btn-back">
                     <i className="fas fa-arrow-left"></i>
                 </div>
-                <p>{this.props.email.from}</p>
+                <div className="body-header">
+                    <p>{this.props.email.from}</p>
+                    <p>{sentAt}</p>
+                </div>
                 <hr />
                 <h2>{this.props.email.subject}</h2>
                 <p>{this.props.email.body}</p>
