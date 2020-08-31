@@ -21,10 +21,11 @@
 
 @media (max-width:780px) {
     .side-filter {
+        z-index: 1;
         right: 0;
         width: 100%;
         height: 100px;
-        top: 100px;
+        top: 102px;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 15px;
