@@ -12,12 +12,11 @@
         border-right: 2px solid #121212;
         width: 51%;
         background-color: #121212;
-        width: 50%;
+        width: 47%;
         height: 96px;
         top: 437px;
-        right: 0px;
+        right: 2px;
         align-items: center;
-        border-left: 2px solid rgb(149 149 149 / 24%);
         height: auto;
         padding: 15px;
     }
