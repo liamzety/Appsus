@@ -10,7 +10,7 @@
     background-color: #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    z-index: 999;
+    z-index: 2;
     animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -23,15 +23,19 @@
 }
 
 .email-compose .form-header {
-    padding: 15px;
+    display: flex;
     background-color: #2a2a2a;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
 }
 
 @media (max-width:550px) {
     .email-compose .form-header {
         border-radius: 0;
+        padding: 0 0 0 10px;
     }
 }
 

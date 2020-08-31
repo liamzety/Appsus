@@ -23,7 +23,7 @@ export class UserMsg extends React.Component {
         return (
             <div className={`notification-box ${type}`}>
                 {isShown && <button className="notification-close" onClick={() => this.setState({ isShown: false })}><i className="fas fa-times"></i></button>}
-                {isShown && <h3>Notification - {msg}</h3>}
+                {isShown && <h3>{msg}</h3>}
             </div>
         )
     }

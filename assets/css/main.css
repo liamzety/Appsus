@@ -302,13 +302,13 @@ option {
 /* NOTIFICATIONS */
 
 .notification-box {
+  z-index: 999;
   position: fixed;
-  top: 100px;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
   border-radius: 5px;
   background-color: #007DFC;
   color: #f1f1f1;
-  z-index: 1;
   font-size: 1rem;
 }
 
