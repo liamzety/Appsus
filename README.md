@@ -3,6 +3,8 @@
 **Triple-google-like-apps including Emails, Keep and a Bookshop**
 > Made with frontend functionality only. all files are saved to local storage.
 
+> Made with React's non-CLI version and with no external libraries.
+
 <img src="https://i.ibb.co/fGSQ6kr/appsus-homepage.jpg" />
 
 # Email
