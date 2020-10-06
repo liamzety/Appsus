@@ -1,9 +1,11 @@
 # Appsus
 
 **Triple-google-like-apps including Emails, Keep and a Bookshop**
-> Made with frontend functionality only. all files are saved to local storage.
+> Created with frontend functionality only. all files are saved to local storage.
 
-> Made with React's non-CLI version and with no external libraries.
+> Created using React's non-CLI version and with no external libraries.
+
+**Check it out LIVE here: <a href="https://liamzety.github.io/Appsus/#/">Appsus</a>**
 
 <img src="https://i.ibb.co/fGSQ6kr/appsus-homepage.jpg" />
 
